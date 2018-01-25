@@ -1956,48 +1956,66 @@ function mostrarListaClientes() {
 
 function mostrarListaEmpleados() {
   	
-  	
+  	vaciarTablas(document.querySelector("#listadoEmpleados"));
+  	document.querySelector("#listadoEmpleados").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado empleados";
+
+  	document.querySelector("#listadoEmpleados").appendChild(labelTitulo);
 
     var lista = oPaqueteria.cogerTodosLosEmpleados();
+    
     var oTabla = document.createElement("table");
 
-
-    oTabla.setAttribute("class", "table table-striped");
+    oTabla.setAttribute("class", "table table-striped table-responsive");
 
     var oThead = oTabla.createTHead();
     var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Nombre";
 
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Apellidos";
 
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Nombre"));
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Puesto Gestor";
 
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Apellidos"));
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Puesto Mánager";
 
-
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("¿Es gestor?"));
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("¿Es mánager?"));
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Oficina"));
-	
-
-
-    
+        oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Oficina";
 
     var oTBody = oTabla.createTBody();
 
+    var oEmpleados = oXML.getElementsByTagName("empleado");
+	
+	for (var i = 0; i < oEmpleados.length; i++) {
+		oFila = oTBody.insertRow(-1);
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oEmpleados[i].getElementsByTagName("nombre")[0].textContent;
 
-	
-	
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oEmpleados[i].getElementsByTagName("apellidos")[0].textContent;
+		
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oEmpleados[i].getElementsByTagName("gestor")[0].textContent;
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oEmpleados[i].getElementsByTagName("manager")[0].textContent;
+		
+
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oEmpleados[i].getElementsByTagName("oficina")[0].textContent;
+		
+		}	
+
+
+
     for (i = 0; i < lista.length; i++) {
         oFila = oTBody.insertRow(-1);
         
@@ -2019,46 +2037,60 @@ function mostrarListaEmpleados() {
 }
 
 
-/*function mostrarListaEmpleados() {
+function mostrarListaArticulos() {
  
 
+	vaciarTablas(document.querySelector("#listadoArtic"));
+  	document.querySelector("#listadoArtic").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado artículos";
+
+  	document.querySelector("#listadoArtic").appendChild(labelTitulo);
 
     var lista = oPaqueteria.cogerTodosLosArticulos();
+    
     var oTabla = document.createElement("table");
 
-
-    oTabla.setAttribute("class", "table table-striped");
+    oTabla.setAttribute("class", "table table-striped table-responsive");
 
     var oThead = oTabla.createTHead();
     var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Descripción";
 
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Peso";
 
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Descripción"));
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Valor";
 
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Peso"));
-
-
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Valor"));
-	
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("¿Es comercial?"));
-	
-
-
-    document.querySelector("#listadoEmpleados").appendChild(oTabla);
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Comercial";
 
     var oTBody = oTabla.createTBody();
 
+    var oArticulos = oXML.getElementsByTagName("articulo");
 
 	
+	for (var i = 0; i < oArticulos.length; i++) {
+
+		oFila = oTBody.insertRow(-1);
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oArticulos[i].getElementsByTagName("descripcion")[0].textContent;
+
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oArticulos[i].getElementsByTagName("peso")[0].textContent;
+		
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oArticulos[i].getElementsByTagName("valor")[0].textContent;
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oArticulos[i].getElementsByTagName("comercial")[0].textContent;	
+		}		
 	
     for (i = 0; i < lista.length; i++) {
         oFila = oTBody.insertRow(-1);
@@ -2071,17 +2103,9 @@ function mostrarListaEmpleados() {
         oCelda.appendChild(document.createTextNode(lista[i].doValor));
         oCelda = oFila.insertCell(-1);
         oCelda.appendChild(document.createTextNode(lista[i].sComercial));
-	
-	
-	
-
     }
-}*/
-
-function mostrarListaArticulos(){
-	var oh1=document.createElement("h1");
-	oh1.textContent = "PENE";
-	document.querySelector("#listadoArtic").appendChild(oh1);
+    
+    document.querySelector("#listadoArtic").appendChild(oTabla);
 }
 
 function vaciarTablas(objetoParent)
