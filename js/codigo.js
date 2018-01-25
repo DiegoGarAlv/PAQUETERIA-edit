@@ -1,14 +1,12 @@
 window.addEventListener("load",inicio,false);
-//probando commit antonio
-//probando commit antonio 2
-//probando commit antonio 3
+
 // Instanciamos el objeto principal
 var oPaqueteria = new Paqueteria();
 
 //#########################################################################################
 // PAQUETERIA
 //#########################################################################################
-//probando commit Diego
+
 var btnIndex = document.getElementById("activo");
 btnIndex.addEventListener("click", volverIndex, false);
 
