@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Paqueteria</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style type="text/css">
+		#formAltaCliente, #formBajaCliente, #listadoClientes, #formAltaEmpleados, #formBajaEmple, #listadoEmpleados, #formAltaArticulo, #formBajArticulo, #listadoArtic, #formAltaPedido, #formBajaPedido, #listadoPedidos, #verPaquetesNoEntregados, #verPaquetesEntregados, #formAltaQuejas, #formAltaAduana, #listadoAduana, #uml
+		{
+			display: none;
+		}
+		
+		.error {
+         background-color:yellow;
+         }
+	</style>
+
+</head>
+<body>
+
+	<div class="sidenav">
+
+		<a id="activo" href="#">PAQUETERÍA</a>
+
+		<button class="dropdown-btn">Clientes 
+		    <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+		    <a href="#" id="altaCli">Alta cliente</a>
+            <a href="#" id="bajaCli">Baja cliente</a>
+            <a href="#" id="listadoCli">Listado cliente</a>
+		</div>
+
+		<button class="dropdown-btn">Empleados 
+		    <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+		    <a href="#" id="altaEmpl">Alta empleado</a>
+        	<a href="#" id="bajaEmpl">Baja empleado</a>
+        	<a href="#" id="listadoEmpl">Listado empleado</a>
+		</div>
+
+		<button class="dropdown-btn">Artículos 
+		    <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+		    <a href="#" id="altaArt">Alta Articulos</a>
+        	<a href="#" id="bajaArt">Baja Articulos</a>
+        	<a href="#" id="btnListaArt">Listado Articulos</a>
+		</div>
+
+		<button class="dropdown-btn">Paquetes 
+		    <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="#" id="altaPaquete">Alta Paquete</a>
+		    <a href="#" id="paqueteNoEntregado">Listado Paquetes no entregados</a>
+        	<a href="#" id="paqueteEntregado">Listado paquetes entregado</a>
+		</div>
+
+		<button class="dropdown-btn">Aduanas 
+		    <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="#" id="altaAduana">Alta aduana</a>
+		    <a href="#" id="btnListadoAduana">Listado aduanas</a>
+		</div>
+
+		<button class="dropdown-btn">Quejas 
+		    <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="#" id="altaQueja">Alta quejas</a>
+		    <a href="#" id="listadoQueja">Listado quejas</a>
+		</div>
+
+		<a href="#" id="umlImage">UML</a>
+
+	</div>
+
+    <!-- ######################################################### -->
+
+    <div class="col-xs-12" id="uml">
+    </div>
+
+     <!-- ######################################################### -->
+
+	<div class="main">
+
+    <div class="container">
+
+        <form class="form-horizontal" id="formAltaCliente" name="formAltaCli">
+
+			<div class="form-group">
+				<label class="titulo">Alta cliente</label>
+			</div>
+            
+            <div class="form-group">
+            <label for="idCli">Id Cliente:</label>
+            <input type="text" class="form-control" id="idCli" placeholder="Id cliente" name="idCli">
+          </div>
+
+        	<div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
+          </div>
+
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" name="apellidos">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono">
+          </div>
+
+          <!--<div class="form-group">
+            <label for="puntos">Puntos:</label>
+            <input type="text" class="form-control" id="puntos" placeholder="Puntos" name="pnts">
+          </div>-->
+
+          <div class="form-group">
+            <label for="calle">Dirección / Calle:</label>
+            <input type="text" class="form-control" id="calle" placeholder="Calle" name="calle">
+          </div>
+
+          <div class="form-group">
+            <label for="codigopostal">Código Postal:</label>
+            <input type="text" class="form-control" id="codigopostal" placeholder="Código Postal" name="codigopostal">
+          </div>
+
+          <div class="form-group">
+            <label for="pais">País:</label>
+            <input type="text" class="form-control" id="pais" placeholder="País" name="pais">
+          </div>
+
+		<div class="form-group">
+          <button type="button" id="aceptarAltaCli" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+
+        <form class="form-horizontal" id="formBajaCliente" name="formBajaCli">
+
+			<div class="form-group">
+        		<label class="titulo">Baja cliente</label>
+    		</div>
+
+           <div class="form-group">
+              <label for="sel1">Dar de baja:</label>
+              <select class="form-control" id="baja">
+              </select>
+            </div> 
+
+		<div class="form-group">
+          <button type="button" id="aceptarEliminarCliente" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+
+		<div id="listadoClientes" class="table-responsive">
+
+        	<!--Aquí se inserta ListadoClientes-->
+
+       
+        </div>
+
+        <form class="form-horizontal" id="formAltaEmpleados" name="formAltaCli">
+
+			<div class="form-group">
+        		<label class="titulo">Alta Empleados</label>
+			</div>
+
+            <div class="form-group">
+            <label for="idEmple">Id Empleado:</label>
+            <input type="text" class="form-control" id="idEmple" placeholder="Id empleado" name="idEmple">
+          </div>
+
+            <div class="form-group">
+                <label for="nombreEmple">Nombre:</label>
+                <input type="text" class="form-control" id="nombreEmple" placeholder="Nombre" name="nombreEmple">
+            </div>
+
+            <div class="form-group">
+                <label for="apellidosEmple">Apellidos:</label>
+                <input type="text" class="form-control" id="apellidosEmple" placeholder="Apellidos" name="apellidosEmple">
+            </div>
+			
+			
+
+            <div class="form-group">
+                <label>Gestor: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" value="Sí" checked>Sí</label>
+					      
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Manager: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio1"  value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio1" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="oficina">Oficina:</label>
+                <input type="text" class="form-control" id="oficina" placeholder="Oficina" name="ofic">
+            </div>
+
+		<div class="form-group">
+            <button type="button" id="aceptarAltaEmple" class="btn btn-primary">Aceptar</button>
+            </div>
+
+        </form>
+
+        <form class="form-horizontal" id="formBajaEmple" name="formBajaEmpl">
+
+			<div class="form-group">
+        		<label class="titulo">Baja Empleados</label>
+			</div>
+
+           <div class="form-group">
+              <label for="sel1">Dar de baja:</label>
+              <select class="form-control" id="bajaEmple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div> 
+
+		<div class="form-group">
+          <button type="button" id="aceptarBajaEmple" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+
+		<div id="listadoEmpleados" class="table-responsive">
+
+			
+
+        
+        </div>
+
+        <form class="form-horizontal" id="formAltaArticulo" name="formAltaArticulo">
+
+			<div class="form-group">
+        		<label class="titulo">Alta artículos</label>
+			</div>
+
+            <div class="form-group">
+            <label for="idArti">Id artículo:</label>
+            <input type="text" class="form-control" id="idArti" placeholder="Id artículo" name="idArti">
+          </div>
+
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" class="form-control" id="descripcion" placeholder="Descripción"  name="descripcion">
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso:</label>
+                <input type="text" class="form-control" id="peso" placeholder="Peso" name="peso">
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor:</label>
+                <input type="text" class="form-control" id="valor" placeholder="Valor" name="valor">
+            </div>
+
+            <div class="form-group">
+                <label>Comercial: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio2" checked value="Sí">Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio2" value="No">No</label>
+                </div>
+            </div>
+
+		    <div class="form-group">
+                <button type="button" id="aceptarAltaArticulo" class="btn btn-primary">Aceptar</button>
+            </div>
+
+        </form>
+
+        <form class="form-horizontal" id="formBajArticulo" name="formBajaArt">
+
+			<div class="form-group">
+        		<label class="titulo">Baja artículo</label>
+			</div>
+			
+
+           <div class="form-group">
+              <label for="sel1">Dar de baja:</label>
+              <select class="form-control" id="bajaArticulo">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div> 
+
+		  <div class="form-group">
+            <button type="button" id="aceptarBajaArticulo" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+
+        <form class="form-horizontal" id="formAltaPedido" name="formAltaPedido">
+
+			<div class="form-group">
+        		<label class="titulo">Alta paquete</label>
+			</div>
+			
+			<div class="form-group">
+                <label for="idPaquete">Id paquete:</label>
+                <input type="text" class="form-control" id="idPaquete" placeholder="Id paquete" name="idPaquete">
+            </div>
+
+            <div class="form-group">
+                <label for="tarifa">Tarifa:</label>
+                <input type="text" class="form-control" id="tarifa" placeholder="Tarifa" name="tarifa">
+            </div>
+			
+
+            <div class="form-group">
+                <label for="fechaEntrega">Fecha de entrega:</label>
+                <input type="text" class="form-control datepicker" id="fechaEntrega" placeholder="Fecha de Entrega" name="fechaEntrega">
+            </div>
+			
+			<div class="form-group">
+                <label for="volumen">Volumen:</label>
+                <input type="text" class="form-control" id="volumen" placeholder="Volumen" name="volumen">
+            </div>
+			
+			<div class="form-group">
+                <label for="peso">Peso:</label>
+                <input type="text" class="form-control" id="peso" placeholder="Peso" name="peso">
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor:</label>
+                <input type="text" class="form-control" id="valor" placeholder="Valor" name="valor">
+            </div>
+
+            <div class="form-group">
+                <label>Urgente: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio3" value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio3" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Entregado: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio4" value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio4" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Admin. Pública: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio5" value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio5" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Internacional: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio6" value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio6" value="No">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Asegurado: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio7" value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio7" value="No">No</label>
+                </div>
+            </div>
+
+		    <div class="form-group">
+                <button type="button" id="aceptarAltaPaquete" class="btn btn-primary">Aceptar</button>
+        	</div>
+
+        </form>
+
+        <form class="form-horizontal" id="formAltaAduana" name="formAltaAduan">
+
+        	<div class="form-group">
+        		<label class="titulo">Alta aduana</label>
+			</div>
+			
+			<div class="form-group">
+                <label for="idAduana">Id aduana:</label>
+                <input type="text" class="form-control" id="idAduana" placeholder="Id aduana" name="idAduana">
+            </div>
+
+            <div class="form-group">
+              <label for="sel1">Artículo:</label>
+              <select class="form-control" id="listaArticulos" name="listaArticulos">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div> 
+			
+            <div class="form-group">
+                <label for="declaracion">Declaración:</label>
+                <input type="text" class="form-control" placeholder="Declaración"  id="declaracion" name="declaracion">
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Tasa:</label>
+                <input type="text" class="form-control" id="tasa" placeholder="Tasa" name="tasa">
+            </div>
+
+		    <div class="form-group">
+                <button type="button" id="aceptarAltaAduana" class="btn btn-primary">Aceptar</button>
+            </div>
+
+        </form>
+
+        <div id="listadoAduana" class="table-responsive">
+
+            <div class="form-group">
+                <label class="titulo">Listado aduanas</label>
+            </div>
+
+        </div>
+
+        <form class="form-horizontal" id="formAltaQuejas" name="formAltaQuejas">
+
+        	<div class="form-group">
+        		<label class="titulo">Alta quejas</label>
+			</div>
+			
+			<div class="form-group">
+                <label for="idQueja">Id queja:</label>
+                <input type="text" class="form-control" id="idQueja" placeholder="Id queja" name="idQueja">
+            </div>
+
+        	<div class="form-group">
+                <label for="descripcionQueja">Descripción:</label>
+                <input type="text" class="form-control" placeholder="Descripción de la queja"  id="descripcionQueja" name="descripcionQueja">
+            </div>
+
+            <div class="form-group">
+                <label for="fechaQueja">Fecha:</label>
+                <input type="text" class="form-control datepicker" id="fechaQueja" placeholder="Fecha" name="fechaQueja">
+            </div>
+
+            <div class="form-group">
+                <label>Resuelta: </label>
+                <div class="radio">
+                    <label><input type="radio" name="optradio8" value="Sí" checked>Sí</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio8" value="No">No</label>
+                </div>
+            </div>
+
+	        <div class="form-group">
+                <button type="button" id="aceptarAltaQueja" class="btn btn-primary">Aceptar</button>
+            </div>
+
+        </form>
+		
+		<div id="listadoArtic" class="table-responsive">
+
+			<div class="form-group">
+        		<label class="titulo">Listado artículos</label>
+			</div>
+	
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Descripción</th>
+                <th>Peso</th>
+                <th>Valor</th>
+                <th>Comercial</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>john@example.com</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+                <td>mary@example.com</td>
+                <td>mary@example.com</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+                <td>july@example.com</td>
+                <td>july@example.com</td>
+              </tr>
+            </tbody>
+        </table>
+
+        </div>
+
+        <div id="verPaquetesNoEntregados" class="table-responsive">
+
+			<div class="form-group">
+        		<label class="titulo">Listado paquetes no entregados</label>
+			</div>
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Tarifa</th>
+                <th>Fecha entrega</th>
+                <th>Urgente</th>
+                <th>Admin. pública</th>
+                <th>Internacional</th>
+                <th>Volumen</th>
+                <th>Peso</th>
+                <th>Valor</th>
+                <th>Asegurado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+              </tr>
+            </tbody>
+        </table>
+
+        </div>
+
+        <div id="verPaquetesEntregados" class="table-responsive">
+
+			<div class="form-group">
+        		<label class="titulo">Listado paquetes entregados</label>
+			</div>
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Tarifa</th>
+                <th>Fecha entrega</th>
+                <th>Urgente</th>
+                <th>Admin. pública</th>
+                <th>Internacional</th>
+                <th>Volumen</th>
+                <th>Peso</th>
+                <th>Valor</th>
+                <th>Asegurado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+                <td>John</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+                <td>Mary</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+                <td>July</td>
+              </tr>
+            </tbody>
+        </table>
+
+        </div>
+
+    </div>
+
+	</div>
+
+	<script>
+	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+	  dropdown[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var dropdownContent = this.nextElementSibling;
+	    if (dropdownContent.style.display === "block") {
+	      dropdownContent.style.display = "none";
+	    } else {
+	      dropdownContent.style.display = "block";
+	    }
+	  });
+	}
+	</script>
+
+
+</body>
+
+    
+    <script type="text/javascript" src="js/objetos.js"></script>
+	<script type="text/javascript" src="js/codigo.js"></script>
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+	<script type="application/javascript">
+        $(function () {
+            $("input.datepicker").datepicker({ 
+                autoclose: true, 
+                todayHighlight: true
+            }).datepicker('update', new Date());
+        });
+    </script>
+
+</html>

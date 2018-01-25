@@ -1,1 +1,2 @@
-# PAQUETERIA-edit
+# PracticaPaqueteria
+Practica para la asignatura Cliente//Bloque2
