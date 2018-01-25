@@ -1,5 +1,5 @@
 window.addEventListener("load",inicio,false);
-
+//probando commit antonio
 // Instanciamos el objeto principal
 var oPaqueteria = new Paqueteria();
 
