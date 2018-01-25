@@ -6,7 +6,7 @@ var oPaqueteria = new Paqueteria();
 //#########################################################################################
 // PAQUETERIA
 //#########################################################################################
-//probando commit Diego
+
 var btnIndex = document.getElementById("activo");
 btnIndex.addEventListener("click", volverIndex, false);
 
