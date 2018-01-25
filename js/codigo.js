@@ -2,7 +2,7 @@ window.addEventListener("load",inicio,false);
 
 // Instanciamos el objeto principal
 var oPaqueteria = new Paqueteria();
-
+//probando juanan 2 888    
 //#########################################################################################
 // PAQUETERIA
 //#########################################################################################
