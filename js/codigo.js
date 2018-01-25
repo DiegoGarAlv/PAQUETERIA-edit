@@ -1,6 +1,7 @@
 window.addEventListener("load",inicio,false);
 //probando commit antonio
 //probando commit antonio 2
+//probando commit antonio 3
 // Instanciamos el objeto principal
 var oPaqueteria = new Paqueteria();
 
