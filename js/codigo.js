@@ -1066,7 +1066,7 @@ function aceptarBajaCliente()
 
    	if(clienteEncontrado)
    	{
-   		alert("Encontrado");
+   		alert(clienteSeleccionado + " encontrado");
    	}
 
     //alert(mensaje);
@@ -1080,11 +1080,25 @@ function comboEliminarCliente()
         mod[i].parentNode.removeChild(mod[i]);
     }*/
 
+    var select = oForm.baja;
+
     var comboClientes = oPaqueteria.cogerTodosLosNombresClientes();
+
+    var longitudSelect = comboClientes.length;
+
+    for (i = 0; i < longitudSelect; i++) 
+    {
+	  select.options[i] = null;
+	}
+
+    
     //console.log(comboClientes.length);
     var mod = oForm.baja;
     var seleccionado = oForm.baja.value.trim();
 
+    
+
+    
     
     //console.log(seleccionado);
 
@@ -2192,7 +2206,7 @@ function rellenaComboClientes(combo){
 		oSelect.childNodes[0].remove();
 	for(var i=0;i<oPaqueteria.clientes.length;i++){
 		var oOption = document.createElement('option');
-		oOption.value=i;
+		oOption.value=oPaqueteria.clientes[i].sIdCliente;
 		var oTextOption = document.createTextNode(oPaqueteria.clientes[i].sIdCliente);
 		oOption.appendChild(oTextOption);
 		oSelect.appendChild(oOption);
@@ -2214,12 +2228,17 @@ function aceptarModificarCliente(oEvento){
 	   var oForm = document.getElementById("formModiCliente");
 	  var sErrores = "";
 	  var sMensaje ="";
-	  
-	  var oClienteMod=oForm.comboModificarClientes.value;
-	 var oCliente=oPaqueteria.clientes[oClienteMod];
-	 var sNombre=oCliente.nombre;
-	
 
+	  //var posSeleccionado = oForm.selectedIndex;
+	  
+	  var sIdCliente=formModiCliente.comboClientes.value.trim();
+	  //var selected = oForm.options[posSeleccionado].text;
+	  //var selected = oForm.selectedIndex.text;
+	  console.log(sIdCliente);
+	 //var oCliente=oPaqueteria.clientes[sIdCliente];
+	 //var sNombre=oCliente.nombre;
+	
+	 //oForm.nombre.value = ;
 	
 	if(sMensaje==""){
 		           for (var i=0;i<oPaqueteria.clientes.length;i++)
@@ -2419,7 +2438,7 @@ function aceptarModificarCliente(oEvento){
 	
 	else
 	{
-     var cliente= new Cliente(sNombre,sApellidos,sEmail,sTelef,sDireccion,sCodPost,sPais);
+     var cliente= new Cliente(sIdCliente,sNombre,sApellidos,sEmail,sTelef,sDireccion,sCodPost,sPais);
 	 sMensaje=oPaqueteria.modificarCliente(cliente);
 	 oForm.reset();
 	}

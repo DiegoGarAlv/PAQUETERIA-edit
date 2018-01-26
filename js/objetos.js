@@ -44,10 +44,13 @@ Paqueteria.prototype.altaCliente = function(oCliente)
     var bEncontrado = false;
     var sMensaje = "";
 
+    console.log("CLiente enviado: " + oCliente.sIdCliente);
+
     // Busco por idEmpleado
 	for(var i=0; i<this.clientes.length && bEncontrado==false; i++)
 	{
-        if(this.clientes[i].idPersona == oCliente.idPersona){
+		console.log("revisando cliente: " + this.clientes[i].sIdCliente);
+        if(this.clientes[i].sIdCliente == oCliente.sIdCliente){
             bEncontrado = true;
             sMensaje = "Cliente registrado con anterioridad";
         }
@@ -343,8 +346,10 @@ Paqueteria.prototype.cogerTodosLosArticulos = function ()
 Paqueteria.prototype.modificarCliente= function(oCliente){
     var sCadena = "";
     for(var i=0;i < this.clientes.length;i++){
-		
-        if(this.clientes[i].sIdCliente == oCliente.idCliente){
+        console.log(oCliente);
+		console.log(oCliente.sIdCliente);
+        if(this.clientes[i].sIdCliente == oCliente.sIdCliente)
+        {
 			this.clientes[i].sNombre = oCliente.sNombre;
             this.clientes[i].sApellidos = oCliente.sApellidos;
             this.clientes[i].sEmail = oCliente.sEmail;
@@ -353,12 +358,12 @@ Paqueteria.prototype.modificarCliente= function(oCliente){
 			this.clientes[i].sCodPost = oCliente.sCodPost;
 			this.clientes[i].sPais = oCliente.sPais;
            
-            sCadena = "Cliente "+oCliente.nombre+" modificado";
+            sCadena = "Cliente "+oCliente.sNombre+" modificado";
         }
 		
 		 else
 		 {
-			 sCadena = "Cliente no encontrado";
+			sCadena = "Cliente no encontrado";
 		 }
 		
     }
