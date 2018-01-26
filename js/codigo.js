@@ -2096,10 +2096,27 @@ function mostrarListaEmpleados() {
     document.querySelector("#listadoEmpleados").appendChild(oTabla);
 }
 
+function loadXMLDoc(filename)
+    {
+        if (window.XMLHttpRequest)
+        {
+            xhttp=new XMLHttpRequest();
+        }
+        else // code for IE5 and IE6
+        {
+            xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET",filename,false);
+
+        xhttp.send();
+
+        return xhttp.responseXML;
+    }
+
+    var oXML2 = loadXMLDoc("datosArticulos.xml");
 
 function mostrarListaArticulos() {
- 
-
+ 	
 	vaciarTablas(document.querySelector("#listadoArtic"));
   	document.querySelector("#listadoArtic").style.display="block";
 
@@ -2131,7 +2148,7 @@ function mostrarListaArticulos() {
 
     var oTBody = oTabla.createTBody();
 
-    var oArticulos = oXML.getElementsByTagName("articulo");
+    var oArticulos = oXML2.getElementsByTagName("articulo");
 
 	
 	for (var i = 0; i < oArticulos.length; i++) {
