@@ -179,6 +179,70 @@
           </div>
 
         </form>
+		
+		<!-- modificar cliente-->
+		  <form class="form-horizontal" id="formModiCliente" name="formModiCliente">
+
+			<div class="form-group">
+				<label class="titulo">Modificar cliente</label>
+			</div>
+			
+		
+
+			<div class="form-group">
+			<label for="idCli"> ID Cliente</label>  
+				 <div class="form-group">
+					<select  name="comboClientes" id="comboModificarClientes" class="form-control">
+				        <option>No hay clientes disponibles</option>
+				    </select>
+			    </div>
+			</div>
+            
+        	<div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
+          </div>
+
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" name="apellidos">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono">
+          </div>
+
+      
+
+          <div class="form-group">
+            <label for="calle">Dirección / Calle:</label>
+            <input type="text" class="form-control" id="calle" placeholder="Calle" name="calle">
+          </div>
+
+          <div class="form-group">
+            <label for="codigopostal">Código Postal:</label>
+            <input type="text" class="form-control" id="codigopostal" placeholder="Código Postal" name="codigopostal">
+          </div>
+
+          <div class="form-group">
+            <label for="pais">País:</label>
+            <input type="text" class="form-control" id="pais" placeholder="País" name="pais">
+          </div>
+
+		<div class="form-group">
+          <button type="button" id="aceptarModiCli" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+		
+		
+		<!-- fin modificar-->
 
 		<div id="listadoClientes" class="table-responsive">
 
@@ -266,9 +330,6 @@
 
 		<div id="listadoEmpleados" class="table-responsive">
 
-			
-
-        
         </div>
 
         <form class="form-horizontal" id="formAltaArticulo" name="formAltaArticulo">
@@ -336,6 +397,11 @@
           </div>
 
         </form>
+        
+        <div id="listadoArtic" class="table-responsive">
+            
+        </div>
+        
 
         <form class="form-horizontal" id="formAltaPedido" name="formAltaPedido">
 
@@ -511,49 +577,6 @@
             </div>
 
         </form>
-		
-		<div id="listadoArtic" class="table-responsive">
-
-			<div class="form-group">
-        		<label class="titulo">Listado artículos</label>
-			</div>
-	
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Descripción</th>
-                <th>Peso</th>
-                <th>Valor</th>
-                <th>Comercial</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-                <td>john@example.com</td>
-                <td>john@example.com</td>
-              </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-                <td>mary@example.com</td>
-                <td>mary@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-                <td>july@example.com</td>
-                <td>july@example.com</td>
-              </tr>
-            </tbody>
-        </table>
-
-        </div>
 
         <div id="verPaquetesNoEntregados" class="table-responsive">
 

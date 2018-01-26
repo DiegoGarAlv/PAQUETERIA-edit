@@ -337,4 +337,32 @@ Paqueteria.prototype.cogerTodosLosArticulos = function ()
     return arrayArticulos;
 }
 
+//Modificaciones
+
+//Cliente
+Paqueteria.prototype.modificarCliente= function(oCliente){
+    var sCadena = "";
+    for(var i=0;i < this.clientes.length;i++){
+		
+        if(this.clientes[i].sIdCliente == oCliente.idCliente){
+			this.clientes[i].sNombre = oCliente.sNombre;
+            this.clientes[i].sApellidos = oCliente.sApellidos;
+            this.clientes[i].sEmail = oCliente.sEmail;
+			this.clientes[i].sTelefono = oCliente.sTelef;
+            this.clientes[i].sDireccion = oCliente.sDireccion;
+			this.clientes[i].sCodPost = oCliente.sCodPost;
+			this.clientes[i].sPais = oCliente.sPais;
+           
+            sCadena = "Cliente "+oCliente.nombre+" modificado";
+        }
+		
+		 else
+		 {
+			 sCadena = "Cliente no encontrado";
+		 }
+		
+    }
+    return sCadena;
+}
+
 
