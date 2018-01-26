@@ -375,16 +375,15 @@ Paqueteria.prototype.modificarEmpleado= function(oEmpleado){
     var sCadena = "";
     for(var i=0;i < this.empleados.length;i++){
        
-        if(this.empleados[i].idEmpleado == oEmpleado.sIdCliente)
+        if(this.empleados[i].idEmpleado == oEmpleado.idEmpleado)
         {
-			idEmpleado, sNombre, sApellidos, sGestor, sManager, sOficina
+			
 			this.empleados[i].sNombre = oEmpleado.sNombre;
             this.empleados[i].sApellidos = oEmpleado.sApellidos;
-            this.empleados[i].sEmail = oEmpleado.sEmail;
-			this.empleados[i].sTelefono = oEmpleado.sTelef;
-            this.empleados[i].sDireccion = oEmpleado.sDireccion;
-			this.empleados[i].sCodPost = oEmpleado.sCodPost;
-			this.empleados[i].sPais = oEmpleado.sPais;
+            this.empleados[i].sGestor = oEmpleado.sGestor;
+			this.empleados[i].sTelefono = oEmpleado.sManager;
+            this.empleados[i].sDireccion = oEmpleado.sOficina;
+		
            
             sCadena = "Empleado "+oEmpleado.sNombre+" modificado";
         }

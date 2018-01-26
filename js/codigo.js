@@ -1165,7 +1165,7 @@ function aceptarAltaEmpleado(oEvento){
 	//Campo id empleado
 	var idEmpleado=  oForm.idEmple.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idEmpleado) == false){
 	
