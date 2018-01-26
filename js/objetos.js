@@ -63,24 +63,36 @@ Paqueteria.prototype.altaCliente = function(oCliente)
 };
 
 Paqueteria.prototype.eliminarCliente = function (sIdCliente) {
-    var i = 0;
-    var bEnc = false;
-    var posicion = 0;
+    //var i = 0;
+    var encontrado = false;
+    //var posicion = 0;
     // Busco por descripcion
-    while (i < this.clientes.length && bEnc == false) {
+
+    console.log(sIdCliente);
+
+    for(var i=0; i<this.clientes.length; i++)
+    {
+        console.log(this.clientes[i].sIdCliente);
+        if(sIdCliente == this.clientes[i].sIdCliente)
+        {
+            encontrado = true;
+        }
+    }
+
+    /*while (i < this.clientes.length && encontrado == false) {
         if (this.clientes[i].sIdCliente == sIdCliente) {
 
             posicion = i;
-            bEnc = true;
+            encontrado = true;
         }
         i++;
     }
 
-    if (bEnc) {
+    if (encontrado) {
         this.clientes.splice(posicion, 1);
-    }
+    }*/
 
-    return bEnc;
+    return encontrado;
 }
 
 // ###############################  Objeto Empleado ############################### \\

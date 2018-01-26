@@ -1024,44 +1024,55 @@ function aceptarBajaCliente()
 {
 	var oForm = document.getElementById("formBajaCliente");
     var bValido = true;
-    var sMensaje = "";
-    var clienteBaja = oForm.baja.value;
+    var clienteSeleccionado = oForm.baja.value.substr(0,2);
     //var clienteMod = baja.substr(0, 9);
     var mensaje = "";
 
-    sMensaje = oPaqueteria.eliminarCliente(clienteBaja);
+    var clienteEncontrado = oPaqueteria.eliminarCliente(clienteSeleccionado);
     comboEliminarCliente();
 
-    if (sMensaje == false) 
-    {
-        mensaje = "No hay clientes registrados";
-    }
-    else
-    {
-        mensaje = "Cliente dado de baja";
-    }
+    console.log(clienteEncontrado);
 
-    alert(mensaje);
+   	if(clienteEncontrado)
+   	{
+   		alert("Encontrado");
+   	}
+
+    //alert(mensaje);
 }
 
 function comboEliminarCliente()
 {
-	var oForm=document.getElementById("formBajaCliente");
+	var oForm = document.getElementById("formBajaCliente");
 	var mod = oForm.baja.children;
-    for (var i = mod.length - 1; i >= 0; i--) {
+    /*for (var i = mod.length - 1; i >= 0; i--) {
         mod[i].parentNode.removeChild(mod[i]);
-    }
+    }*/
 
     var comboClientes = oPaqueteria.cogerTodosLosNombresClientes();
-    console.log(comboClientes.length);
+    //console.log(comboClientes.length);
     var mod = oForm.baja;
+    var seleccionado = oForm.baja.value.trim();
+
+    
+    //console.log(seleccionado);
+
     for (i = 0; i < comboClientes.length; i++) 
     {
-        var item = document.createElement("option");
-        item.setAttribute("value", comboClientes[i]);
-        var texto = document.createTextNode(comboClientes[i]);
-        item.appendChild(texto);
-        mod.appendChild(item);
+		//console.log(comboClientes[i]);
+		if(comboClientes.length > 0)
+		{
+			mod.selectedIndex = 1;
+
+			if(comboClientes[i] != seleccionado && mod.selectedIndex != 0)
+			{
+		        var item = document.createElement("option");
+		        item.setAttribute("value", comboClientes[i]);
+		        var texto = document.createTextNode(comboClientes[i]);
+		        item.appendChild(texto);
+		        mod.appendChild(item);
+	        }
+        }
     }
 }
 
