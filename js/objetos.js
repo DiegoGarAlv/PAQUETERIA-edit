@@ -44,7 +44,7 @@ Paqueteria.prototype.altaCliente = function(oCliente)
     var bEncontrado = false;
     var sMensaje = "";
 
-    console.log("CLiente enviado: " + oCliente.sIdCliente);
+    console.log("Cliente enviado: " + oCliente.sIdCliente);
 
     // Busco por idEmpleado
 	for(var i=0; i<this.clientes.length && bEncontrado==false; i++)
@@ -63,7 +63,7 @@ Paqueteria.prototype.altaCliente = function(oCliente)
     }
 
     return sMensaje;
-};
+}
 
 Paqueteria.prototype.eliminarCliente = function (sIdCliente) {
     //var i = 0;
@@ -122,7 +122,7 @@ Paqueteria.prototype.altaEmpleado = function(oEmpleado)
     // Busco por idEmpleado
 	for(var i=0; i<this.empleados.length && bEncontrado==false; i++)
 	{
-        if(this.empleados[i].idPersona == oEmpleado.idPersona && this.empleados[i].idEmpleado == oEmpleado.idEmpleado){
+        if(this.empleados[i].idEmpleado == oEmpleado.idEmpleado){
             bEncontrado = true;
             sMensaje = "Empleado registrado con anterioridad";
         }
@@ -364,6 +364,34 @@ Paqueteria.prototype.modificarCliente= function(oCliente){
 		 else
 		 {
 			sCadena = "Cliente no encontrado";
+		 }
+		
+    }
+    return sCadena;
+}
+
+//Empleado
+Paqueteria.prototype.modificarEmpleado= function(oEmpleado){
+    var sCadena = "";
+    for(var i=0;i < this.empleados.length;i++){
+       
+        if(this.empleados[i].idEmpleado == oEmpleado.sIdCliente)
+        {
+			idEmpleado, sNombre, sApellidos, sGestor, sManager, sOficina
+			this.empleados[i].sNombre = oEmpleado.sNombre;
+            this.empleados[i].sApellidos = oEmpleado.sApellidos;
+            this.empleados[i].sEmail = oEmpleado.sEmail;
+			this.empleados[i].sTelefono = oEmpleado.sTelef;
+            this.empleados[i].sDireccion = oEmpleado.sDireccion;
+			this.empleados[i].sCodPost = oEmpleado.sCodPost;
+			this.empleados[i].sPais = oEmpleado.sPais;
+           
+            sCadena = "Empleado "+oEmpleado.sNombre+" modificado";
+        }
+		
+		 else
+		 {
+			sCadena = "Empleado no encontrado";
 		 }
 		
     }
