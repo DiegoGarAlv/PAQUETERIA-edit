@@ -59,6 +59,8 @@ function volverIndex()
 	verAltaAduana.reset();
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 
 	var verUML = document.getElementById("uml");
  	verUML.style.display = "none";
@@ -124,6 +126,8 @@ function altaCliente()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var formBajaCliente = document.getElementById("bajaCli");
@@ -183,6 +187,8 @@ function bajaCliente()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var listCliente = document.getElementById("listadoCli");
@@ -241,6 +247,8 @@ function listCLientes()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 //#########################################################################################
@@ -299,6 +307,8 @@ function altaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var bajaEmpleados = document.getElementById("bajaEmpl");
@@ -350,6 +360,8 @@ function bajaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var listaEmpleados = document.getElementById("listadoEmpl");
@@ -401,6 +413,8 @@ function listaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 //#########################################################################################
@@ -457,6 +471,8 @@ function altaArticulo()
 	
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var bajaArticulo = document.getElementById("bajaArt");
@@ -511,6 +527,8 @@ function bajaArticulos()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var listaArticulo = document.getElementById("btnListaArt");
@@ -562,6 +580,8 @@ function listArticul()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 //#########################################################################################
@@ -619,6 +639,8 @@ function altaPaquete()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var paqueteNoEntregado = document.getElementById("paqueteNoEntregado");
@@ -670,6 +692,8 @@ function listaPaquetesNoEntregado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 var paqueteEntregado = document.getElementById("paqueteEntregado");
@@ -721,6 +745,8 @@ function listaPaquetesEntregado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 }
 
 //#########################################################################################
@@ -776,6 +802,8 @@ function altaAduana()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
  	
 }
 
@@ -789,6 +817,8 @@ function verListaAduana()
  	verListaAduanas.style.display = "block";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
 
 }
 
@@ -1135,7 +1165,7 @@ function aceptarAltaEmpleado(oEvento){
 	//Campo id empleado
 	var idEmpleado=  oForm.idEmple.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idEmpleado) == false){
 	
@@ -1848,8 +1878,13 @@ function inicio(){
 	document.getElementById("btnListaArt").addEventListener("click",mostrarListaArticulos,false);
 	document.getElementById("modiCli").addEventListener("click", modificarCliente,false);
 	document.getElementById("aceptarModiCli").addEventListener("click", aceptarModificarCliente,false);
+<<<<<<< HEAD
 	document.getElementById("paqueteNoEntregado").addEventListener("click", mostrarListaPaquetesNo,false);
 	document.getElementById("paqueteEntregado").addEventListener("click", mostrarListaPaquetesSi,false);
+=======
+    document.getElementById("modiEmple").addEventListener("click", modificarEmpleado,false);
+	document.getElementById("aceptarModiEmple").addEventListener("click", aceptarModificarEmpleado,false);
+>>>>>>> 8ba15387e51692252ccaf5a61228f57e029320ae
 	
 
 }
@@ -2481,6 +2516,14 @@ function modificarCliente()
 	rellenaComboClientes("comboModificarClientes");
 }
 
+function modificarEmpleado()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiEmpleado").style.display = "block";
+	document.getElementById("formModiEmpleado").reset();
+	rellenaComboEmpleados("comboModificarEmpleados");
+}
+
 function rellenaComboClientes(combo){
 	var oSelect = document.getElementById(combo);
 	var cont=0;
@@ -2499,6 +2542,29 @@ function rellenaComboClientes(combo){
 		var oOption = document.createElement('option');
 		oOption.value="-1";
 		var oTextOption = document.createTextNode('No se han encontrado clientes');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboEmpleados(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.empleados.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.empleados[i].idEmpleado;
+		var oTextOption = document.createTextNode(oPaqueteria.empleados[i].idEmpleado);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado empleados');
 		oOption.appendChild(oTextOption);
 		oSelect.appendChild(oOption);
 	}
@@ -2736,19 +2802,25 @@ function aceptarModificarCliente(oEvento){
 	
 }
 
-/*function aceptarAltaCliente(oEvento){
-	var oE = oEvento || window.event;
-	var bValido = true;
-	var oForm=document.getElementById("formAltaCliente");
-	var sErrores = "";
-	var sMensaje ="";
+
+function aceptarModificarEmpleado(oEvento){
+		var oE = oEvento || window.event;
+	   var bValido = true;
+	   var oForm = document.getElementById("formModiEmpleado");
+	  var sErrores = "";
+	  var sMensaje ="";
+	  
+	  var sIdEmpleado=formModiEmpleado.comboEmpleados.value.trim();
 	
 	
-	// Validaciones
+	if(sMensaje==""){
+		           for (var i=0;i<oPaqueteria.empleados.length;i++)
+				   {
+					   // Validaciones
 
 	
 	//Campo nombre
-	var sNombre =oForm.nombre.value.trim();
+	var sNombre = oForm.nombreEmple.value.trim();
 	
 
 	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,15}$/;
@@ -2758,198 +2830,104 @@ function aceptarModificarCliente(oEvento){
 		if(bValido == true){
 			bValido = false;		
 			//Este campo obtiene el foco
-			oForm.nombre.focus();		
+			oForm.nombreEmple.focus();		
 		}
 	
 		sErrores += "\nNombre incorrecto";
 		
 		//Marcar error
-		oForm.nombre.className = "form-control error";
+		oForm.nombreEmple.className = "form-control error";
 	
 	}
 	else {
 		//Desmarcar error
-		oForm.nombre.className = "form-control";	
+		oForm.nombreEmple.className = "form-control";	
 	}
 
 	//Campo apellidos
-	var sApellidos = oForm.apellidos.value.trim();
+	var sApellidos = oForm.apellidosEmple.value.trim();
 	
 
-	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{4,50}$/;
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{4,15}$/;
 	
 	if (oExpReg.test(sApellidos) == false){
 	
 		if(bValido == true){
 			bValido = false;		
 			//Este campo obtiene el foco
-			oForm.apellidos.focus();		
+			oForm.apellidosEmple.focus();		
 		}
 	
 		sErrores += "\nApellidos incorrectos";
 		
 		//Marcar error
-		oForm.apellidos.className = "form-control error";
+		oForm.apellidosEmple.className = "form-control error";
 	
 	}
 	else {
 		//Desmarcar error
-		oForm.apellidos.className = "form-control";	
+		oForm.apellidosEmple.className = "form-control";	
 	}
 	
-	//Campo email
-	var sEmail = oForm.email.value.trim();
 	
-	var oExpReg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
 	
-	if (oExpReg.test(sEmail) == false){
+
+	//Campo oficina
+	var sOficina= oForm.oficina.value.trim();
+
+
+	var oExpReg = /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,4}$/;
+	
+	if (oExpReg.test(sOficina) == false){
 	
 		if(bValido == true){
 			bValido = false;		
 			//Este campo obtiene el foco
-			document.getElementById("email").focus();		
+			oForm.oficina.focus();		
 		}
 	
-		sErrores += "\nEmail incorrecto";
+		sErrores += "\nNombre de oficina incorrecto";
 		
 		//Marcar error
-		oForm.email.className = "form-control error";
+		oForm.oficina.className = "form-control error";
 	
 	}
 	else {
 		//Desmarcar error
-		oForm.email.className = "form-control";	
-	}
-	
-	
-	
-	
-	//Campo telefono
-	var sTelef = oForm.telefono.value.trim();
-	
-	var oExpReg =  /^[6|7|9][0-9]{8}$/;
-	
-	if (oExpReg.test(sTelef) == false){
-	
-		if(bValido == true){
-			bValido = false;		
-			//Este campo obtiene el foco
-			oForm.telefono.focus();		
-		}
-	
-		sErrores += "\nTeléfono incorrecto";
-		
-		//Marcar error
-		oForm.telefono.className = "form-control error";
-	
-	}
-	else {
-		//Desmarcar error
-		oForm.telefono.className = "form-control";	
-	}
-	
-	
-
-	//Campo calle
-	var sDireccion= oForm.calle.value.trim();
-
-
-	var oExpReg = /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,15}$/;
-	
-	if (oExpReg.test(sDireccion) == false){
-	
-		if(bValido == true){
-			bValido = false;		
-			//Este campo obtiene el foco
-			oForm.calle.focus();		
-		}
-	
-		sErrores += "\nNombre de calle incorrecto";
-		
-		//Marcar error
-		oForm.calle.className = "form-control error";
-	
-	}
-	else {
-		//Desmarcar error
-		oForm.calle.className = "form-control";	
+		oForm.oficina.className = "form-control";	
 	}
 		
-	//Campo codigopostal
-	var sCodPost = oForm.codigopostal.value.trim();
-
-	var oExpReg = /^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/;
 	
-	if (oExpReg.test(sCodPost) == false){
 	
-		if(bValido == true){
-			bValido = false;		
-			//Este campo obtiene el foco
-			oForm.codigopostal.focus();		
-		}
-	
-		sErrores += "\nCódigo postal incorrecto";
-		
-		//Marcar error
-		oForm.codigopostal.className = "form-control error";
-	
-	}
-	else {
-		//Desmarcar error
-		oForm.codigopostal.className = "form-control";	
-	}
-
-	//Campo pais
-	var sPais= oForm.pais.value.trim();
-
-
-	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,15}$/;
-	
-	if (oExpReg.test(sPais) == false){
-	
-		if(bValido == true){
-			bValido = false;		
-			//Este campo obtiene el foco
-			oForm.pais.focus();		
-		}
-	
-		sErrores += "\nNombre de país incorrecto";
-		
-		//Marcar error
-		oForm.pais.className = "form-control error";
-	
-	}
-	else {
-		//Desmarcar error
-		oForm.pais.className = "form-control";	
-	}
-	
-  if(idCliente == "" || sNombre =="" || sApellidos =="" || sEmail ==""  || sTelef=="" || sDireccion=="" || sCodPost=="" || sPais=="")
+  if(sNombre =="" || sApellidos =="" || sOficina =="" )
     {
         sErrores +="Debe rellenar todos los campos";
     }
 
 	
-
+    
+	 var sGestor = oForm.optradio.value;
+	 var sManager = oForm.optradio1.value;
 	//Resultado
-	if (bValido == false)
-	{
+	if (bValido == false){
 		//Cancelar envio del formulario
 		oE.preventDefault();
 		//Mostrar errores
 		alert(sErrores);
 	}
+	else{
 	
-	else
-	{
-     var cliente= new Cliente(idCliente,sNombre,sApellidos,sEmail,sTelef,sDireccion,sCodPost,sPais);
-	 sMensaje=oPaqueteria.altaCliente(cliente);
-	 oForm.reset();
+     var empleado= new Empleado(sIdEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina);
+	 sMensaje=oPaqueteria.modificarEmpleado(empleado);
 	}
 	
 	
 	alert(sMensaje);
-
-}*/
-
-
+			
+					
+	}
+		}
+	
+	
+	
+}
