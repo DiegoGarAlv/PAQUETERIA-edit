@@ -1584,8 +1584,8 @@ function aceptarAltaPaquete(oEvento){
 	
 	
 
-	var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
-	
+	//var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
 	
 	if (oExpReg.test(dFechaEntrega) == false){
 	
@@ -1968,12 +1968,19 @@ function inicio(){
 	document.getElementById("btnListaArt").addEventListener("click",mostrarListaArticulos,false);
 	document.getElementById("modiCli").addEventListener("click", modificarCliente,false);
 	document.getElementById("aceptarModiCli").addEventListener("click", aceptarModificarCliente,false);
+	document.getElementById("paqueteNoEntregado").addEventListener("click", mostrarListaPaquetesNo,false);
+	document.getElementById("paqueteEntregado").addEventListener("click", mostrarListaPaquetesSi,false);
     document.getElementById("modiEmple").addEventListener("click", modificarEmpleado,false);
 	document.getElementById("aceptarModiEmple").addEventListener("click", aceptarModificarEmpleado,false);
+<<<<<<< HEAD
     document.getElementById("modiArti").addEventListener("click", modificarArticulo,false);
 	document.getElementById("aceptarModiArticulo").addEventListener("click", aceptarModificarArticulo,false);
 	document.getElementById("modiPaq").addEventListener("click", modificarPaquete,false);
 	document.getElementById("aceptarModificarPaquete").addEventListener("click", aceptarModificarPaquete,false);
+=======
+
+	
+>>>>>>> 4402a149fed12beadde33c8697faec92e0c39b87
 
 }
 
@@ -2308,6 +2315,270 @@ function mostrarListaArticulos() {
     
     document.querySelector("#listadoArtic").appendChild(oTabla);
 }
+
+//listado paquetes no entregados
+
+function mostrarListaPaquetesNo(){
+
+	vaciarTablas(document.querySelector("#verPaquetesNoEntregados"));
+  	document.querySelector("#verPaquetesNoEntregados").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado paquetes no entregados";
+
+  	document.querySelector("#verPaquetesNoEntregados").appendChild(labelTitulo);
+
+    var lista = oPaqueteria.cogerTodosLosPaquetes();
+    
+    var oTabla = document.createElement("table");
+
+    oTabla.setAttribute("class", "table table-striped table-responsive");
+
+    var oThead = oTabla.createTHead();
+    var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "ID";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Tarifa";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Fecha de entrega";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Volumen";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Peso";
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Valor";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Urgente";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Administración pública";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Internacional";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Asegurado";
+
+
+    var oTBody = oTabla.createTBody();
+
+    var oPaquetes = oXML.getElementsByTagName("paquete");
+
+    for (var i = 0; i < oPaquetes.length; i++) {
+    	var entregado = oPaquetes[i].getElementsByTagName("entregado")[0].textContent;
+
+    	if(entregado == "No")
+    	{
+    		oFila = oTBody.insertRow(-1);
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("idPaquete")[0].textContent;
+
+		
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("Tarifa")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("fechaEntrega")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("volumen")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("peso")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("valor")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("urgente")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("adminPublica")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("internacional")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("asegurado")[0].textContent;
+    	}
+    }
+
+    for (i = 0; i < lista.length; i++) {
+        
+        var entregado = lista[i].sEntregado;
+
+        if(entregado == "No")
+        {
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+        }
+    }
+    document.querySelector("#verPaquetesNoEntregados").appendChild(oTabla);
+}
+
+function mostrarListaPaquetesSi(){
+
+	vaciarTablas(document.querySelector("#verPaquetesEntregados"));
+  	document.querySelector("#verPaquetesEntregados").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado paquetes entregados";
+
+  	document.querySelector("#verPaquetesEntregados").appendChild(labelTitulo);
+
+    var lista = oPaqueteria.cogerTodosLosPaquetes();
+    
+    var oTabla = document.createElement("table");
+
+    oTabla.setAttribute("class", "table table-striped table-responsive");
+
+    var oThead = oTabla.createTHead();
+    var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "ID";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Tarifa";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Fecha de entrega";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Volumen";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Peso";
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Valor";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Urgente";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Administración pública";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Internacional";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Asegurado";
+
+
+    var oTBody = oTabla.createTBody();
+
+    var oPaquetes = oXML.getElementsByTagName("paquete");
+
+    for (var i = 0; i < oPaquetes.length; i++) {
+    	var entregado = oPaquetes[i].getElementsByTagName("entregado")[0].textContent;
+
+    	if(entregado == "Si")
+    	{
+    		oFila = oTBody.insertRow(-1);
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("idPaquete")[0].textContent;
+
+		
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("Tarifa")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("fechaEntrega")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("volumen")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("peso")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("valor")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("urgente")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("adminPublica")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("internacional")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("asegurado")[0].textContent;
+    	}
+    }
+
+    for (i = 0; i < lista.length; i++) {
+        
+        var entregado = lista[i].sEntregado;
+        
+
+        if(entregado == "Sí")
+        {
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+        }
+    }
+    document.querySelector("#verPaquetesEntregados").appendChild(oTabla);
+}
+
 
 function vaciarTablas(objetoParent)
 {

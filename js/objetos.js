@@ -340,6 +340,15 @@ Paqueteria.prototype.cogerTodosLosArticulos = function ()
     return arrayArticulos;
 }
 
+Paqueteria.prototype.cogerTodosLosPaquetes = function()
+{
+    var arrayPaquetes = [];
+    for (var i = 0; i < this.paquetes.length; i++) {
+        arrayPaquetes.push(this.paquetes[i]);
+    }
+    return arrayPaquetes;
+}
+
 //Modificaciones
 
 //Cliente
