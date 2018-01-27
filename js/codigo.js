@@ -1878,13 +1878,11 @@ function inicio(){
 	document.getElementById("btnListaArt").addEventListener("click",mostrarListaArticulos,false);
 	document.getElementById("modiCli").addEventListener("click", modificarCliente,false);
 	document.getElementById("aceptarModiCli").addEventListener("click", aceptarModificarCliente,false);
-<<<<<<< HEAD
 	document.getElementById("paqueteNoEntregado").addEventListener("click", mostrarListaPaquetesNo,false);
 	document.getElementById("paqueteEntregado").addEventListener("click", mostrarListaPaquetesSi,false);
-=======
     document.getElementById("modiEmple").addEventListener("click", modificarEmpleado,false);
 	document.getElementById("aceptarModiEmple").addEventListener("click", aceptarModificarEmpleado,false);
->>>>>>> 8ba15387e51692252ccaf5a61228f57e029320ae
+
 	
 
 }
