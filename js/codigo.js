@@ -848,6 +848,8 @@ function aceptarAltaCliente(oEvento){
 	var oForm=document.getElementById("formAltaCliente");
 	var sErrores = "";
 	var sMensaje ="";
+
+	var sActivo = true;
 	
 	
 	// Validaciones
@@ -1050,7 +1052,7 @@ function aceptarAltaCliente(oEvento){
 	}
 	else {
 		//Desmarcar error
-		oForm.pais.className = "form-control";	
+		oForm.pais.className = "form-control";
 	}
 	
   if(idCliente == "" || sNombre =="" || sApellidos =="" || sEmail ==""  || sTelef=="" || sDireccion=="" || sCodPost=="" || sPais=="")
@@ -1071,7 +1073,7 @@ function aceptarAltaCliente(oEvento){
 	
 	else
 	{
-     var cliente= new Cliente(idCliente,sNombre,sApellidos,sEmail,sTelef,sDireccion,sCodPost,sPais);
+     var cliente= new Cliente(idCliente,sNombre,sApellidos,sEmail,sTelef,sDireccion,sCodPost,sPais,sActivo);
 	 sMensaje=oPaqueteria.altaCliente(cliente);
 	 oForm.reset();
 	}
@@ -1086,68 +1088,62 @@ function aceptarBajaCliente()
 	var oForm = document.getElementById("formBajaCliente");
     var bValido = true;
     var clienteSeleccionado = oForm.baja.value.substr(0,2);
-    //var clienteMod = baja.substr(0, 9);
     var mensaje = "";
 
-    var clienteEncontrado = oPaqueteria.eliminarCliente(clienteSeleccionado);
-    comboEliminarCliente();
+    var seleccNoValido = oForm.baja.value;
 
-    console.log(clienteEncontrado);
+    if(seleccNoValido == "Seleccione un cliente...")
+    {
+    	alert("No hay ningún cliente seleccionado");
+    }
+
+    var clienteEncontrado = oPaqueteria.eliminarCliente(clienteSeleccionado);
 
    	if(clienteEncontrado)
    	{
-   		alert(clienteSeleccionado + " encontrado");
+   		alert("Cliente " + clienteSeleccionado + " dado de baja");
    	}
 
-    //alert(mensaje);
+   	comboEliminarCliente();	
+
 }
 
 function comboEliminarCliente()
 {
 	var oForm = document.getElementById("formBajaCliente");
-	var mod = oForm.baja.children;
-    /*for (var i = mod.length - 1; i >= 0; i--) {
-        mod[i].parentNode.removeChild(mod[i]);
-    }*/
-
-    var select = oForm.baja;
 
     var comboClientes = oPaqueteria.cogerTodosLosNombresClientes();
 
-    var longitudSelect = comboClientes.length;
+    var select = oForm.baja;
 
-    for (i = 0; i < longitudSelect; i++) 
-    {
-	  select.options[i] = null;
-	}
-
-    
-    //console.log(comboClientes.length);
-    var mod = oForm.baja;
     var seleccionado = oForm.baja.value.trim();
 
     
-
     
-    
-    //console.log(seleccionado);
-
-    for (i = 0; i < comboClientes.length; i++) 
+   	if(comboClientes.length == 0)
     {
-		//console.log(comboClientes[i]);
-		if(comboClientes.length > 0)
-		{
-			mod.selectedIndex = 1;
+    	document.getElementById("baja").options.length = 0;
+    	var option = document.createElement("option");
+        option.setAttribute("value", "noCliente");
+        var texto = document.createTextNode("Seleccione un cliente...");
+        option.appendChild(texto);
+        select.appendChild(option);
+    }
 
-			if(comboClientes[i] != seleccionado && mod.selectedIndex != 0)
-			{
-		        var item = document.createElement("option");
-		        item.setAttribute("value", comboClientes[i]);
-		        var texto = document.createTextNode(comboClientes[i]);
-		        item.appendChild(texto);
-		        mod.appendChild(item);
-	        }
-        }
+    else
+    {
+
+		document.getElementById("baja").options.length = 0;
+
+	    for (i = 0; i < comboClientes.length; i++) 
+	    {
+	        var option = document.createElement("option");
+	        option.setAttribute("value", comboClientes[i]);
+	        var texto = document.createTextNode(comboClientes[i]);
+	        option.appendChild(texto);
+	        select.appendChild(option);
+	    }
+
     }
 }
 
@@ -1159,6 +1155,8 @@ function aceptarAltaEmpleado(oEvento){
 	var oForm=document.getElementById("formAltaEmpleados");
 	var sErrores = "";
 	var sMensaje ="";
+
+	var sActivo = true;
 	
 	// Validaciones
 
@@ -1273,8 +1271,8 @@ function aceptarAltaEmpleado(oEvento){
 
 	
     
-	 var sGestor = oForm.optradio.value;
-	 var sManager = oForm.optradio1.value;
+	 var sGestor = oForm.optradio.value.trim();
+	 var sManager = oForm.optradio1.value.trim();
 	//Resultado
 	if (bValido == false){
 		//Cancelar envio del formulario
@@ -1284,13 +1282,80 @@ function aceptarAltaEmpleado(oEvento){
 	}
 	else{
 	
-     var empleado= new Empleado(idEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina);
+     var empleado= new Empleado(idEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina, sActivo);
 	 sMensaje=oPaqueteria.altaEmpleado(empleado);
+	 oForm.reset();
 	}
 	
 	
 	alert(sMensaje);
 }
+
+function aceptarEliminarEmpleado()
+{
+	var oForm = document.getElementById("formBajaEmple");
+    var bValido = true;
+    var empleadoSeleccionado = oForm.bajaEmple.value.substr(0,2);
+    var mensaje = "";
+
+    var seleccNoValido = oForm.bajaEmple.value;
+
+    if(seleccNoValido == "Seleccione un cliente...")
+    {
+    	alert("No hay ningún cliente seleccionado");
+    }
+
+    var empleadoEncontrado = oPaqueteria.eliminarEmpleado(empleadoSeleccionado);
+
+   	if(empleadoEncontrado)
+   	{
+   		alert("Cliente " + empleadoSeleccionado + " dado de baja");
+   	}
+
+   	comboEliminarEmpleado();	
+
+}
+
+function comboEliminarEmpleado()
+{
+	var oForm = document.getElementById("formBajaEmple");
+
+    var comboEmpleados = oPaqueteria.cogerTodosLosNombresEmpleados();
+
+    var select = oForm.bajaEmple;
+
+    var seleccionado = oForm.bajaEmple.value.trim();
+
+    
+    
+   	if(comboEmpleados.length == 0)
+    {
+    	document.getElementById("bajaEmple").options.length = 0;
+    	var option = document.createElement("option");
+        option.setAttribute("value", "noEmpleado");
+        var texto = document.createTextNode("Seleccione un empleado...");
+        option.appendChild(texto);
+        select.appendChild(option);
+    }
+
+    else
+    {
+
+		document.getElementById("bajaEmple").options.length = 0;
+
+	    for (i = 0; i < comboEmpleados.length; i++) 
+	    {
+	        var option = document.createElement("option");
+	        option.setAttribute("value", comboEmpleados[i]);
+	        var texto = document.createTextNode(comboEmpleados[i]);
+	        option.appendChild(texto);
+	        select.appendChild(option);
+	    }
+
+    }
+}
+
+//#######################################################################
 
 function aceptarAltaArticulo(oEvento){
 	var oE = oEvento || window.event;
@@ -1866,20 +1931,34 @@ function inicio(){
 	document.getElementById("aceptarAltaCli").addEventListener("click", aceptarAltaCliente,false);
 	document.getElementById("aceptarEliminarCliente").addEventListener("click", aceptarBajaCliente,false);
 	document.getElementById("bajaCli").addEventListener("click", comboEliminarCliente,false);
-	document.getElementById("aceptarAltaEmple").addEventListener("click", aceptarAltaEmpleado,false);
-	//document.getElementById("aceptarBajaEmple").addEventListener("click", aceptarEliminarEmpleado,false);
-	document.getElementById("aceptarAltaArticulo").addEventListener("click", aceptarAltaArticulo,false);
-	//document.getElementById("aceptarBajaArticulo").addEventListener("click", aceptarEliminarArticulo,false);
-	document.getElementById("aceptarAltaPaquete").addEventListener("click", aceptarAltaPaquete,false);
-	document.getElementById("aceptarAltaAduana").addEventListener("click", aceptarAltaAduana,false);
-    document.getElementById("aceptarAltaQueja").addEventListener("click", aceptarAltaQueja,false);
-	document.getElementById("listadoCli").addEventListener("click", mostrarListaClientes,false);
-	document.getElementById("listadoEmpl").addEventListener("click", mostrarListaEmpleados,false);
-	document.getElementById("btnListaArt").addEventListener("click",mostrarListaArticulos,false);
 	document.getElementById("modiCli").addEventListener("click", modificarCliente,false);
 	document.getElementById("aceptarModiCli").addEventListener("click", aceptarModificarCliente,false);
-    document.getElementById("modiEmple").addEventListener("click", modificarEmpleado,false);
+	document.getElementById("listadoCli").addEventListener("click", mostrarListaClientes,false);
+
+	document.getElementById("aceptarAltaEmple").addEventListener("click", aceptarAltaEmpleado,false);
+	document.getElementById("bajaEmpl").addEventListener("click", comboEliminarEmpleado,false);
+	document.getElementById("aceptarBajaEmple").addEventListener("click", aceptarEliminarEmpleado,false);
+	document.getElementById("modiEmple").addEventListener("click", modificarEmpleado,false);
 	document.getElementById("aceptarModiEmple").addEventListener("click", aceptarModificarEmpleado,false);
+	document.getElementById("listadoEmpl").addEventListener("click", mostrarListaEmpleados,false);
+
+	document.getElementById("aceptarAltaArticulo").addEventListener("click", aceptarAltaArticulo,false);
+	//document.getElementById("aceptarBajaArticulo").addEventListener("click", aceptarEliminarArticulo,false);
+	document.getElementById("modiArti").addEventListener("click",modificarArticulo,false);
+	document.getElementById("btnListaArt").addEventListener("click",mostrarListaArticulos,false);
+
+	document.getElementById("aceptarAltaPaquete").addEventListener("click", aceptarAltaPaquete,false);
+
+	document.getElementById("aceptarAltaAduana").addEventListener("click", aceptarAltaAduana,false);
+
+    document.getElementById("aceptarAltaQueja").addEventListener("click", aceptarAltaQueja,false);
+
+	
+	
+	
+	
+	
+    
 	
 
 }
@@ -2228,8 +2307,8 @@ function vaciarTablas(objetoParent)
 function ocultarFormulariosModificar(){
 	
 	document.getElementById("formModiCliente").style.display = "none";
-	/*document.getElementById("formModiEmpleado").style.display = "none";
-	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiEmpleado").style.display = "none";
+	/*document.getElementById("formModiArticulo").style.display = "none";
 	document.getElementById("formModiPedido").style.display = "none";
 	document.getElementById("formModiQueja").style.display = "none";
 	document.getElementById("formModiAduana").style.display = "none";*/
@@ -2248,6 +2327,14 @@ function modificarCliente()
 }
 
 function modificarEmpleado()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiEmpleado").style.display = "block";
+	document.getElementById("formModiEmpleado").reset();
+	rellenaComboEmpleados("comboModificarEmpleados");
+}
+
+function modificarArticulo()
 {
 	ocultarFormulariosModificar();
 	document.getElementById("formModiEmpleado").style.display = "block";
@@ -2544,9 +2631,11 @@ function aceptarModificarEmpleado(oEvento){
 	  var sIdEmpleado=formModiEmpleado.comboEmpleados.value.trim();
 	
 	
-	if(sMensaje==""){
-		           for (var i=0;i<oPaqueteria.empleados.length;i++)
-				   {
+	if(sMensaje=="")
+	{
+	  
+	   for (var i=0;i<oPaqueteria.empleados.length;i++)
+	   {
 					   // Validaciones
 
 	
@@ -2656,9 +2745,8 @@ function aceptarModificarEmpleado(oEvento){
 	alert(sMensaje);
 			
 					
-	}
 		}
-	
-	
+		
+	}
 	
 }
