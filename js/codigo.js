@@ -66,6 +66,8 @@ function volverIndex()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 
 	var verUML = document.getElementById("uml");
