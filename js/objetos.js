@@ -532,12 +532,12 @@ Paqueteria.prototype.modificarQueja= function(oQueja){
           
 		
            
-            sCadena = "Aduana "+oAduana.idDeclaracion+" modificada";
+            sCadena = "Queja "+oQueja.idQueja+" modificada";
         }
 		
 		 else
 		 {
-			sCadena = "Aduana no encontrada";
+			sCadena = "Queja no encontrada";
 		 }
 		
     }
