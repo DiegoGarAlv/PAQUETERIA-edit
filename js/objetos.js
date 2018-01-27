@@ -25,7 +25,7 @@ function Persona(idPersona){
 
 // ###############################  Objeto Cliente  ############################### \\
 
-function Cliente(sIdCliente, sNombre, sApellidos, sEmail, sTelefono, sDireccion, sCodPost, sPais){
+function Cliente(sIdCliente, sNombre, sApellidos, sEmail, sTelefono, sDireccion, sCodPost, sPais, sActivo){
     this.sIdCliente = sIdCliente;
     this.sNombre = sNombre;
     this.sApellidos = sApellidos;
@@ -34,6 +34,7 @@ function Cliente(sIdCliente, sNombre, sApellidos, sEmail, sTelefono, sDireccion,
     this.sDireccion = sDireccion;
     this.sCodPost = sCodPost;
     this.sPais = sPais;
+    this.sActivo = sActivo;
     
 
 }
@@ -66,10 +67,8 @@ Paqueteria.prototype.altaCliente = function(oCliente)
 }
 
 Paqueteria.prototype.eliminarCliente = function (sIdCliente) {
-    //var i = 0;
+
     var encontrado = false;
-    //var posicion = 0;
-    // Busco por descripcion
 
     console.log(sIdCliente);
 
@@ -79,36 +78,25 @@ Paqueteria.prototype.eliminarCliente = function (sIdCliente) {
         if(sIdCliente == this.clientes[i].sIdCliente)
         {
             encontrado = true;
+            this.clientes[i].sActivo = false;
+            console.log(this.clientes[i]);
         }
     }
-
-    /*while (i < this.clientes.length && encontrado == false) {
-        if (this.clientes[i].sIdCliente == sIdCliente) {
-
-            posicion = i;
-            encontrado = true;
-        }
-        i++;
-    }
-
-    if (encontrado) {
-        this.clientes.splice(posicion, 1);
-    }*/
 
     return encontrado;
 }
 
 // ###############################  Objeto Empleado ############################### \\
 
-function Empleado(/*idPersona,*/ idEmpleado, sNombre, sApellidos, sGestor, sManager, sOficina){
+function Empleado(/*idPersona,*/ idEmpleado, sNombre, sApellidos, sGestor, sManager, sOficina, sActivo){
 	//Persona.call(this,idPersona);
-	this.idEmpleado=idEmpleado
+	this.idEmpleado = idEmpleado;
 	this.sNombre = sNombre;
 	this.sApellidos = sApellidos;
 	 this.sGestor=sGestor;
      this.sManager=sManager;
     this.sOficina = sOficina;
-
+    this.sActivo = sActivo;
     
 
 }
@@ -135,7 +123,25 @@ Paqueteria.prototype.altaEmpleado = function(oEmpleado)
     }
 
     return sMensaje;
-};
+}
+
+Paqueteria.prototype.eliminarEmpleado = function (idEmpleado) {
+
+    var encontrado = false;
+
+    for(var i=0; i<this.empleados.length; i++)
+    {
+        console.log(this.empleados[i].idEmpleado);
+        if(idEmpleado == this.empleados[i].idEmpleado)
+        {
+            encontrado = true;
+            this.empleados[i].sActivo = false;
+            console.log(this.empleados[i]);
+        }
+    }
+
+    return encontrado;
+}
 
 // ###############################  Objeto Paquete  ################################## \\
 
@@ -223,7 +229,7 @@ Paqueteria.prototype.altaArticulo = function(oArticulo)
 
 // ############################### Objeto EventoQueja  ################################ \\
 
-function EventoQueja (idEvento, sMensaje){
+/*function EventoQueja (idEvento, sMensaje){
     this.idEvento = idEvento;
     this.sMensaje = sMensaje;
     
@@ -250,7 +256,7 @@ Paqueteria.prototype.altaEventoQueja = function(oEventoQueja)
     }
 
     return sMensaje;
-};
+};*/
 
 // ###############################  Objeto Queja  ################################### \\
 
@@ -349,9 +355,25 @@ Paqueteria.prototype.cogerTodosLosNombresClientes = function ()
     var arrayClientes = [];
     for (var i = 0; i < this.clientes.length; i++) 
     {
-        arrayClientes.push(this.clientes[i].sIdCliente + " - " + this.clientes[i].sNombre);
+        if(this.clientes[i].sActivo == true)
+        {
+            arrayClientes.push(this.clientes[i].sIdCliente + " - " + this.clientes[i].sNombre);
+        }
     }
     return arrayClientes;
+}
+
+Paqueteria.prototype.cogerTodosLosNombresEmpleados = function () 
+{
+    var arrayEmpleados = [];
+    for (var i = 0; i < this.empleados.length; i++) 
+    {
+        if(this.empleados[i].sActivo == true)
+        {
+            arrayEmpleados.push(this.empleados[i].idEmpleado + " - " + this.empleados[i].sNombre);
+        }
+    }
+    return arrayEmpleados;
 }
 
 Paqueteria.prototype.cogerTodosLosArticulos = function () 
