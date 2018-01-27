@@ -435,7 +435,7 @@ Paqueteria.prototype.modificarArticulo= function(oArticulo){
     var sCadena = "";
     for(var i=0;i < this.articulos.length;i++){
        
-        if(this.articulos[i].idArticulo == oArticulo.idArticulo)
+        if(this.articulos[i].idArticulo == oArticulo.sIdArticulo)
         {
 			
 			this.articulos[i].sDescripcion = oArticulo.sDescripcion;

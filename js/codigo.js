@@ -14,17 +14,18 @@ function volverIndex()
 {
 	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
- 	
+ 	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
- 	
+    formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
  
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
@@ -59,20 +60,28 @@ function volverIndex()
 	verAltaAduana.reset();
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 
 	var verUML = document.getElementById("uml");
  	verUML.style.display = "none";
@@ -138,20 +147,28 @@ function altaCliente()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 
 }
 
@@ -212,20 +229,28 @@ function bajaCliente()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var listCliente = document.getElementById("listadoCli");
@@ -284,20 +309,28 @@ function listCLientes()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -311,6 +344,7 @@ function altaEmpleado()
 {
 	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "block";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -320,9 +354,11 @@ function altaEmpleado()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
@@ -356,20 +392,28 @@ function altaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var bajaEmpleados = document.getElementById("bajaEmpl");
@@ -382,21 +426,25 @@ function bajaEmpleado()
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var listadoEmpleados = document.getElementById("listadoEmpleados");
  	listadoEmpleados.style.display = "none";
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -421,20 +469,28 @@ function bajaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var listaEmpleados = document.getElementById("listadoEmpl");
@@ -450,18 +506,22 @@ function listaEmpleado()
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -486,20 +546,28 @@ function listaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -513,18 +581,22 @@ function altaArticulo()
 {
 	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "block";
+	altaArtic.reset();
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -556,20 +628,28 @@ function altaArticulo()
 	
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var bajaArticulo = document.getElementById("bajaArt");
@@ -582,15 +662,18 @@ function bajaArticulos()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -600,9 +683,11 @@ function bajaArticulos()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 	
 	var verAltaAduana= document.getElementById("formAltaAduana");
  	verAltaAduana.style.display = "none";
+	verAltaAduana.reset();
 
  	var listadoArtic = document.getElementById("listadoArtic");
  	listadoArtic.style.display = "none";
@@ -624,20 +709,28 @@ function bajaArticulos()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var listaArticulo = document.getElementById("btnListaArt");
@@ -650,15 +743,18 @@ function listArticul()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -668,6 +764,7 @@ function listArticul()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -688,21 +785,29 @@ function listArticul()
 	var verUML = document.getElementById("uml");
  	verUML.style.display = "none";
 	
-	document.getElementById("formModiCliente").style.display = "none";
+		document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -724,15 +829,18 @@ function altaPaquete()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -742,6 +850,7 @@ function altaPaquete()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var listadoArtic = document.getElementById("listadoArtic");
  	listadoArtic.style.display = "none";
@@ -760,20 +869,28 @@ function altaPaquete()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var paqueteNoEntregado = document.getElementById("paqueteNoEntregado");
@@ -786,15 +903,18 @@ function listaPaquetesNoEntregado()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -804,6 +924,7 @@ function listaPaquetesNoEntregado()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -825,20 +946,28 @@ function listaPaquetesNoEntregado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var paqueteEntregado = document.getElementById("paqueteEntregado");
@@ -851,15 +980,18 @@ function listaPaquetesEntregado()
 	
 	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -869,6 +1001,7 @@ function listaPaquetesEntregado()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -890,20 +1023,28 @@ function listaPaquetesEntregado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -917,18 +1058,22 @@ function altaAduana()
 {
 	var verAltaAduana = document.getElementById("formAltaAduana");
  	verAltaAduana.style.display = "block";
+	verAltaAduana.reset();
  
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -938,6 +1083,7 @@ function altaAduana()
 
    	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 	
 	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -959,20 +1105,28 @@ function altaAduana()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
  	
 }
 
@@ -986,20 +1140,28 @@ function verListaAduana()
  	verListaAduanas.style.display = "block";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
 	
 	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 
 }
 
@@ -1016,15 +1178,18 @@ function altaQueja()
  
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -1034,6 +1199,7 @@ function altaQueja()
 
    	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 	
 	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -1055,18 +1221,28 @@ function altaQueja()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
 	
 	document.getElementById("formModiArticulo").style.display = "none";
-	
+	document.getElementById("formModiArticulo").reset();
+
 	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
 	
 	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
 	
 	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
 	
 	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
  	
 }
 
