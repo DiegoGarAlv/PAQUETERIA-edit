@@ -9,7 +9,7 @@
 	
 	<style type="text/css">
 
-		#formAltaCliente, #formBajaCliente, #formModiCliente, #listadoClientes, #formAltaEmpleados, #formBajaEmple, #formModiEmpleado, #listadoEmpleados, #formAltaArticulo, #formBajArticulo, #formModiArticulo, #listadoArtic, #formAltaPedido, #formBajaPedido, #formModiPedido, #listadoPedidos, #verPaquetesNoEntregados, #verPaquetesEntregados, #formAltaQuejas ,#formModiQuejas, #formAltaAduana, #formModiAduana, #listadoAduana, #uml
+		#formAltaCliente, #formBajaCliente, #formModiCliente, #listadoClientes, #formAltaEmpleados, #formBajaEmple, #formModiEmpleado, #listadoEmpleados, #formAltaArticulo, #formBajArticulo, #formModiArticulo, #listadoArtic, #formAltaPedido, #formBajaPedido, #formModiPedido, #listadoPedidos, #verPaquetesNoEntregados, #verPaquetesEntregados, #formAltaQuejas ,#formModiQuejas, #formAltaAduana, #formModiAduana, #listadoAduana, #uml, #formBajaPaquete, #formBajaAduana, #formBajaQueja
 		{
 			display: none;
 		}
@@ -63,7 +63,8 @@
 		    <i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-container">
-			<a href="#" id="altaPaquete">Alta Paquete</a>
+      <a href="#" id="altaPaquete">Alta Paquete</a>
+			<a href="#" id="btnBajaPaquete">Baja Paquete</a>
 			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiPaq">Modificar paquete</a>
 		    <a href="#" id="paqueteNoEntregado">Listado Paquetes no entregados</a>
@@ -74,7 +75,8 @@
 		    <i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-container">
-			<a href="#" id="altaAduana">Alta aduana</a>
+      <a href="#" id="altaAduana">Alta aduana</a>
+			<a href="#" id="btnBajaAduana">Baja aduana</a>
 			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiAduana">Modificar aduana</a>
 		    <a href="#" id="btnListadoAduana">Listado aduanas</a>
@@ -84,7 +86,8 @@
 		    <i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-container">
-			<a href="#" id="altaQueja">Alta quejas</a>
+      <a href="#" id="altaQueja">Alta quejas</a>
+			<a href="#" id="btnBajaQueja">Baja quejas</a>
 			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiQueja">Modificar queja</a>
 		    <a href="#" id="listadoQueja">Listado quejas</a>
@@ -592,6 +595,25 @@
         	</div>
 
         </form>
+
+        <form class="form-horizontal" id="formBajaPaquete" name="formBajaPaquete">
+
+          <div class="form-group">
+            <label class="titulo">Baja paquete</label>
+          </div>
+      
+
+           <div class="form-group">
+              <label for="sel1">Dar de baja:</label>
+              <select class="form-control" id="bajaPaquete">
+              </select>
+            </div> 
+
+          <div class="form-group">
+            <button type="button" id="aceptarBajaPaquete" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
 		
 		
 		<form class="form-horizontal" id="formModiPedido" name="formAltaPedido">
@@ -725,6 +747,25 @@
             </div>
 
         </form>
+
+        <form class="form-horizontal" id="formBajaAduana" name="formBajaAduana">
+
+          <div class="form-group">
+            <label class="titulo">Baja aduana</label>
+          </div>
+      
+
+           <div class="form-group">
+              <label for="sel1">Dar de baja:</label>
+              <select class="form-control" id="bajaAduana">
+              </select>
+            </div> 
+
+          <div class="form-group">
+            <button type="button" id="aceptarBajaAduana" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
 		
 		<form class="form-horizontal" id="formModiAduana" name="formModiAduana">
 
@@ -811,8 +852,27 @@
             </div>
 
         </form>
+
+        <form class="form-horizontal" id="formBajaQueja" name="formBajaQueja">
+
+          <div class="form-group">
+            <label class="titulo">Baja queja</label>
+          </div>
+      
+
+           <div class="form-group">
+              <label for="sel1">Dar de baja:</label>
+              <select class="form-control" id="bajaQueja">
+              </select>
+            </div> 
+
+          <div class="form-group">
+            <button type="button" id="aceptarBajaQueja" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
 		
-		<form class="form-horizontal" id="formModiQuejas" name="formModiQuejas">
+		<form class="form-horizontal" id="formModiQuejas" name="formModiQuej">
 
         	<div class="form-group">
         		<label class="titulo">Modificar queja</label>
