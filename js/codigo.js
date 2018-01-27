@@ -1138,9 +1138,60 @@ listaAduanas.addEventListener("click", verListaAduana, false);
 
 function verListaAduana()
 {
-
-	var verListaAduanas = document.getElementById("listadoAduana");
+		var verListaAduanas = document.getElementById("listadoAduana");
  	verListaAduanas.style.display = "block";
+	
+		var verAltaAduana = document.getElementById("formAltaAduana");
+ 	verAltaAduana.style.display = "none";
+	verAltaAduana.reset();
+ 
+ 	//rellenar el combo de articulos en alta aduanas
+ 	rellenaComboArticulos2("listaArticulos");
+ 	
+ 	var formAltaCliente = document.getElementById("formAltaCliente");
+ 	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
+
+ 	var formBajaCliente = document.getElementById("formBajaCliente");
+ 	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
+
+ 	var listadoClientes = document.getElementById("listadoClientes");
+ 	listadoClientes.style.display = "none";
+
+ 	var altaEmpleados = document.getElementById("formAltaEmpleados");
+ 	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
+
+ 	var bajaEmpleados = document.getElementById("formBajaEmple");
+ 	bajaEmpleados.style.display = "none";
+
+ 	var listadoEmpleados = document.getElementById("listadoEmpleados");
+ 	listadoEmpleados.style.display = "none";
+
+   	var altaArtic = document.getElementById("formAltaArticulo");
+ 	altaArtic.style.display = "none";
+	altaArtic.reset();
+	
+	var bajaArtic = document.getElementById("formBajArticulo");
+ 	bajaArtic.style.display = "none";
+ 	bajaArtic.reset();
+
+ 	var listadoArtic = document.getElementById("listadoArtic");
+ 	listadoArtic.style.display = "none";
+
+	var altaPaq = document.getElementById("formAltaPedido");
+ 	altaPaq.style.display = "none";
+	
+ 	var verPaqueteEntre = document.getElementById("verPaquetesEntregados");
+ 	verPaqueteEntre.style.display = "none";
+
+ 	var verPaquetesNoEntre = document.getElementById("verPaquetesNoEntregados");
+ 	verPaquetesNoEntre.style.display = "none";
+
+ 	var verUML = document.getElementById("uml");
+ 	verUML.style.display = "none";
+
 	
 	document.getElementById("formModiCliente").style.display = "none";
 	document.getElementById("formModiCliente").reset();
