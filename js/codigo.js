@@ -1152,7 +1152,7 @@ function altaAduana()
 	verAltaAduana.reset();
  
  	//rellenar el combo de articulos en alta aduanas
- 	rellenaComboArticulos("listaArticulos");
+ 	rellenaComboArticulos2("listaArticulos");
  	
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
@@ -1271,9 +1271,60 @@ listaAduanas.addEventListener("click", verListaAduana, false);
 
 function verListaAduana()
 {
-
-	var verListaAduanas = document.getElementById("listadoAduana");
+		var verListaAduanas = document.getElementById("listadoAduana");
  	verListaAduanas.style.display = "block";
+	
+		var verAltaAduana = document.getElementById("formAltaAduana");
+ 	verAltaAduana.style.display = "none";
+	verAltaAduana.reset();
+ 
+ 	//rellenar el combo de articulos en alta aduanas
+ 	rellenaComboArticulos2("listaArticulos");
+ 	
+ 	var formAltaCliente = document.getElementById("formAltaCliente");
+ 	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
+
+ 	var formBajaCliente = document.getElementById("formBajaCliente");
+ 	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
+
+ 	var listadoClientes = document.getElementById("listadoClientes");
+ 	listadoClientes.style.display = "none";
+
+ 	var altaEmpleados = document.getElementById("formAltaEmpleados");
+ 	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
+
+ 	var bajaEmpleados = document.getElementById("formBajaEmple");
+ 	bajaEmpleados.style.display = "none";
+
+ 	var listadoEmpleados = document.getElementById("listadoEmpleados");
+ 	listadoEmpleados.style.display = "none";
+
+   	var altaArtic = document.getElementById("formAltaArticulo");
+ 	altaArtic.style.display = "none";
+	altaArtic.reset();
+	
+	var bajaArtic = document.getElementById("formBajArticulo");
+ 	bajaArtic.style.display = "none";
+ 	bajaArtic.reset();
+
+ 	var listadoArtic = document.getElementById("listadoArtic");
+ 	listadoArtic.style.display = "none";
+
+	var altaPaq = document.getElementById("formAltaPedido");
+ 	altaPaq.style.display = "none";
+	
+ 	var verPaqueteEntre = document.getElementById("verPaquetesEntregados");
+ 	verPaqueteEntre.style.display = "none";
+
+ 	var verPaquetesNoEntre = document.getElementById("verPaquetesNoEntregados");
+ 	verPaquetesNoEntre.style.display = "none";
+
+ 	var verUML = document.getElementById("uml");
+ 	verUML.style.display = "none";
+
 	
 	document.getElementById("formModiCliente").style.display = "none";
 	document.getElementById("formModiCliente").reset();
@@ -2668,6 +2719,7 @@ function inicio(){
 
 	document.getElementById("paqueteNoEntregado").addEventListener("click", mostrarListaPaquetesNo,false);
 	document.getElementById("paqueteEntregado").addEventListener("click", mostrarListaPaquetesSi,false);
+	document.getElementById("btnListadoAduana").addEventListener("click", mostrarListaAduanas, false);
 
 	document.getElementById("aceptarModiArticulo").addEventListener("click", aceptarModificarArticulo,false);
 	document.getElementById("modiPaq").addEventListener("click", modificarPaquete,false);
@@ -3276,6 +3328,75 @@ function mostrarListaPaquetesSi(){
     document.querySelector("#verPaquetesEntregados").appendChild(oTabla);
 }
 
+function mostrarListaAduanas(){
+	vaciarTablas(document.querySelector("#listadoAduana"));
+  	document.querySelector("#listadoAduana").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado aduanas";
+
+  	document.querySelector("#listadoAduana").appendChild(labelTitulo);
+
+    var lista = oPaqueteria.cogerTodasLasAduanas();
+    
+    var oTabla = document.createElement("table");
+
+    oTabla.setAttribute("class", "table table-striped table-responsive");
+
+    var oThead = oTabla.createTHead();
+    var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "ID";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Artículo";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Declaracion";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Tasa";
+
+    var oTBody = oTabla.createTBody();
+
+    var oAduanas = oXML.getElementsByTagName("aduana");
+	
+	for (var i = 0; i < oAduanas.length; i++) {
+		oFila = oTBody.insertRow(-1);
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oAduanas[i].getElementsByTagName("idDeclaracion")[0].textContent;
+
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oAduanas[i].getElementsByTagName("articulo")[0].textContent;
+		
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oAduanas[i].getElementsByTagName("declaracion")[0].textContent;
+		
+		oCelda = oFila.insertCell(-1);
+		oCelda.textContent = oAduanas[i].getElementsByTagName("tasa")[0].textContent;
+		
+		}	
+
+
+
+    for (i = 0; i < lista.length; i++) {
+        oFila = oTBody.insertRow(-1);
+        
+        oCelda = oFila.insertCell(-1);
+        oCelda.appendChild(document.createTextNode(lista[i].idDeclaracion));
+        oCelda = oFila.insertCell(-1);
+        oCelda.appendChild(document.createTextNode(lista[i].sArticulo));
+		oCelda = oFila.insertCell(-1);
+        oCelda.appendChild(document.createTextNode(lista[i].sDeclaracion));
+        oCelda = oFila.insertCell(-1);
+        oCelda.appendChild(document.createTextNode(lista[i].iTasa));
+	
+    }
+    document.querySelector("#listadoAduana").appendChild(oTabla);
+}
 
 function vaciarTablas(objetoParent)
 {
@@ -3424,6 +3545,29 @@ function rellenaComboArticulos(combo){
 		var oOption = document.createElement('option');
 		oOption.value=oPaqueteria.articulos[i].idArticulo;
 		var oTextOption = document.createTextNode(oPaqueteria.articulos[i].idArticulo);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado articulos');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboArticulos2(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.articulos.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.articulos[i].sDescripcion;
+		var oTextOption = document.createTextNode(oPaqueteria.articulos[i].sDescripcion);
 		oOption.appendChild(oTextOption);
 		oSelect.appendChild(oOption);
 		cont++;

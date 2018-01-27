@@ -426,6 +426,14 @@ Paqueteria.prototype.cogerTodosLosPaquetes = function()
     }
     return arrayPaquetes;
 }
+Paqueteria.prototype.cogerTodasLasAduanas = function()
+{
+    var arrayAduanas = [];
+    for (var i = 0; i < this.aduanas.length; i++) {
+        arrayAduanas.push(this.aduanas[i]);
+    }
+    return arrayAduanas;
+}
 
 //Modificaciones
 
