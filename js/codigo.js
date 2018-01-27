@@ -68,6 +68,8 @@ function volverIndex()
 	
 	document.getElementById("formModiAduana").style.display = "none";
 	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 
 	var verUML = document.getElementById("uml");
@@ -141,6 +143,10 @@ function altaCliente()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -208,6 +214,10 @@ function bajaCliente()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -273,6 +283,10 @@ function listCLientes()
 	document.getElementById("formModiArticulo").style.display = "none";
 	
 	document.getElementById("formModiPedido").style.display = "none";
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
 	
 	document.getElementById("listadoAduana").style.display = "none";
 }
@@ -340,6 +354,10 @@ function altaEmpleado()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -399,6 +417,10 @@ function bajaEmpleado()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -457,6 +479,10 @@ function listaEmpleado()
 	document.getElementById("formModiArticulo").style.display = "none";
 	
 	document.getElementById("formModiPedido").style.display = "none";
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
 	
 	document.getElementById("listadoAduana").style.display = "none";
 }
@@ -522,6 +548,10 @@ function altaArticulo()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -584,6 +614,10 @@ function bajaArticulos()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -642,6 +676,10 @@ function listArticul()
 	document.getElementById("formModiArticulo").style.display = "none";
 	
 	document.getElementById("formModiPedido").style.display = "none";
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
 	
 	document.getElementById("listadoAduana").style.display = "none";
 }
@@ -708,6 +746,10 @@ function altaPaquete()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -767,6 +809,10 @@ function listaPaquetesNoEntregado()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
 }
 
@@ -825,6 +871,10 @@ function listaPaquetesEntregado()
 	document.getElementById("formModiArticulo").style.display = "none";
 	
 	document.getElementById("formModiPedido").style.display = "none";
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
 	
 	document.getElementById("listadoAduana").style.display = "none";
 }
@@ -889,6 +939,10 @@ function altaAduana()
 	
 	document.getElementById("formModiPedido").style.display = "none";
 	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	document.getElementById("listadoAduana").style.display = "none";
  	
 }
@@ -909,6 +963,10 @@ function verListaAduana()
 	document.getElementById("formModiArticulo").style.display = "none";
 	
 	document.getElementById("formModiPedido").style.display = "none";
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	
+	document.getElementById("formModiQuejas").style.display = "none";
 	
 	document.getElementById("listadoAduana").style.display = "none";
 
@@ -1533,7 +1591,7 @@ function aceptarAltaPaquete(oEvento){
 	//Campo id paquete
 	var idPaquete=  oForm.idPaquete.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idPaquete) == false){
 	
@@ -1806,9 +1864,9 @@ function aceptarAltaAduana(oEvento){
 	  //Validar combo articulos
     for (var i = 0; i < listaArticulos.options.length; ++i) {
         if (listaArticulos.options[i].selected)
-            var articulos = listaArticulos.options[i].text;
+            var articulo = listaArticulos.options[i].text;
     }
-    if (articulos == null) {
+    if (articulo == null) {
         if (bValido == true) {
             bValido = false;
             oForm.listaArticulos.focus();
@@ -1819,7 +1877,7 @@ function aceptarAltaAduana(oEvento){
         oForm.listaArticulos.className = "form-control error";
     }
     else {
-        if (articulos == "No hay artículos disponibles") {
+        if (articulo == "No hay artículos disponibles") {
             if (bValido == true) {
                 bValido = false;
                 oForm.listaArticulos.focus();
@@ -1850,7 +1908,7 @@ function aceptarAltaAduana(oEvento){
 	}
 	else{
 	
-     var aduana= new Aduana(idDeclaracion, articulos, sDeclaracion, iTasa);
+     var aduana= new Aduana(idDeclaracion, articulo, sDeclaracion, iTasa);
 	 sMensaje=oPaqueteria.altaAduana(aduana);
 	}
 	
@@ -1873,7 +1931,7 @@ function aceptarAltaQueja(oEvento){
 	//Campo id 
 	var idQueja=  oForm.idQueja.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idQueja) == false){
 	
@@ -1941,7 +1999,7 @@ function aceptarAltaQueja(oEvento){
 	}
 	else{
 	
-     var queja= new Queja(idQueja, sDeclaracion, dFechaQueja, sResuelta);//queda la fecha
+     var queja= new Queja(idQueja, sDescripcionQ, dFechaQueja, sResuelta);
 	 sMensaje=oPaqueteria.altaQueja(queja);
 	}
 	
@@ -1978,6 +2036,9 @@ function inicio(){
 	document.getElementById("aceptarModiArticulo").addEventListener("click", aceptarModificarArticulo,false);
 	document.getElementById("modiPaq").addEventListener("click", modificarPaquete,false);
 	document.getElementById("aceptarModificarPaquete").addEventListener("click", aceptarModificarPaquete,false);
+	document.getElementById("modiAduana").addEventListener("click", modificarAduana,false);
+	document.getElementById("aceptarModificarAduana").addEventListener("click", aceptarModificarAduana,false);
+	
 
 
 }
@@ -2593,11 +2654,16 @@ function ocultarFormulariosModificar(){
 	document.getElementById("formModiEmpleado").style.display = "none";
 	document.getElementById("formModiArticulo").style.display = "none";
 	document.getElementById("formModiPedido").style.display = "none";
-	/*document.getElementById("formModiQueja").style.display = "none";
-	document.getElementById("formModiAduana").style.display = "none";*/
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	
 	document.getElementById("formAltaCliente").style.display = "none";
 	document.getElementById("formAltaEmpleados").style.display = "none";
+	document.getElementById("formAltaArticulo").style.display = "none";
+	document.getElementById("formAltaPedido").style.display = "none";
+	document.getElementById("formAltaAduana").style.display = "none";
+	document.getElementById("formAltaQuejas").style.display = "none";
 
 }
 

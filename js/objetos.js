@@ -493,4 +493,31 @@ Paqueteria.prototype.modificarAduana= function(oAduana){
     return sCadena;
 }
 
+//Queja
+Paqueteria.prototype.modificarQueja= function(oQueja){
+    var sCadena = "";
+    for(var i=0;i < this.quejas.length;i++){
+       
+        if(this.quejas[i].idQueja == oQueja.idQueja)
+        {
+			
+			this.quejas[i].sDescripcion = oQueja.sDescripcion;
+			this.quejas[i].dFecha = oQueja.dFecha;
+			this.quejas[i].sResuelta = oQueja.sResuelta;
+            
+          
+		
+           
+            sCadena = "Aduana "+oAduana.idDeclaracion+" modificada";
+        }
+		
+		 else
+		 {
+			sCadena = "Aduana no encontrada";
+		 }
+		
+    }
+    return sCadena;
+}
+
 
