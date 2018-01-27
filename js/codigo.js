@@ -1176,6 +1176,10 @@ function altaQueja()
 
 	document.getElementById("formAltaQuejas").style.display = "block";
  
+ 	var verAltaAduana = document.getElementById("formAltaAduana");
+ 	verAltaAduana.style.display = "none";
+	verAltaAduana.reset();
+ 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
 	formAltaCliente.reset();
@@ -1190,6 +1194,59 @@ function altaQueja()
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
 	altaEmpleados.reset();
+
+ 	var bajaEmpleados = document.getElementById("formBajaEmple");
+ 	bajaEmpleados.style.display = "none";
+
+ 	var listadoEmpleados = document.getElementById("listadoEmpleados");
+ 	listadoEmpleados.style.display = "none";
+
+   	var altaArtic = document.getElementById("formAltaArticulo");
+ 	altaArtic.style.display = "none";
+	altaArtic.reset();
+	
+	var bajaArtic = document.getElementById("formBajArticulo");
+ 	bajaArtic.style.display = "none";
+ 	bajaArtic.reset();
+
+ 	var listadoArtic = document.getElementById("listadoArtic");
+ 	listadoArtic.style.display = "none";
+
+	var altaPaq = document.getElementById("formAltaPedido");
+ 	altaPaq.style.display = "none";
+	
+ 	var verPaqueteEntre = document.getElementById("verPaquetesEntregados");
+ 	verPaqueteEntre.style.display = "none";
+
+ 	var verPaquetesNoEntre = document.getElementById("verPaquetesNoEntregados");
+ 	verPaquetesNoEntre.style.display = "none";
+
+ 	var verUML = document.getElementById("uml");
+ 	verUML.style.display = "none";
+	
+	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	
+	
+	document.getElementById("formAltaQuejas").reset();
 
 }
 
