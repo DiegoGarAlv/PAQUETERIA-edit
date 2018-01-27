@@ -186,12 +186,13 @@ Paqueteria.prototype.altaPaquete = function(oPaquete)
 
 // ###############################  Objeto Articulo ################################### \\
 
-function Articulo(idArticulo,sDescripcion,doPeso,doValor,sComercial){
+function Articulo(idArticulo,sDescripcion,doPeso,doValor,sComercial,sActivo){
     this.idArticulo = idArticulo;
     this.sDescripcion = sDescripcion;
      this.doPeso = doPeso;
     this.doValor = doValor;
      this.sComercial=sComercial;
+     this.sActivo=sActivo;
 }
 
 Paqueteria.prototype.altaArticulo = function(oArticulo)
@@ -216,6 +217,24 @@ Paqueteria.prototype.altaArticulo = function(oArticulo)
 
     return sMensaje;
 };
+
+Paqueteria.prototype.eliminarArticulo = function (idArticulo) {
+
+    var encontrado = false;
+
+    for(var i=0; i<this.articulos.length; i++)
+    {
+        //console.log(this.articulos[i].idArticulo);
+        if(idArticulo == this.articulos[i].idArticulo)
+        {
+            encontrado = true;
+            this.articulos[i].sActivo = false;
+            console.log(this.articulos[i]);
+        }
+    }
+
+    return encontrado;
+}
 
 
 // ############################### Objeto Direccion  ################################# \\
@@ -374,6 +393,19 @@ Paqueteria.prototype.cogerTodosLosNombresEmpleados = function ()
         }
     }
     return arrayEmpleados;
+}
+
+Paqueteria.prototype.cogerTodosLosNombresArticulos = function () 
+{
+    var arrayArticulos = [];
+    for (var i = 0; i < this.articulos.length; i++) 
+    {
+        if(this.articulos[i].sActivo == true)
+        {
+            arrayArticulos.push(this.articulos[i].idArticulo + " - " + this.articulos[i].sDescripcion);
+        }
+    }
+    return arrayArticulos;
 }
 
 Paqueteria.prototype.cogerTodosLosArticulos = function () 

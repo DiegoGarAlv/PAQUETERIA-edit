@@ -1741,7 +1741,7 @@ function aceptarEliminarEmpleado()
 
    	if(empleadoEncontrado)
    	{
-   		alert("Cliente " + empleadoSeleccionado + " dado de baja");
+   		alert("Empleado " + empleadoSeleccionado + " dado de baja");
    	}
 
    	comboEliminarEmpleado();	
@@ -1795,6 +1795,8 @@ function aceptarAltaArticulo(oEvento){
 	var oForm=document.getElementById("formAltaArticulo");
 	var sErrores = "";
 	var sMensaje ="";
+
+	var sActivo = true;
 	
 	// Validaciones
 
@@ -1916,7 +1918,7 @@ function aceptarAltaArticulo(oEvento){
 	}
 	else{
 	
-     var articulo= new Articulo(idArticulo,sDescripcion,doPeso,doValor,sComercial);
+     var articulo= new Articulo(idArticulo,sDescripcion,doPeso,doValor,sComercial,sActivo);
 	 sMensaje=oPaqueteria.altaArticulo(articulo);
 	  oForm.reset();
 	}
@@ -1925,6 +1927,72 @@ function aceptarAltaArticulo(oEvento){
 	alert(sMensaje);
 
 }
+
+function aceptarEliminarArticulo()
+{
+	var oForm = document.getElementById("formBajArticulo");
+    var bValido = true;
+    var articuloSeleccionado = oForm.bajaArticulo.value.substr(0,2);
+    var mensaje = "";
+
+    var seleccNoValido = oForm.bajaArticulo.value;
+
+    if(seleccNoValido == "Seleccione un artículo...")
+    {
+    	alert("No hay ningún artículo seleccionado");
+    }
+
+    var empleadoEncontrado = oPaqueteria.eliminarArticulo(articuloSeleccionado);
+
+   	if(empleadoEncontrado)
+   	{
+   		alert("Artículo " + articuloSeleccionado + " dado de baja");
+   	}
+
+   	comboEliminarArticulo();	
+
+}
+
+function comboEliminarArticulo()
+{
+	var oForm = document.getElementById("formBajArticulo");
+
+    var comboArticulos = oPaqueteria.cogerTodosLosNombresArticulos();
+
+    var select = oForm.bajaArticulo;
+
+    var seleccionado = oForm.bajaArticulo.value.trim();
+
+    
+    
+   	if(comboArticulos.length == 0)
+    {
+    	document.getElementById("bajaArticulo").options.length = 0;
+    	var option = document.createElement("option");
+        option.setAttribute("value", "noArticulo");
+        var texto = document.createTextNode("Seleccione un artículo...");
+        option.appendChild(texto);
+        select.appendChild(option);
+    }
+
+    else
+    {
+
+		document.getElementById("bajaArticulo").options.length = 0;
+
+	    for (i = 0; i < comboArticulos.length; i++) 
+	    {
+	        var option = document.createElement("option");
+	        option.setAttribute("value", comboArticulos[i]);
+	        var texto = document.createTextNode(comboArticulos[i]);
+	        option.appendChild(texto);
+	        select.appendChild(option);
+	    }
+
+    }
+}
+
+//#######################################################################
 
 
 function aceptarAltaPaquete(oEvento){
@@ -2407,7 +2475,8 @@ function inicio(){
 	document.getElementById("listadoEmpl").addEventListener("click", mostrarListaEmpleados,false);
 
 	document.getElementById("aceptarAltaArticulo").addEventListener("click", aceptarAltaArticulo,false);
-	//document.getElementById("aceptarBajaArticulo").addEventListener("click", aceptarEliminarArticulo,false);
+	document.getElementById("aceptarBajaArticulo").addEventListener("click", aceptarEliminarArticulo,false);
+	document.getElementById("bajaArt").addEventListener("click", comboEliminarArticulo,false);
 	document.getElementById("modiArti").addEventListener("click",modificarArticulo,false);
 	document.getElementById("btnListaArt").addEventListener("click",mostrarListaArticulos,false);
 
