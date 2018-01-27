@@ -1972,15 +1972,11 @@ function inicio(){
 	document.getElementById("paqueteEntregado").addEventListener("click", mostrarListaPaquetesSi,false);
     document.getElementById("modiEmple").addEventListener("click", modificarEmpleado,false);
 	document.getElementById("aceptarModiEmple").addEventListener("click", aceptarModificarEmpleado,false);
-<<<<<<< HEAD
     document.getElementById("modiArti").addEventListener("click", modificarArticulo,false);
 	document.getElementById("aceptarModiArticulo").addEventListener("click", aceptarModificarArticulo,false);
 	document.getElementById("modiPaq").addEventListener("click", modificarPaquete,false);
 	document.getElementById("aceptarModificarPaquete").addEventListener("click", aceptarModificarPaquete,false);
-=======
 
-	
->>>>>>> 4402a149fed12beadde33c8697faec92e0c39b87
 
 }
 
@@ -3163,6 +3159,202 @@ function aceptarModificarArticulo(oEvento){
 	
      var articulo= new Articulo(sIdArticulo,sDescripcion,doPeso,doValor,sComercial);
 	 sMensaje=oPaqueteria.modificarArticulo(articulo);
+	}
+	
+	
+	alert(sMensaje);
+
+}
+
+function aceptarAltaPaquete(oEvento){
+	var oE = oEvento || window.event;
+	var bValido = true;
+	var oForm=document.getElementById("formAltaPedido");
+	var sErrores = "";
+	var sMensaje ="";
+	
+	// Validaciones
+
+	//Campo id paquete
+	var idPaquete=  oForm.idPaquete.value.trim();
+
+	var oExpReg = /^\d{8}\w$/;
+	
+	if (oExpReg.test(idPaquete) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.idPaquete.focus();		
+		}
+	
+		sErrores += "\nId incorrecto";
+		
+		//Marcar error
+		oForm.idPaquete.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.idPaquete.className = "form-control";	
+	}
+
+//Campo tarifa parseFloat
+	var doTarifa = parseFloat(oForm.tarifa.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doTarifa) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.tarifa.focus();		
+		}
+	
+		sErrores += "\Tarifa incorrecta";
+		
+		//Marcar error
+		oForm.tarifa.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.tarifa.className = "form-control";	
+	}
+	
+	
+
+	//Campo fecha
+	var dFechaEntrega= new Date(oForm.fechaEntrega.value.trim()).toLocaleDateString("es-ES");
+	
+	
+
+	//var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
+	
+	if (oExpReg.test(dFechaEntrega) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.fechaEntrega.focus();		
+		}
+	
+		sErrores += "\Fecha incorrecta";
+		
+		//Marcar error
+		oForm.fechaEntrega.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.fechaEntrega.className = "form-control";	
+	}
+	
+	//Campo volumen parseFloat
+	var doVolumen= parseFloat(oForm.volumen.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doVolumen) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.volumen.focus();		
+		}
+	
+		sErrores += "\Volumen incorrecto";
+		
+		//Marcar error
+		oForm.volumen.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.volumen.className = "form-control";	
+	}
+	
+	
+	//Campo peso parseFloat
+	var doPeso= parseFloat(oForm.peso.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doPeso) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.peso.focus();		
+		}
+	
+		sErrores += "\Peso incorrecto";
+		
+		//Marcar error
+		oForm.peso.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.peso.className = "form-control";	
+	}
+	
+	
+
+//Campo valor parseFloat
+	var doValor = parseFloat(oForm.valor.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doValor) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.valor.focus();		
+		}
+	
+		sErrores += "\Valor incorrecto";
+		
+		//Marcar error
+		oForm.valor.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.valor.className = "form-control";	
+	}
+	
+	  if(idPaquete =="" || doTarifa =="" || dFechaEntrega=="" || doVolumen=="" || doPeso =="" || doValor =="" )
+		
+    {
+        sErrores +="Debe rellenar todos los campos";
+    }
+	
+
+	
+	var sUrgente=oForm.optradio3.value;
+    var sEntregado=oForm.optradio4.value;
+    var sAdminPublica=oForm.optradio5.value;
+    var sInternacional=oForm.optradio6.value;
+    var sAsegurado=oForm.optradio7.value;
+	//Resultado
+	if (bValido == false){
+		//Cancelar envio del formulario
+		oE.preventDefault();
+		//Mostrar errores
+		alert(sErrores);
+	}
+	else{
+	
+     var paquete= new Paquete(idPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
+	 sMensaje=oPaqueteria.altaPaquete(paquete);
 	}
 	
 	
