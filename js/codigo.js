@@ -1536,6 +1536,7 @@ function aceptarAltaEmpleado(oEvento){
 	
      var empleado= new Empleado(idEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina);
 	 sMensaje=oPaqueteria.altaEmpleado(empleado);
+	  oForm.reset();
 	}
 	
 	
@@ -1671,6 +1672,7 @@ function aceptarAltaArticulo(oEvento){
 	
      var articulo= new Articulo(idArticulo,sDescripcion,doPeso,doValor,sComercial);
 	 sMensaje=oPaqueteria.altaArticulo(articulo);
+	  oForm.reset();
 	}
 	
 	
@@ -1868,6 +1870,7 @@ function aceptarAltaPaquete(oEvento){
 	
      var paquete= new Paquete(idPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
 	 sMensaje=oPaqueteria.altaPaquete(paquete);
+	  oForm.reset();
 	}
 	
 	
@@ -2010,6 +2013,7 @@ function aceptarAltaAduana(oEvento){
 	
      var aduana= new Aduana(idDeclaracion, articulo, sDeclaracion, iTasa);
 	 sMensaje=oPaqueteria.altaAduana(aduana);
+	  oForm.reset();
 	}
 	
 	
@@ -2129,6 +2133,7 @@ function aceptarAltaQueja(oEvento){
 	
      var queja= new Queja(idQueja, sDescripcionQ, dFechaQueja, sResuelta);
 	 sMensaje=oPaqueteria.altaQueja(queja);
+	 oForm.reset();
 	}
 	
 	
@@ -3343,6 +3348,8 @@ function aceptarModificarEmpleado(oEvento){
 	
      var empleado= new Empleado(sIdEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina);
 	 sMensaje=oPaqueteria.modificarEmpleado(empleado);
+	 
+	  oForm.reset();
 	}
 	
 	
@@ -3461,6 +3468,7 @@ function aceptarModificarArticulo(oEvento){
 	
      var articulo= new Articulo(sIdArticulo,sDescripcion,doPeso,doValor,sComercial);
 	 sMensaje=oPaqueteria.modificarArticulo(articulo);
+	  oForm.reset();
 	}
 	
 	
@@ -3635,6 +3643,7 @@ function aceptarModificarPaquete(oEvento){
 	
      var paquete= new Paquete(sIdPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
 	 sMensaje=oPaqueteria.modificarPaquete(paquete);
+	  oForm.reset();
 	}
 	
 	
@@ -3756,6 +3765,7 @@ function aceptarModificarAduana(oEvento){
 	
      var aduana= new Aduana(sIdAduana, articulo, sDeclaracion, iTasa);
 	 sMensaje=oPaqueteria.modificarAduana(aduana);
+	  oForm.reset();
 	}
 	
 	
@@ -3851,9 +3861,12 @@ var sIdQueja=formModiQuejas.comboQuejas.value.trim();
 	
      var queja= new Queja(sIdQueja, sDescripcionQ, dFechaQueja, sResuelta);
 	 sMensaje=oPaqueteria.modificarQueja(queja);
+	  oForm.reset();
 	}
 	
 	
 	alert(sMensaje);
+	
+	
 
 }
