@@ -2,7 +2,7 @@ window.addEventListener("load",inicio,false);
 
 // Instanciamos el objeto principal
 var oPaqueteria = new Paqueteria();
-//probando juanan 2 888    
+ 
 //#########################################################################################
 // PAQUETERIA
 //#########################################################################################
@@ -18,14 +18,15 @@ function volverIndex()
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
- 	formBajaCliente.reset();
+    formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
- 	altaEmpleados.reset();
+	altaEmpleados.reset();
+ 
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -59,8 +60,28 @@ function volverIndex()
 	verAltaAduana.reset();
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 
 	var verUML = document.getElementById("uml");
  	verUML.style.display = "none";
@@ -126,8 +147,29 @@ function altaCliente()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
+
 }
 
 var formBajaCliente = document.getElementById("bajaCli");
@@ -187,8 +229,28 @@ function bajaCliente()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var listCliente = document.getElementById("listadoCli");
@@ -247,8 +309,28 @@ function listCLientes()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -262,6 +344,7 @@ function altaEmpleado()
 {
 	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "block";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -271,9 +354,11 @@ function altaEmpleado()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
@@ -307,8 +392,28 @@ function altaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var bajaEmpleados = document.getElementById("bajaEmpl");
@@ -321,21 +426,25 @@ function bajaEmpleado()
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var listadoEmpleados = document.getElementById("listadoEmpleados");
  	listadoEmpleados.style.display = "none";
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -360,8 +469,28 @@ function bajaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var listaEmpleados = document.getElementById("listadoEmpl");
@@ -377,18 +506,22 @@ function listaEmpleado()
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -413,8 +546,28 @@ function listaEmpleado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -428,18 +581,22 @@ function altaArticulo()
 {
 	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "block";
+	altaArtic.reset();
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -471,8 +628,28 @@ function altaArticulo()
 	
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var bajaArticulo = document.getElementById("bajaArt");
@@ -485,15 +662,18 @@ function bajaArticulos()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -503,9 +683,11 @@ function bajaArticulos()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 	
 	var verAltaAduana= document.getElementById("formAltaAduana");
  	verAltaAduana.style.display = "none";
+	verAltaAduana.reset();
 
  	var listadoArtic = document.getElementById("listadoArtic");
  	listadoArtic.style.display = "none";
@@ -527,8 +709,28 @@ function bajaArticulos()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var listaArticulo = document.getElementById("btnListaArt");
@@ -541,15 +743,18 @@ function listArticul()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -559,6 +764,7 @@ function listArticul()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -579,9 +785,29 @@ function listArticul()
 	var verUML = document.getElementById("uml");
  	verUML.style.display = "none";
 	
-	document.getElementById("formModiCliente").style.display = "none";
+		document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -603,15 +829,18 @@ function altaPaquete()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -621,6 +850,7 @@ function altaPaquete()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var listadoArtic = document.getElementById("listadoArtic");
  	listadoArtic.style.display = "none";
@@ -639,8 +869,28 @@ function altaPaquete()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var paqueteNoEntregado = document.getElementById("paqueteNoEntregado");
@@ -653,15 +903,18 @@ function listaPaquetesNoEntregado()
 
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -671,6 +924,7 @@ function listaPaquetesNoEntregado()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -692,8 +946,28 @@ function listaPaquetesNoEntregado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 var paqueteEntregado = document.getElementById("paqueteEntregado");
@@ -706,15 +980,18 @@ function listaPaquetesEntregado()
 	
 	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -724,6 +1001,7 @@ function listaPaquetesEntregado()
 
  	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 
  	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -745,8 +1023,28 @@ function listaPaquetesEntregado()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 }
 
 //#########################################################################################
@@ -760,18 +1058,22 @@ function altaAduana()
 {
 	var verAltaAduana = document.getElementById("formAltaAduana");
  	verAltaAduana.style.display = "block";
+	verAltaAduana.reset();
  
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
 
  	var formBajaCliente = document.getElementById("formBajaCliente");
  	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
 
  	var listadoClientes = document.getElementById("listadoClientes");
  	listadoClientes.style.display = "none";
 
  	var altaEmpleados = document.getElementById("formAltaEmpleados");
  	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
 
  	var bajaEmpleados = document.getElementById("formBajaEmple");
  	bajaEmpleados.style.display = "none";
@@ -781,6 +1083,7 @@ function altaAduana()
 
    	var altaArtic = document.getElementById("formAltaArticulo");
  	altaArtic.style.display = "none";
+	altaArtic.reset();
 	
 	var bajaArtic = document.getElementById("formBajArticulo");
  	bajaArtic.style.display = "none";
@@ -802,8 +1105,28 @@ function altaAduana()
  	verUML.style.display = "none";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
  	
 }
 
@@ -817,10 +1140,59 @@ function verListaAduana()
  	verListaAduanas.style.display = "block";
 	
 	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
 	
 	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
 
 }
+
+
+//QUEJAS
+
+var formularioQuejas = document.getElementById("altaQueja");
+formularioQuejas.addEventListener("click", altaQueja, false);
+
+function altaQueja()
+{
+
+	document.getElementById("formAltaQuejas").style.display = "block";
+ 
+ 	var formAltaCliente = document.getElementById("formAltaCliente");
+ 	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
+
+ 	var formBajaCliente = document.getElementById("formBajaCliente");
+ 	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
+
+ 	var listadoClientes = document.getElementById("listadoClientes");
+ 	listadoClientes.style.display = "none";
+
+ 	var altaEmpleados = document.getElementById("formAltaEmpleados");
+ 	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
+
+}
+
 
 //#########################################################################################
 // UML
@@ -848,9 +1220,8 @@ function aceptarAltaCliente(oEvento){
 	var oForm=document.getElementById("formAltaCliente");
 	var sErrores = "";
 	var sMensaje ="";
-
-	var sActivo = true;
 	
+	var sActivo = true;
 	
 	// Validaciones
 
@@ -1284,7 +1655,8 @@ function aceptarAltaEmpleado(oEvento){
 	
      var empleado= new Empleado(idEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina, sActivo);
 	 sMensaje=oPaqueteria.altaEmpleado(empleado);
-	 oForm.reset();
+
+	  oForm.reset();
 	}
 	
 	
@@ -1369,7 +1741,7 @@ function aceptarAltaArticulo(oEvento){
 	//Campo id articulo
 	var idArticulo=  oForm.idArti.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idArticulo) == false){
 	
@@ -1394,7 +1766,7 @@ function aceptarAltaArticulo(oEvento){
 	var sDescripcion = oForm.descripcion.value.trim();
 	
 
-	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,15}$/;
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
 	
 	if (oExpReg.test(sDescripcion) == false){
 	
@@ -1486,6 +1858,7 @@ function aceptarAltaArticulo(oEvento){
 	
      var articulo= new Articulo(idArticulo,sDescripcion,doPeso,doValor,sComercial);
 	 sMensaje=oPaqueteria.altaArticulo(articulo);
+	  oForm.reset();
 	}
 	
 	
@@ -1506,7 +1879,7 @@ function aceptarAltaPaquete(oEvento){
 	//Campo id paquete
 	var idPaquete=  oForm.idPaquete.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idPaquete) == false){
 	
@@ -1559,8 +1932,8 @@ function aceptarAltaPaquete(oEvento){
 	
 	
 
-	var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
-	
+	//var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
 	
 	if (oExpReg.test(dFechaEntrega) == false){
 	
@@ -1683,6 +2056,7 @@ function aceptarAltaPaquete(oEvento){
 	
      var paquete= new Paquete(idPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
 	 sMensaje=oPaqueteria.altaPaquete(paquete);
+	  oForm.reset();
 	}
 	
 	
@@ -1701,34 +2075,34 @@ function aceptarAltaAduana(oEvento){
 	// Validaciones
 
 	//Campo id declaracion
-	var idDeclaracion=  oForm.idDeclaracion.value.trim();
+	var idDeclaracion=  oForm.idAduana.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idDeclaracion) == false){
 	
 		if(bValido == true){
 			bValido = false;		
 			//Este campo obtiene el foco
-			oForm.idDeclaracion.focus();		
+			oForm.idAduana.focus();		
 		}
 	
 		sErrores += "\nId incorrecto";
 		
 		//Marcar error
-		oForm.idDeclaracion.className = "form-control error";
+		oForm.idAduana.className = "form-control error";
 	
 	}
 	else {
 		//Desmarcar error
-		oForm.idDeclaracion.className = "form-control";	
+		oForm.idAduana.className = "form-control";	
 	}
 	
 	//Campo declaracion
 	var sDeclaracion = oForm.declaracion.value.trim();
 	
 
-	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]$/;
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
 	
 	if (oExpReg.test(sDeclaracion) == false){
 	
@@ -1753,7 +2127,7 @@ function aceptarAltaAduana(oEvento){
 	var iTasa = parseInt(oForm.tasa.value.trim());
 	
 
-	var oExpReg = /^[0-9]$/;
+	var oExpReg = /^[0-9]{1,}$/;
 	
 	if (oExpReg.test(iTasa) == false){
 	
@@ -1763,7 +2137,7 @@ function aceptarAltaAduana(oEvento){
 			oForm.tasa.focus();		
 		}
 	
-		sErrores += "\Tarifa incorrecta";
+		sErrores += "\nTasa incorrecta";
 		
 		//Marcar error
 		oForm.tasa.className = "form-control error";
@@ -1779,9 +2153,9 @@ function aceptarAltaAduana(oEvento){
 	  //Validar combo articulos
     for (var i = 0; i < listaArticulos.options.length; ++i) {
         if (listaArticulos.options[i].selected)
-            var articulos = listaArticulos.options[i].text;
+            var articulo = listaArticulos.options[i].text;
     }
-    if (articulos == null) {
+    if (articulo == null) {
         if (bValido == true) {
             bValido = false;
             oForm.listaArticulos.focus();
@@ -1792,7 +2166,7 @@ function aceptarAltaAduana(oEvento){
         oForm.listaArticulos.className = "form-control error";
     }
     else {
-        if (articulos == "No hay artículos disponibles") {
+        if (articulo == "No hay artículos disponibles") {
             if (bValido == true) {
                 bValido = false;
                 oForm.listaArticulos.focus();
@@ -1823,8 +2197,9 @@ function aceptarAltaAduana(oEvento){
 	}
 	else{
 	
-     var aduana= new Aduana(idDeclaracion, articulos, sDeclaracion, iTasa);
+     var aduana= new Aduana(idDeclaracion, articulo, sDeclaracion, iTasa);
 	 sMensaje=oPaqueteria.altaAduana(aduana);
+	  oForm.reset();
 	}
 	
 	
@@ -1846,7 +2221,7 @@ function aceptarAltaQueja(oEvento){
 	//Campo id 
 	var idQueja=  oForm.idQueja.value.trim();
 
-	var oExpReg = /^\d{8}\w$/;
+	var oExpReg = /^\d{1,}\w$/;
 	
 	if (oExpReg.test(idQueja) == false){
 	
@@ -1871,7 +2246,7 @@ function aceptarAltaQueja(oEvento){
 	var sDescripcionQ = oForm.descripcionQueja.value.trim();
 	
 
-	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]$/;
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
 	
 	if (oExpReg.test(sDescripcionQ) == false){
 	
@@ -1894,17 +2269,45 @@ function aceptarAltaQueja(oEvento){
 
 
 	
-	  if(idQueja =="" || sDescripcionQ=="" )
+	
+	
+	//Campo fecha
+	var dFechaQueja= new Date(oForm.fechaQueja.value.trim()).toLocaleDateString("es-ES");
+	
+	
+
+
+	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
+	
+	if (oExpReg.test(dFechaQueja) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.fechaQueja.focus();		
+		}
+	
+		sErrores += "\Fecha incorrecta";
+		
+		//Marcar error
+		oForm.fechaQueja.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.fechaQueja.className = "form-control";	
+	}
+	
+	
+	var sResuelta = oForm.optradio8.value;
+
+	   if(idQueja =="" || sDescripcionQ=="" || dFechaQueja=="" )
 		
     {
         sErrores +="Debe rellenar todos los campos";
     }
-	
-	
-	var sResuelta = oForm.optradio8.value;
-	var fechaQueja = oForm.fechaQueja.value.trim();
-	  var dFechaQueja = convertirFecha(fechaQueja);
 
+	 
 	//Resultado
 	if (bValido == false){
 		//Cancelar envio del formulario
@@ -1914,8 +2317,9 @@ function aceptarAltaQueja(oEvento){
 	}
 	else{
 	
-     var queja= new Queja(idQueja, sDeclaracion, dFechaQueja, sResuelta);//queda la fecha
+     var queja= new Queja(idQueja, sDescripcionQ, dFechaQueja, sResuelta);
 	 sMensaje=oPaqueteria.altaQueja(queja);
+	 oForm.reset();
 	}
 	
 	
@@ -1953,13 +2357,18 @@ function inicio(){
 
     document.getElementById("aceptarAltaQueja").addEventListener("click", aceptarAltaQueja,false);
 
-	
-	
-	
-	
-	
-    
-	
+	document.getElementById("paqueteNoEntregado").addEventListener("click", mostrarListaPaquetesNo,false);
+	document.getElementById("paqueteEntregado").addEventListener("click", mostrarListaPaquetesSi,false);
+
+	document.getElementById("aceptarModiArticulo").addEventListener("click", aceptarModificarArticulo,false);
+	document.getElementById("modiPaq").addEventListener("click", modificarPaquete,false);
+	document.getElementById("aceptarModificarPaquete").addEventListener("click", aceptarModificarPaquete,false);
+	document.getElementById("modiAduana").addEventListener("click", modificarAduana,false);
+	document.getElementById("aceptarModificarAduana").addEventListener("click", aceptarModificarAduana,false);
+	document.getElementById("modiQueja").addEventListener("click", modificarQueja,false);
+	document.getElementById("aceptarModificarQueja").addEventListener("click", aceptarModificarQueja,false);
+
+
 
 }
 
@@ -2295,6 +2704,270 @@ function mostrarListaArticulos() {
     document.querySelector("#listadoArtic").appendChild(oTabla);
 }
 
+//listado paquetes no entregados
+
+function mostrarListaPaquetesNo(){
+
+	vaciarTablas(document.querySelector("#verPaquetesNoEntregados"));
+  	document.querySelector("#verPaquetesNoEntregados").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado paquetes no entregados";
+
+  	document.querySelector("#verPaquetesNoEntregados").appendChild(labelTitulo);
+
+    var lista = oPaqueteria.cogerTodosLosPaquetes();
+    
+    var oTabla = document.createElement("table");
+
+    oTabla.setAttribute("class", "table table-striped table-responsive");
+
+    var oThead = oTabla.createTHead();
+    var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "ID";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Tarifa";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Fecha de entrega";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Volumen";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Peso";
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Valor";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Urgente";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Administración pública";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Internacional";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Asegurado";
+
+
+    var oTBody = oTabla.createTBody();
+
+    var oPaquetes = oXML.getElementsByTagName("paquete");
+
+    for (var i = 0; i < oPaquetes.length; i++) {
+    	var entregado = oPaquetes[i].getElementsByTagName("entregado")[0].textContent;
+
+    	if(entregado == "No")
+    	{
+    		oFila = oTBody.insertRow(-1);
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("idPaquete")[0].textContent;
+
+		
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("Tarifa")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("fechaEntrega")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("volumen")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("peso")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("valor")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("urgente")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("adminPublica")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("internacional")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("asegurado")[0].textContent;
+    	}
+    }
+
+    for (i = 0; i < lista.length; i++) {
+        
+        var entregado = lista[i].sEntregado;
+
+        if(entregado == "No")
+        {
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+        }
+    }
+    document.querySelector("#verPaquetesNoEntregados").appendChild(oTabla);
+}
+
+function mostrarListaPaquetesSi(){
+
+	vaciarTablas(document.querySelector("#verPaquetesEntregados"));
+  	document.querySelector("#verPaquetesEntregados").style.display="block";
+
+  	var labelTitulo = document.createElement("label");
+  	labelTitulo.setAttribute("class", "titulo");
+  	labelTitulo.textContent="Listado paquetes entregados";
+
+  	document.querySelector("#verPaquetesEntregados").appendChild(labelTitulo);
+
+    var lista = oPaqueteria.cogerTodosLosPaquetes();
+    
+    var oTabla = document.createElement("table");
+
+    oTabla.setAttribute("class", "table table-striped table-responsive");
+
+    var oThead = oTabla.createTHead();
+    var oFila = oThead.insertRow(-1);
+    var oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "ID";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Tarifa";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Fecha de entrega";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Volumen";
+
+    oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Peso";
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Valor";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Urgente";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Administración pública";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Internacional";
+
+
+	oCelda = oFila.insertCell(-1);
+    oCelda.textContent = "Asegurado";
+
+
+    var oTBody = oTabla.createTBody();
+
+    var oPaquetes = oXML.getElementsByTagName("paquete");
+
+    for (var i = 0; i < oPaquetes.length; i++) {
+    	var entregado = oPaquetes[i].getElementsByTagName("entregado")[0].textContent;
+
+    	if(entregado == "Si")
+    	{
+    		oFila = oTBody.insertRow(-1);
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("idPaquete")[0].textContent;
+
+		
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("Tarifa")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("fechaEntrega")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("volumen")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("peso")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("valor")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("urgente")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("adminPublica")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("internacional")[0].textContent;
+
+			oCelda = oFila.insertCell(-1);
+			oCelda.textContent = oPaquetes[i].getElementsByTagName("asegurado")[0].textContent;
+    	}
+    }
+
+    for (i = 0; i < lista.length; i++) {
+        
+        var entregado = lista[i].sEntregado;
+        
+
+        if(entregado == "Sí")
+        {
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+        }
+    }
+    document.querySelector("#verPaquetesEntregados").appendChild(oTabla);
+}
+
+
 function vaciarTablas(objetoParent)
 {
 	while(objetoParent.children.length != 0)
@@ -2308,12 +2981,31 @@ function ocultarFormulariosModificar(){
 	
 	document.getElementById("formModiCliente").style.display = "none";
 	document.getElementById("formModiEmpleado").style.display = "none";
-	/*document.getElementById("formModiArticulo").style.display = "none";
+
+	document.getElementById("formModiArticulo").style.display = "none";
+
 	document.getElementById("formModiPedido").style.display = "none";
-	document.getElementById("formModiQueja").style.display = "none";
-	document.getElementById("formModiAduana").style.display = "none";*/
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiQuejas").style.display = "none";
+	
 	
 	document.getElementById("formAltaCliente").style.display = "none";
+	document.getElementById("formAltaEmpleados").style.display = "none";
+	document.getElementById("formAltaArticulo").style.display = "none";
+	document.getElementById("formAltaPedido").style.display = "none";
+	document.getElementById("formAltaAduana").style.display = "none";
+	document.getElementById("formAltaQuejas").style.display = "none";
+	document.getElementById("formBajaCliente").style.display = "none";
+	document.getElementById("formBajaEmple").style.display = "none";
+	document.getElementById("formBajArticulo").style.display = "none";
+	//document.getElementById("formBajaPedido").style.display = "none";
+	document.getElementById("listadoClientes").style.display = "none";
+	document.getElementById("listadoEmpleados").style.display = "none";
+	document.getElementById("listadoArtic").style.display = "none";
+	document.getElementById("verPaquetesNoEntregados").style.display = "none";
+	document.getElementById("verPaquetesEntregados").style.display = "none";
+	document.getElementById("listadoAduana").style.display = "none";
+
 	
 
 }
@@ -2337,9 +3029,33 @@ function modificarEmpleado()
 function modificarArticulo()
 {
 	ocultarFormulariosModificar();
-	document.getElementById("formModiEmpleado").style.display = "block";
-	document.getElementById("formModiEmpleado").reset();
-	rellenaComboEmpleados("comboModificarEmpleados");
+	document.getElementById("formModiArticulo").style.display = "block";
+	document.getElementById("formModiArticulo").reset();
+	rellenaComboArticulos("comboModificarArticulos");
+}
+
+function modificarPaquete()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiPedido").style.display = "block";
+	document.getElementById("formModiPedido").reset();
+	rellenaComboPedidos("comboModificarPedidos");
+}
+
+function modificarAduana()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiAduana").style.display = "block";
+	document.getElementById("formModiAduana").reset();
+	rellenaComboAduanas("comboModificarAduanas");
+}
+
+function modificarQueja()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiQuejas").style.display = "block";
+	document.getElementById("formModiQuejas").reset();
+	rellenaComboQuejas("comboModificarQuejas");
 }
 
 function rellenaComboClientes(combo){
@@ -2388,6 +3104,98 @@ function rellenaComboEmpleados(combo){
 	}
 }
 
+function rellenaComboArticulos(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.articulos.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.articulos[i].idEmpleado;
+		var oTextOption = document.createTextNode(oPaqueteria.articulos[i].idArticulo);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado articulos');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboPedidos(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.paquetes.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.paquetes[i].idPaquete;
+		var oTextOption = document.createTextNode(oPaqueteria.paquetes[i].idPaquete);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado paquetes');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboAduanas(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.aduanas.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.aduanas[i].idDeclaracion;
+		var oTextOption = document.createTextNode(oPaqueteria.aduanas[i].idDeclaracion);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado aduanas');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboQuejas(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.quejas.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.quejas[i].idQueja;
+		var oTextOption = document.createTextNode(oPaqueteria.quejas[i].idQueja);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado quejas');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
 function aceptarModificarCliente(oEvento){
 		var oE = oEvento || window.event;
 	   var bValido = true;
@@ -2400,7 +3208,7 @@ function aceptarModificarCliente(oEvento){
 	  var sIdCliente=formModiCliente.comboClientes.value.trim();
 	  //var selected = oForm.options[posSeleccionado].text;
 	  //var selected = oForm.selectedIndex.text;
-	  console.log(sIdCliente);
+	  console.log(sIdCliente); 
 	 //var oCliente=oPaqueteria.clientes[sIdCliente];
 	 //var sNombre=oCliente.nombre;
 	
@@ -2739,6 +3547,8 @@ function aceptarModificarEmpleado(oEvento){
 	
      var empleado= new Empleado(sIdEmpleado, sNombre,sApellidos, sGestor, sManager, sOficina);
 	 sMensaje=oPaqueteria.modificarEmpleado(empleado);
+	 
+	  oForm.reset();
 	}
 	
 	
@@ -2749,4 +3559,512 @@ function aceptarModificarEmpleado(oEvento){
 		
 	}
 	
+}
+
+function aceptarModificarArticulo(oEvento){
+	var oE = oEvento || window.event;
+	var bValido = true;
+	var oForm=document.getElementById("formModiArticulo");
+	var sErrores = "";
+	var sMensaje ="";
+	var sIdArticulo=formModiArticulo.comboArticulos.value.trim();
+	// Validaciones
+
+	//Campo descripción
+	var sDescripcion = oForm.descripcion.value.trim();
+	
+
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
+	
+	if (oExpReg.test(sDescripcion) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.descripcion.focus();		
+		}
+	
+		sErrores += "\nDescripción incorrecta";
+		
+		//Marcar error
+		oForm.descripcion.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.descripcion.className = "form-control";	
+	}
+
+	//Campo peso parseFloat
+	var doPeso = parseFloat(oForm.peso.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doPeso) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.peso.focus();		
+		}
+	
+		sErrores += "\Peso incorrecto";
+		
+		//Marcar error
+		oForm.peso.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.peso.className = "form-control";	
+	}
+	
+	
+	
+
+//Campo valor parseFloat
+	var doValor = parseFloat(oForm.valor.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doValor) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.valor.focus();		
+		}
+	
+		sErrores += "\Valor incorrecto";
+		
+		//Marcar error
+		oForm.valor.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.valor.className = "form-control";	
+	}
+	
+	  if(sDescripcion =="" || doPeso =="" || doValor =="" )
+    {
+        sErrores +="Debe rellenar todos los campos";
+    }
+	
+
+	 var sComercial = oForm.optradio2.value;
+	//Resultado
+	if (bValido == false){
+		//Cancelar envio del formulario
+		oE.preventDefault();
+		//Mostrar errores
+		alert(sErrores);
+	}
+	else{
+	
+     var articulo= new Articulo(sIdArticulo,sDescripcion,doPeso,doValor,sComercial);
+	 sMensaje=oPaqueteria.modificarArticulo(articulo);
+	  oForm.reset();
+	}
+	
+	
+	alert(sMensaje);
+
+}
+
+function aceptarModificarPaquete(oEvento){
+	var oE = oEvento || window.event;
+	var bValido = true;
+	var oForm=document.getElementById("formModiPedido");
+	var sErrores = "";
+	var sMensaje ="";
+	
+	// Validaciones
+
+	var sIdPaquete=formModiPedido.comboPedidos.value.trim();
+	
+//Campo tarifa parseFloat
+	var doTarifa = parseFloat(oForm.tarifa.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doTarifa) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.tarifa.focus();		
+		}
+	
+		sErrores += "\Tarifa incorrecta";
+		
+		//Marcar error
+		oForm.tarifa.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.tarifa.className = "form-control";	
+	}
+	
+	
+
+	//Campo fecha
+	var dFechaEntrega= new Date(oForm.fechaEntrega.value.trim()).toLocaleDateString("es-ES");
+	
+	
+
+	//var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
+	
+	if (oExpReg.test(dFechaEntrega) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.fechaEntrega.focus();		
+		}
+	
+		sErrores += "\Fecha incorrecta";
+		
+		//Marcar error
+		oForm.fechaEntrega.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.fechaEntrega.className = "form-control";	
+	}
+	
+	//Campo volumen parseFloat
+	var doVolumen= parseFloat(oForm.volumen.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doVolumen) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.volumen.focus();		
+		}
+	
+		sErrores += "\Volumen incorrecto";
+		
+		//Marcar error
+		oForm.volumen.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.volumen.className = "form-control";	
+	}
+	
+	
+	//Campo peso parseFloat
+	var doPeso= parseFloat(oForm.peso.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doPeso) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.peso.focus();		
+		}
+	
+		sErrores += "\Peso incorrecto";
+		
+		//Marcar error
+		oForm.peso.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.peso.className = "form-control";	
+	}
+	
+	
+
+//Campo valor parseFloat
+	var doValor = parseFloat(oForm.valor.value.trim());
+	
+
+	var oExpReg = /^[0-9]+([,])?([0-9]+)?$/;
+	
+	if (oExpReg.test(doValor) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.valor.focus();		
+		}
+	
+		sErrores += "\Valor incorrecto";
+		
+		//Marcar error
+		oForm.valor.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.valor.className = "form-control";	
+	}
+	
+	  if(doTarifa =="" || dFechaEntrega=="" || doVolumen=="" || doPeso =="" || doValor =="" )
+		
+    {
+        sErrores +="Debe rellenar todos los campos";
+    }
+	
+
+	
+	var sUrgente=oForm.optradio3.value;
+    var sEntregado=oForm.optradio4.value;
+    var sAdminPublica=oForm.optradio5.value;
+    var sInternacional=oForm.optradio6.value;
+    var sAsegurado=oForm.optradio7.value;
+	//Resultado
+	if (bValido == false){
+		//Cancelar envio del formulario
+		oE.preventDefault();
+		//Mostrar errores
+		alert(sErrores);
+	}
+	else{
+	
+     var paquete= new Paquete(sIdPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
+	 sMensaje=oPaqueteria.modificarPaquete(paquete);
+	  oForm.reset();
+	}
+	
+	
+	alert(sMensaje);
+
+}
+
+
+function aceptarModificarAduana(oEvento){
+	var oE = oEvento || window.event;
+	var bValido = true;
+	var oForm=document.getElementById("formAltaAduana");
+	 var listaArticulos = oForm.listaArticulos;
+	var sErrores = "";
+	var sMensaje ="";
+	
+	// Validaciones
+
+	var sIdAduana=formModiAduana.comboAduanas.value.trim();
+	
+	//Campo declaracion
+	var sDeclaracion = oForm.declaracion.value.trim();
+	
+
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
+	
+	if (oExpReg.test(sDeclaracion) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.declaracion.focus();		
+		}
+	
+		sErrores += "\nDeclaración incorrecta";
+		
+		//Marcar error
+		oForm.declaracion.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.declaracion.className = "form-control";	
+	}
+
+//Campo tasa
+	var iTasa = parseInt(oForm.tasa.value.trim());
+	
+
+	var oExpReg = /^[0-9]{1,}$/;
+	
+	if (oExpReg.test(iTasa) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.tasa.focus();		
+		}
+	
+		sErrores += "n\Tasa incorrecta";
+		
+		//Marcar error
+		oForm.tasa.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.tasa.className = "form-control";	
+	}
+	
+	
+
+	  //Validar combo articulos
+    for (var i = 0; i < listaArticulos.options.length; ++i) {
+        if (listaArticulos.options[i].selected)
+            var articulo = listaArticulos.options[i].text;
+    }
+    if (articulo == null) {
+        if (bValido == true) {
+            bValido = false;
+            oForm.listaArticulos.focus();
+        }
+        sErrores += "\Debe seleccionar un artículo";
+     
+        //Marcar error
+        oForm.listaArticulos.className = "form-control error";
+    }
+    else {
+        if (articulo == "No hay artículos disponibles") {
+            if (bValido == true) {
+                bValido = false;
+                oForm.listaArticulos.focus();
+            }
+            sErrores += "\Lo sentimos no hay artículos disponibles";
+            oForm.listaArticulos.className = "form-control  error";
+        }
+        else {
+           oForm.listaArticulos.className = "form-control";
+        }
+    }
+	
+	  if(sDeclaracion=="" || iTasa =="" )
+		
+    {
+        sErrores +="Debe rellenar todos los campos";
+    }
+	
+	
+	
+
+	//Resultado
+	if (bValido == false){
+		//Cancelar envio del formulario
+		oE.preventDefault();
+		//Mostrar errores
+		alert(sErrores);
+	}
+	else{
+	
+     var aduana= new Aduana(sIdAduana, articulo, sDeclaracion, iTasa);
+	 sMensaje=oPaqueteria.modificarAduana(aduana);
+	  oForm.reset();
+	}
+	
+	
+	alert(sMensaje);
+
+}
+
+function aceptarModificarQueja(oEvento){
+	var oE = oEvento || window.event;
+	var bValido = true;
+	var oForm=document.getElementById("formModiQuejas");
+	
+	var sErrores = "";
+	var sMensaje = "";
+	
+	// Validaciones
+
+var sIdQueja=formModiQuejas.comboQuejas.value.trim();
+	
+	//Campo descripcion
+	var sDescripcionQ = oForm.descripcionQueja.value.trim();
+	
+
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
+	
+	if (oExpReg.test(sDescripcionQ) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.descripcionQueja.focus();		
+		}
+	
+		sErrores += "\nDescripción incorrecta";
+		
+		//Marcar error
+		oForm.descripcionQueja.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.descripcionQueja.className = "form-control";	
+	}
+
+
+	
+	 
+	
+	//Campo fecha
+	var dFechaQueja= new Date(oForm.fechaQueja.value.trim()).toLocaleDateString("es-ES");
+	
+	
+
+
+	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
+	
+	if (oExpReg.test(dFechaQueja) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.fechaQueja.focus();		
+		}
+	
+		sErrores += "\Fecha incorrecta";
+		
+		//Marcar error
+		oForm.fechaQueja.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.fechaQueja.className = "form-control";	
+	}
+	
+	
+	var sResuelta = oForm.optradio8.value;
+
+	  if(sDescripcionQ=="" || dFechaQueja=="" )
+		
+    {
+        sErrores +="Debe rellenar todos los campos";
+    }
+
+	//Resultado
+	if (bValido == false){
+		//Cancelar envio del formulario
+		oE.preventDefault();
+		//Mostrar errores
+		alert(sErrores);
+	}
+	else{
+	
+     var queja= new Queja(sIdQueja, sDescripcionQ, dFechaQueja, sResuelta);
+	 sMensaje=oPaqueteria.modificarQueja(queja);
+	  oForm.reset();
+	}
+	
+	
+	alert(sMensaje);
+	
+	
+
 }
