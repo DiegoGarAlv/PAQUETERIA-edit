@@ -3111,7 +3111,7 @@ function rellenaComboArticulos(combo){
 		oSelect.childNodes[0].remove();
 	for(var i=0;i<oPaqueteria.articulos.length;i++){
 		var oOption = document.createElement('option');
-		oOption.value=oPaqueteria.articulos[i].idEmpleado;
+		oOption.value=oPaqueteria.articulos[i].idArticulo;
 		var oTextOption = document.createTextNode(oPaqueteria.articulos[i].idArticulo);
 		oOption.appendChild(oTextOption);
 		oSelect.appendChild(oOption);
