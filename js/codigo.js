@@ -2590,8 +2590,8 @@ function ocultarFormulariosModificar(){
 	document.getElementById("formModiCliente").style.display = "none";
 	document.getElementById("formModiEmpleado").style.display = "none";
 	document.getElementById("formModiArticulo").style.display = "none";
-	/*document.getElementById("formModiPedido").style.display = "none";
-	document.getElementById("formModiQueja").style.display = "none";
+	document.getElementById("formModiPedido").style.display = "none";
+	/*document.getElementById("formModiQueja").style.display = "none";
 	document.getElementById("formModiAduana").style.display = "none";*/
 	
 	document.getElementById("formAltaCliente").style.display = "none";
@@ -2621,6 +2621,14 @@ function modificarArticulo()
 	document.getElementById("formModiArticulo").style.display = "block";
 	document.getElementById("formModiArticulo").reset();
 	rellenaComboArticulos("comboModificarArticulos");
+}
+
+function modificarPaquete()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiPedido").style.display = "block";
+	document.getElementById("formModiPedido").reset();
+	rellenaComboPedidos("comboModificarPedidos");
 }
 
 function rellenaComboClientes(combo){
@@ -2687,6 +2695,29 @@ function rellenaComboArticulos(combo){
 		var oOption = document.createElement('option');
 		oOption.value="-1";
 		var oTextOption = document.createTextNode('No se han encontrado articulos');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboPedidos(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.paquetes.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.paquetes[i].idPaquete;
+		var oTextOption = document.createTextNode(oPaqueteria.paquetes[i].idPaquete);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado paquetes');
 		oOption.appendChild(oTextOption);
 		oSelect.appendChild(oOption);
 	}
@@ -3166,39 +3197,17 @@ function aceptarModificarArticulo(oEvento){
 
 }
 
-function aceptarAltaPaquete(oEvento){
+function aceptarModificarPaquete(oEvento){
 	var oE = oEvento || window.event;
 	var bValido = true;
-	var oForm=document.getElementById("formAltaPedido");
+	var oForm=document.getElementById("formModiPedido");
 	var sErrores = "";
 	var sMensaje ="";
 	
 	// Validaciones
 
-	//Campo id paquete
-	var idPaquete=  oForm.idPaquete.value.trim();
-
-	var oExpReg = /^\d{8}\w$/;
+	var sIdPaquete=formModiPedido.comboPedidos.value.trim();
 	
-	if (oExpReg.test(idPaquete) == false){
-	
-		if(bValido == true){
-			bValido = false;		
-			//Este campo obtiene el foco
-			oForm.idPaquete.focus();		
-		}
-	
-		sErrores += "\nId incorrecto";
-		
-		//Marcar error
-		oForm.idPaquete.className = "form-control error";
-	
-	}
-	else {
-		//Desmarcar error
-		oForm.idPaquete.className = "form-control";	
-	}
-
 //Campo tarifa parseFloat
 	var doTarifa = parseFloat(oForm.tarifa.value.trim());
 	
@@ -3331,7 +3340,7 @@ function aceptarAltaPaquete(oEvento){
 		oForm.valor.className = "form-control";	
 	}
 	
-	  if(idPaquete =="" || doTarifa =="" || dFechaEntrega=="" || doVolumen=="" || doPeso =="" || doValor =="" )
+	  if(doTarifa =="" || dFechaEntrega=="" || doVolumen=="" || doPeso =="" || doValor =="" )
 		
     {
         sErrores +="Debe rellenar todos los campos";
@@ -3353,8 +3362,8 @@ function aceptarAltaPaquete(oEvento){
 	}
 	else{
 	
-     var paquete= new Paquete(idPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
-	 sMensaje=oPaqueteria.altaPaquete(paquete);
+     var paquete= new Paquete(sIdPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
+	 sMensaje=oPaqueteria.modificarPaquete(paquete);
 	}
 	
 	
