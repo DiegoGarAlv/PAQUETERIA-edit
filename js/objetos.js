@@ -9,7 +9,7 @@ class Paqueteria {
     this.articulos = [ ];
     this.paquetes = [ ];
     this.eventosQueja = [ ];
-    this.aduanas = [ ];
+    this.aduanas = [ ]; 
     
 	
 }
@@ -435,7 +435,7 @@ Paqueteria.prototype.modificarArticulo= function(oArticulo){
     var sCadena = "";
     for(var i=0;i < this.articulos.length;i++){
        
-        if(this.articulos[i].idArticulo == oArticulo.sIdArticulo)
+        if(this.articulos[i].idArticulo == oArticulo.idArticulo)
         {
 			
 			this.articulos[i].sDescripcion = oArticulo.sDescripcion;
