@@ -2038,7 +2038,8 @@ function inicio(){
 	document.getElementById("aceptarModificarPaquete").addEventListener("click", aceptarModificarPaquete,false);
 	document.getElementById("modiAduana").addEventListener("click", modificarAduana,false);
 	document.getElementById("aceptarModificarAduana").addEventListener("click", aceptarModificarAduana,false);
-	
+	document.getElementById("modiQueja").addEventListener("click", modificarQueja,false);
+	document.getElementById("aceptarModificarQueja").addEventListener("click", aceptarModificarQueja,false);
 
 
 }
@@ -2664,6 +2665,18 @@ function ocultarFormulariosModificar(){
 	document.getElementById("formAltaPedido").style.display = "none";
 	document.getElementById("formAltaAduana").style.display = "none";
 	document.getElementById("formAltaQuejas").style.display = "none";
+	document.getElementById("formBajaCliente").style.display = "none";
+	document.getElementById("formBajaEmple").style.display = "none";
+	document.getElementById("formBajArticulo").style.display = "none";
+	document.getElementById("formBajaPedido").style.display = "none";
+	document.getElementById("listadoClientes").style.display = "none";
+	document.getElementById("listadoEmpleados").style.display = "none";
+	document.getElementById("listadoArtic").style.display = "none";
+	document.getElementById("verPaquetesNoEntregados").style.display = "none";
+	document.getElementById("verPaquetesEntregados").style.display = "none";
+	document.getElementById("listadoAduana").style.display = "none";
+
+	
 
 }
 
@@ -2697,6 +2710,22 @@ function modificarPaquete()
 	document.getElementById("formModiPedido").style.display = "block";
 	document.getElementById("formModiPedido").reset();
 	rellenaComboPedidos("comboModificarPedidos");
+}
+
+function modificarAduana()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiAduana").style.display = "block";
+	document.getElementById("formModiAduana").reset();
+	rellenaComboAduanas("comboModificarAduanas");
+}
+
+function modificarQueja()
+{
+	ocultarFormulariosModificar();
+	document.getElementById("formModiQuejas").style.display = "block";
+	document.getElementById("formModiQuejas").reset();
+	rellenaComboQuejas("comboModificarQuejas");
 }
 
 function rellenaComboClientes(combo){
@@ -2786,6 +2815,52 @@ function rellenaComboPedidos(combo){
 		var oOption = document.createElement('option');
 		oOption.value="-1";
 		var oTextOption = document.createTextNode('No se han encontrado paquetes');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboAduanas(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.aduanas.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.aduanas[i].idDeclaracion;
+		var oTextOption = document.createTextNode(oPaqueteria.aduanas[i].idDeclaracion);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado aduanas');
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+	}
+}
+
+function rellenaComboQuejas(combo){
+	var oSelect = document.getElementById(combo);
+	var cont=0;
+	while(oSelect.childNodes.length>0)
+		oSelect.childNodes[0].remove();
+	for(var i=0;i<oPaqueteria.quejas.length;i++){
+		var oOption = document.createElement('option');
+		oOption.value=oPaqueteria.quejas[i].idDeclaracion;
+		var oTextOption = document.createTextNode(oPaqueteria.quejas[i].idDeclaracion);
+		oOption.appendChild(oTextOption);
+		oSelect.appendChild(oOption);
+		cont++;
+	}
+	if(cont==0)
+	{
+		var oOption = document.createElement('option');
+		oOption.value="-1";
+		var oTextOption = document.createTextNode('No se han encontrado quejas');
 		oOption.appendChild(oTextOption);
 		oSelect.appendChild(oOption);
 	}
