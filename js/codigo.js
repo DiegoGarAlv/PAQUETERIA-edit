@@ -1060,6 +1060,9 @@ function altaAduana()
  	verAltaAduana.style.display = "block";
 	verAltaAduana.reset();
  
+ 	//rellenar el combo de articulos en alta aduanas
+ 	rellenaComboArticulos("listaArticulos");
+ 	
  	var formAltaCliente = document.getElementById("formAltaCliente");
  	formAltaCliente.style.display = "none";
 	formAltaCliente.reset();
