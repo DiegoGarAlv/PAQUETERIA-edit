@@ -9,7 +9,7 @@ class Paqueteria {
     this.articulos = [ ];
     this.paquetes = [ ];
     this.eventosQueja = [ ];
-    this.declaraciones = [ ];
+    this.aduanas = [ ];
     
 	
 }
@@ -289,11 +289,11 @@ Paqueteria.prototype.altaQueja = function(oQueja)
 
 // ###############################  Objeto Aduana ################################### \\
 
-function Aduana(idDeclaracion, sArticulo, sDeclaracion, intTasa){
+function Aduana(idDeclaracion, sArticulo, sDeclaracion, iTasa){
 	this.idDeclaracion = idDeclaracion;
     this.sArticulo = sArticulo;
     this.sDeclaracion = sDeclaracion;
-     this.intTasa = intTasa;
+     this.iTasa = iTasa;
 
 }
 
@@ -381,8 +381,8 @@ Paqueteria.prototype.modificarEmpleado= function(oEmpleado){
 			this.empleados[i].sNombre = oEmpleado.sNombre;
             this.empleados[i].sApellidos = oEmpleado.sApellidos;
             this.empleados[i].sGestor = oEmpleado.sGestor;
-			this.empleados[i].sTelefono = oEmpleado.sManager;
-            this.empleados[i].sDireccion = oEmpleado.sOficina;
+			this.empleados[i].sManager = oEmpleado.sManager;
+            this.empleados[i].sOficina = oEmpleado.sOficina;
 		
            
             sCadena = "Empleado "+oEmpleado.sNombre+" modificado";
@@ -391,6 +391,93 @@ Paqueteria.prototype.modificarEmpleado= function(oEmpleado){
 		 else
 		 {
 			sCadena = "Empleado no encontrado";
+		 }
+		
+    }
+    return sCadena;
+}
+
+//Articulo
+Paqueteria.prototype.modificarArticulo= function(oArticulo){
+    var sCadena = "";
+    for(var i=0;i < this.articulos.length;i++){
+       
+        if(this.articulos[i].idArticulo == oArticulo.idArticulo)
+        {
+			
+			this.articulos[i].sDescripcion = oArticulo.sDescripcion;
+            this.articulos[i].doPeso = oArticulo.doPeso;
+            this.articulos[i].doValor = oArticulo.doValor;
+			this.articulos[i].sComercial = oArticulo.sComercial;
+          
+		
+           
+            sCadena = "Artículo "+oArticulo.idArticulo+" modificado";
+        }
+		
+		 else
+		 {
+			sCadena = "Artículo no encontrado";
+		 }
+		
+    }
+    return sCadena;
+}
+
+//Paquete
+Paqueteria.prototype.modificarPaquete= function(oPaquete){
+    var sCadena = "";
+    for(var i=0;i < this.paquetes.length;i++){
+       
+        if(this.paquetes[i].idPaquete == oPaquete.idPaquete)
+        {
+			
+			this.paquetes[i].doTarifa = oPaquete.doTarifa;
+			this.paquetes[i].dFechaEntrega = oPaquete.dFechaEntrega;
+			this.paquetes[i].doVolumen = oPaquete.doVolumen;
+            this.paquetes[i].doPeso = oPaquete.doPeso;
+            this.paquetes[i].doValor = oPaquete.doValor;
+			this.paquetes[i].sUrgente = oPaquete.sUrgente;
+			this.paquetes[i].sEntregado = oPaquete.sEntregado;
+			this.paquetes[i].sAdminPublica = oPaquete.sAdminPublica;
+			this.paquetes[i].sInternacional = oPaquete.sInternacional;
+			this.paquetes[i].sAsegurado = oPaquete.sAsegurado;
+          
+		
+           
+            sCadena = "Paquete "+oPaquete.idPaquete+" modificado";
+        }
+		
+		 else
+		 {
+			sCadena = "Paquete no encontrado";
+		 }
+		
+    }
+    return sCadena;
+}
+
+//Aduana
+Paqueteria.prototype.modificarAduana= function(oAduana){
+    var sCadena = "";
+    for(var i=0;i < this.aduanas.length;i++){
+       
+        if(this.aduanas[i].idDeclaracion == oAduana.idDeclaracion)
+        {
+			
+			this.aduanas[i].sArticulo = oAduana.sArticulo;
+			this.aduanas[i].sDeclaracion = oAduana.sDeclaracion;
+			this.aduanas[i].iTasa = oAduana.iTasa;
+            
+          
+		
+           
+            sCadena = "Aduana "+oAduana.idDeclaracion+" modificada";
+        }
+		
+		 else
+		 {
+			sCadena = "Aduana no encontrada";
 		 }
 		
     }
