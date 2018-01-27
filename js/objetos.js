@@ -223,7 +223,7 @@ Paqueteria.prototype.altaArticulo = function(oArticulo)
 
 // ############################### Objeto EventoQueja  ################################ \\
 
-function EventoQueja (idEvento, sMensaje){
+/*function EventoQueja (idEvento, sMensaje){
     this.idEvento = idEvento;
     this.sMensaje = sMensaje;
     
@@ -250,7 +250,7 @@ Paqueteria.prototype.altaEventoQueja = function(oEventoQueja)
     }
 
     return sMensaje;
-};
+};*/
 
 // ###############################  Objeto Queja  ################################### \\
 
