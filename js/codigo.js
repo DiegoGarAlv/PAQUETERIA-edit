@@ -1786,7 +1786,7 @@ function aceptarAltaAduana(oEvento){
 	// Validaciones
 
 	//Campo id declaracion
-	var idDeclaracion=  oForm.idDeclaracion.value.trim();
+	var idDeclaracion=  oForm.idAduana.value.trim();
 
 	var oExpReg = /^\d{1,}\w$/;
 	
@@ -1795,25 +1795,25 @@ function aceptarAltaAduana(oEvento){
 		if(bValido == true){
 			bValido = false;		
 			//Este campo obtiene el foco
-			oForm.idDeclaracion.focus();		
+			oForm.idAduana.focus();		
 		}
 	
 		sErrores += "\nId incorrecto";
 		
 		//Marcar error
-		oForm.idDeclaracion.className = "form-control error";
+		oForm.idAduana.className = "form-control error";
 	
 	}
 	else {
 		//Desmarcar error
-		oForm.idDeclaracion.className = "form-control";	
+		oForm.idAduana.className = "form-control";	
 	}
 	
 	//Campo declaracion
 	var sDeclaracion = oForm.declaracion.value.trim();
 	
 
-	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]$/;
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
 	
 	if (oExpReg.test(sDeclaracion) == false){
 	
@@ -1838,7 +1838,7 @@ function aceptarAltaAduana(oEvento){
 	var iTasa = parseInt(oForm.tasa.value.trim());
 	
 
-	var oExpReg = /^[0-9]$/;
+	var oExpReg = /^[0-9]{1,}$/;
 	
 	if (oExpReg.test(iTasa) == false){
 	
@@ -1848,7 +1848,7 @@ function aceptarAltaAduana(oEvento){
 			oForm.tasa.focus();		
 		}
 	
-		sErrores += "\Tarifa incorrecta";
+		sErrores += "\nTasa incorrecta";
 		
 		//Marcar error
 		oForm.tasa.className = "form-control error";
@@ -2668,7 +2668,7 @@ function ocultarFormulariosModificar(){
 	document.getElementById("formBajaCliente").style.display = "none";
 	document.getElementById("formBajaEmple").style.display = "none";
 	document.getElementById("formBajArticulo").style.display = "none";
-	document.getElementById("formBajaPedido").style.display = "none";
+	//document.getElementById("formBajaPedido").style.display = "none";
 	document.getElementById("listadoClientes").style.display = "none";
 	document.getElementById("listadoEmpleados").style.display = "none";
 	document.getElementById("listadoArtic").style.display = "none";
@@ -3507,6 +3507,127 @@ function aceptarModificarPaquete(oEvento){
 	
      var paquete= new Paquete(sIdPaquete, doTarifa, dFechaEntrega, doVolumen, doPeso, doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado);
 	 sMensaje=oPaqueteria.modificarPaquete(paquete);
+	}
+	
+	
+	alert(sMensaje);
+
+}
+
+
+function aceptarModificarAduana(oEvento){
+	var oE = oEvento || window.event;
+	var bValido = true;
+	var oForm=document.getElementById("formAltaAduana");
+	 var listaArticulos = oForm.listaArticulos;
+	var sErrores = "";
+	var sMensaje ="";
+	
+	// Validaciones
+
+	var sIdAduana=formModiAduana.comboAduanas.value.trim();
+	
+	//Campo declaracion
+	var sDeclaracion = oForm.declaracion.value.trim();
+	
+
+	var oExpReg = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,40}$/;
+	
+	if (oExpReg.test(sDeclaracion) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.declaracion.focus();		
+		}
+	
+		sErrores += "\nDeclaración incorrecta";
+		
+		//Marcar error
+		oForm.declaracion.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.declaracion.className = "form-control";	
+	}
+
+//Campo tasa
+	var iTasa = parseInt(oForm.tasa.value.trim());
+	
+
+	var oExpReg = /^[0-9]{1,}$/;
+	
+	if (oExpReg.test(iTasa) == false){
+	
+		if(bValido == true){
+			bValido = false;		
+			//Este campo obtiene el foco
+			oForm.tasa.focus();		
+		}
+	
+		sErrores += "n\Tasa incorrecta";
+		
+		//Marcar error
+		oForm.tasa.className = "form-control error";
+	
+	}
+	else {
+		//Desmarcar error
+		oForm.tasa.className = "form-control";	
+	}
+	
+	
+
+	  //Validar combo articulos
+    for (var i = 0; i < listaArticulos.options.length; ++i) {
+        if (listaArticulos.options[i].selected)
+            var articulo = listaArticulos.options[i].text;
+    }
+    if (articulo == null) {
+        if (bValido == true) {
+            bValido = false;
+            oForm.listaArticulos.focus();
+        }
+        sErrores += "\Debe seleccionar un artículo";
+     
+        //Marcar error
+        oForm.listaArticulos.className = "form-control error";
+    }
+    else {
+        if (articulo == "No hay artículos disponibles") {
+            if (bValido == true) {
+                bValido = false;
+                oForm.listaArticulos.focus();
+            }
+            sErrores += "\Lo sentimos no hay artículos disponibles";
+            oForm.listaArticulos.className = "form-control  error";
+        }
+        else {
+           oForm.listaArticulos.className = "form-control";
+        }
+    }
+	
+	  if(sDeclaracion=="" || iTasa =="" )
+		
+    {
+        sErrores +="Debe rellenar todos los campos";
+    }
+	
+	
+	
+
+	//Resultado
+	if (bValido == false){
+		//Cancelar envio del formulario
+		oE.preventDefault();
+		//Mostrar errores
+		alert(sErrores);
+	}
+	else{
+	
+     var aduana= new Aduana(sIdAduana, articulo, sDeclaracion, iTasa);
+	 sMensaje=oPaqueteria.modificarAduana(aduana);
 	}
 	
 	

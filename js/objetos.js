@@ -297,6 +297,30 @@ function Aduana(idDeclaracion, sArticulo, sDeclaracion, iTasa){
 
 }
 
+Paqueteria.prototype.altaAduana = function(oAduana)
+{
+   
+    var bEncontrado = false;
+    var sMensaje = "";
+
+    
+	for(var i=0; i<this.aduanas.length && bEncontrado==false; i++)
+	{
+        if(this.aduanas[i].idDeclaracion == oAduana.idDeclaracion){
+            bEncontrado = true;
+            sMensaje = "Aduana registrada con anterioridad";
+        }
+       
+    }
+
+    if(!bEncontrado){
+        this.aduanas.push(oAduana);
+        sMensaje = "Aduana dada de alta";
+    }
+
+    return sMensaje;
+};
+
 
 //Listados
 Paqueteria.prototype.cogerTodosLosClientes = function () 
