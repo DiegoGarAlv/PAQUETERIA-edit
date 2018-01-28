@@ -1266,7 +1266,7 @@ function bajaAduanas()
 	document.getElementById("listadoArtic").style.display = "none";
 
 	document.getElementById("formAltaPedido").style.display = "none";
-	document.getElementById("formBajaPedido").style.display = "none";
+	//document.getElementById("formBajaPedido").style.display = "none";
 	document.getElementById("formModiPedido").style.display = "none";
 	//document.getElementById("listadoPedidos").style.display = "none";
 	document.getElementById("verPaquetesNoEntregados").style.display = "none";
