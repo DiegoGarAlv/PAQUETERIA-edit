@@ -1,6 +1,6 @@
 window.addEventListener("load",inicio,false);
 
-// Instanciamos el objeto principal
+
 var oPaqueteria = new Paqueteria();
  
 //#########################################################################################
@@ -971,9 +971,9 @@ function bajaPaquetes()
 	document.getElementById("listadoArtic").style.display = "none";
 
 	document.getElementById("formAltaPedido").style.display = "none";
-	//document.getElementById("formBajaPedido").style.display = "none";
+	
 	document.getElementById("formModiPedido").style.display = "none";
-	//document.getElementById("listadoPedidos").style.display = "none";
+	
 	document.getElementById("verPaquetesNoEntregados").style.display = "none";
 	document.getElementById("verPaquetesEntregados").style.display = "none";
 
@@ -1165,7 +1165,7 @@ function altaAduana()
  	verAltaAduana.style.display = "block";
 	verAltaAduana.reset();
  
- 	//rellenar el combo de articulos en alta aduanas
+ 	
  	rellenaComboArticulos2("listaArticulos");
  	
  	var formAltaCliente = document.getElementById("formAltaCliente");
@@ -1266,9 +1266,9 @@ function bajaAduanas()
 	document.getElementById("listadoArtic").style.display = "none";
 
 	document.getElementById("formAltaPedido").style.display = "none";
-	//document.getElementById("formBajaPedido").style.display = "none";
+	
 	document.getElementById("formModiPedido").style.display = "none";
-	//document.getElementById("listadoPedidos").style.display = "none";
+	
 	document.getElementById("verPaquetesNoEntregados").style.display = "none";
 	document.getElementById("verPaquetesEntregados").style.display = "none";
 
@@ -1294,7 +1294,7 @@ function verListaAduana()
  	verAltaAduana.style.display = "none";
 	verAltaAduana.reset();
  
- 	//rellenar el combo de articulos en alta aduanas
+ 	
  	rellenaComboArticulos2("listaArticulos");
  	
  	var formAltaCliente = document.getElementById("formAltaCliente");
@@ -1373,8 +1373,6 @@ function verListaAduana()
 
 }
 
-
-//QUEJAS
 
 var formularioQuejas = document.getElementById("altaQueja");
 formularioQuejas.addEventListener("click", altaQueja, false);
@@ -1693,9 +1691,7 @@ function aceptarAltaCliente(oEvento){
 	
 	var sActivo = true;
 	
-	// Validaciones
-
-	//Campo id cliente (en realidad debe ser id persona)
+	 
 	var idCliente=  oForm.idCli.value.trim();
 
 	var oExpReg = /^\d{1,}\w$/;
@@ -1704,18 +1700,18 @@ function aceptarAltaCliente(oEvento){
 	
 		if(bValido == true){
 			bValido = false;		
-			//Este campo obtiene el foco
+			
 			oForm.idCli.focus();		
 		}
 	
 		sErrores += "\nId incorrecto";
 		
-		//Marcar error
+		
 		oForm.idCli.className = "form-control error";
 	
 	}
 	else {
-		//Desmarcar error
+		
 		oForm.idCli.className = "form-control";	
 	}
 
@@ -2472,7 +2468,7 @@ function aceptarAltaPaquete(oEvento){
 	
 	
 
-	//var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+	
 	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
 	
 	if (oExpReg.test(dFechaEntrega) == false){
@@ -3850,7 +3846,7 @@ function vaciarTablas(objetoParent)
 		objetoParent.removeChild(objetoParent.firstElementChild);
 	}
 }
-//metodo q necesito de momento para poder modificar bien
+
 function ocultarFormulariosModificar(){
 	
 	document.getElementById("formModiCliente").style.display = "none";
@@ -3872,7 +3868,7 @@ function ocultarFormulariosModificar(){
 	document.getElementById("formBajaCliente").style.display = "none";
 	document.getElementById("formBajaEmple").style.display = "none";
 	document.getElementById("formBajArticulo").style.display = "none";
-	//document.getElementById("formBajaPedido").style.display = "none";
+	
 	document.getElementById("listadoClientes").style.display = "none";
 	document.getElementById("listadoEmpleados").style.display = "none";
 	document.getElementById("listadoArtic").style.display = "none";
@@ -4102,16 +4098,12 @@ function aceptarModificarCliente(oEvento){
 	  var sErrores = "";
 	  var sMensaje ="";
 
-	  //var posSeleccionado = oForm.selectedIndex;
+	  
 	  
 	  var sIdCliente=formModiCliente.comboClientes.value.trim();
-	  //var selected = oForm.options[posSeleccionado].text;
-	  //var selected = oForm.selectedIndex.text;
+	  
 	  console.log(sIdCliente); 
-	 //var oCliente=oPaqueteria.clientes[sIdCliente];
-	 //var sNombre=oCliente.nombre;
-	
-	 //oForm.nombre.value = ;
+	 
 	
 	if(sMensaje==""){
 		           for (var i=0;i<oPaqueteria.clientes.length;i++)
@@ -4614,9 +4606,6 @@ function aceptarModificarPaquete(oEvento){
 	//Campo fecha
 	var dFechaEntrega= new Date(oForm.fechaEntrega.value.trim()).toLocaleDateString("es-ES");
 	
-	
-
-	//var oExpReg = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
 	var oExpReg = /^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/;
 	
 	if (oExpReg.test(dFechaEntrega) == false){
