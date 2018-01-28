@@ -435,6 +435,15 @@ Paqueteria.prototype.cogerTodasLasAduanas = function()
     return arrayAduanas;
 }
 
+Paqueteria.prototype.cogerTodasLasQuejas = function()
+{
+    var arrayQuejas = [];
+    for (var i = 0; i < this.quejas.length; i++) {
+        arrayQuejas.push(this.quejas[i]);
+    }
+    return arrayQuejas;
+}
+
 //Modificaciones
 
 //Cliente
