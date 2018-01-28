@@ -3021,8 +3021,8 @@ function inicio(){
 	document.getElementById("btnBajaPaquete").addEventListener("click", comboEliminarPaquete,false);
 
 	document.getElementById("aceptarAltaAduana").addEventListener("click", aceptarAltaAduana,false);
-	//document.getElementById("aceptarBajaAduana").addEventListener("click", aceptarEliminarAduana,false);
-	//document.getElementById("btnBajaAduana").addEventListener("click", comboEliminarAduana,false);
+	document.getElementById("aceptarBajaAduana").addEventListener("click", aceptarEliminarAduana,false);
+	document.getElementById("btnBajaAduana").addEventListener("click", comboEliminarAduana,false);
 
     document.getElementById("aceptarAltaQueja").addEventListener("click", aceptarAltaQueja,false);
     document.getElementById("aceptarBajaQueja").addEventListener("click", aceptarEliminarQueja,false);

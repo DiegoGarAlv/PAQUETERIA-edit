@@ -385,7 +385,7 @@ Paqueteria.prototype.altaAduana = function(oAduana)
     return sMensaje;
 };
 
-/*Paqueteria.prototype.eliminarAduana = function (idAduana) {
+Paqueteria.prototype.eliminarAduana = function (idAduana) {
 
     var encontrado = false;
 
@@ -401,7 +401,7 @@ Paqueteria.prototype.altaAduana = function(oAduana)
     }
 
     return encontrado;
-}*/
+}
 
 
 //Listados
@@ -478,7 +478,7 @@ Paqueteria.prototype.cogerTodosLosNombresPaquetes = function ()
     return arrayPaquetes;
 }
 
-/*Paqueteria.prototype.cogerTodosLosNombresAduanas = function () 
+Paqueteria.prototype.cogerTodosLosNombresAduanas = function () 
 {
     var arrayAduanas = [];
     for (var i = 0; i < this.aduanas.length; i++) 
@@ -489,7 +489,7 @@ Paqueteria.prototype.cogerTodosLosNombresPaquetes = function ()
         }
     }
     return arrayAduanas;
-}*/
+}
 
 Paqueteria.prototype.cogerTodosLosNombresQuejas = function () 
 {
