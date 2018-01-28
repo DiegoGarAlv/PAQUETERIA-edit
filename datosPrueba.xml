@@ -109,42 +109,42 @@
 	</paquete>
 
 	<queja>
-		<idQueja>Q1</idQueja>
+		<idQueja>1Q</idQueja>
 		<descripcion>Paquete no entregado</descripcion>
 		<fecha>05/01/2018</fecha>
 		<resuelta>No</resuelta>
 	</queja>
 
 	<queja>
-		<idQueja>Q2</idQueja>
+		<idQueja>2Q</idQueja>
 		<descripcion>Producto dañado</descripcion>
 		<fecha>20/01/2018</fecha>
 		<resuelta>Si</resuelta>
 	</queja>
 
 	<queja>
-		<idQueja>Q3</idQueja>
+		<idQueja>3Q</idQueja>
 		<descripcion>Paquete erróneo</descripcion>
 		<fecha>05/11/2017</fecha>
 		<resuelta>No</resuelta>
 	</queja>
 
 	<aduana>
-		<idDeclaracion>D1</idDeclaracion>
+		<idDeclaracion>1D</idDeclaracion>
 		<articulo>Archivadores</articulo>
 		<declaracion>Documentos en distintos archivadores</declaracion>
 		<tasa>10</tasa>
 	</aduana>
 		
 	<aduana>
-		<idDeclaracion>D2</idDeclaracion>
+		<idDeclaracion>2D</idDeclaracion>
 		<articulo>Pc de sobremesa</articulo>
 		<declaracion>Torre de pc con sus componentes</declaracion>
 		<tasa>30</tasa>
 	</aduana>
 	
 	<aduana>
-		<idDeclaracion>D3</idDeclaracion>
+		<idDeclaracion>3D</idDeclaracion>
 		<articulo>Juego de vasos</articulo>
 		<declaracion>Vasos de cristal</declaracion>
 		<tasa>10</tasa>
