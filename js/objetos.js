@@ -145,7 +145,7 @@ Paqueteria.prototype.eliminarEmpleado = function (idEmpleado) {
 
 // ###############################  Objeto Paquete  ################################## \\
 
-function Paquete(idPaquete,doTarifa,dFechaEntrega,doVolumen,doPeso,doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado)
+function Paquete(idPaquete,doTarifa,dFechaEntrega,doVolumen,doPeso,doValor,sUrgente,sEntregado,sAdminPublica,sInternacional,sAsegurado,sActivo)
 {
     this.idPaquete = idPaquete;
     this.doTarifa = doTarifa;
@@ -158,6 +158,7 @@ function Paquete(idPaquete,doTarifa,dFechaEntrega,doVolumen,doPeso,doValor,sUrge
     this.sAdminPublica=sAdminPublica;
     this.sInternacional=sInternacional;
     this.sAsegurado=sAsegurado;
+    this.sActivo=sActivo;
 }
 
 Paqueteria.prototype.altaPaquete = function(oPaquete)
@@ -182,6 +183,24 @@ Paqueteria.prototype.altaPaquete = function(oPaquete)
 
     return sMensaje;
 };
+
+Paqueteria.prototype.eliminarPaquete = function (idPaquete) {
+
+    var encontrado = false;
+
+    for(var i=0; i<this.paquetes.length; i++)
+    {
+        console.log(this.paquetes[i].idPaquete);
+        if(idPaquete == this.paquetes[i].idPaquete)
+        {
+            encontrado = true;
+            this.paquetes[i].sActivo = false;
+            console.log(this.paquetes[i]);
+        }
+    }
+
+    return encontrado;
+}
 
 
 // ###############################  Objeto Articulo ################################### \\
@@ -279,11 +298,12 @@ Paqueteria.prototype.altaEventoQueja = function(oEventoQueja)
 
 // ###############################  Objeto Queja  ################################### \\
 
-function Queja(idQueja,sDescripcion, dFecha, sResuelta){
+function Queja(idQueja,sDescripcion, dFecha, sResuelta, sActivo){
     this.idQueja = idQueja;
     this.sDescripcion = sDescripcion;
 	this.dFecha=dFecha;
     this.sResuelta=sResuelta;
+    this.sActivo=sActivo;
 }
 
 
@@ -311,14 +331,33 @@ Paqueteria.prototype.altaQueja = function(oQueja)
     return sMensaje;
 };
 
+Paqueteria.prototype.eliminarQueja = function (idQueja) {
+
+    var encontrado = false;
+
+    for(var i=0; i<this.quejas.length; i++)
+    {
+        console.log(this.quejas[i].idQueja);
+        if(idQueja == this.quejas[i].idQueja)
+        {
+            encontrado = true;
+            this.quejas[i].sActivo = false;
+            console.log(this.quejas[i]);
+        }
+    }
+
+    return encontrado;
+}
+
 
 // ###############################  Objeto Aduana ################################### \\
 
-function Aduana(idDeclaracion, sArticulo, sDeclaracion, iTasa){
+function Aduana(idDeclaracion, sArticulo, sDeclaracion, iTasa, sActivo){
 	this.idDeclaracion = idDeclaracion;
     this.sArticulo = sArticulo;
     this.sDeclaracion = sDeclaracion;
      this.iTasa = iTasa;
+     this.sActivo = sActivo;
 
 }
 
@@ -345,6 +384,24 @@ Paqueteria.prototype.altaAduana = function(oAduana)
 
     return sMensaje;
 };
+
+/*Paqueteria.prototype.eliminarAduana = function (idAduana) {
+
+    var encontrado = false;
+
+    for(var i=0; i<this.aduanas.length; i++)
+    {
+        console.log(this.aduanas[i].idAduana);
+        if(idAduana == this.aduanas[i].idAduana)
+        {
+            encontrado = true;
+            this.aduanas[i].sActivo = false;
+            console.log(this.aduanas[i]);
+        }
+    }
+
+    return encontrado;
+}*/
 
 
 //Listados
@@ -406,6 +463,45 @@ Paqueteria.prototype.cogerTodosLosNombresArticulos = function ()
         }
     }
     return arrayArticulos;
+}
+
+Paqueteria.prototype.cogerTodosLosNombresPaquetes = function () 
+{
+    var arrayPaquetes = [];
+    for (var i = 0; i < this.paquetes.length; i++) 
+    {
+        if(this.paquetes[i].sActivo == true)
+        {
+            arrayPaquetes.push(this.paquetes[i].idPaquete);
+        }
+    }
+    return arrayPaquetes;
+}
+
+/*Paqueteria.prototype.cogerTodosLosNombresAduanas = function () 
+{
+    var arrayAduanas = [];
+    for (var i = 0; i < this.aduanas.length; i++) 
+    {
+        if(this.aduanas[i].sActivo == true)
+        {
+            arrayAduanas.push(this.aduanas[i].idAduana);
+        }
+    }
+    return arrayAduanas;
+}*/
+
+Paqueteria.prototype.cogerTodosLosNombresQuejas = function () 
+{
+    var arrayQuejas = [];
+    for (var i = 0; i < this.quejas.length; i++) 
+    {
+        if(this.quejas[i].sActivo == true)
+        {
+            arrayQuejas.push(this.quejas[i].idQueja + " - " + this.quejas[i].sDescripcion);
+        }
+    }
+    return arrayQuejas;
 }
 
 Paqueteria.prototype.cogerTodosLosArticulos = function () 
