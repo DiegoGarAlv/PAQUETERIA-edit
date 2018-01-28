@@ -45,12 +45,8 @@ Paqueteria.prototype.altaCliente = function(oCliente)
     var bEncontrado = false;
     var sMensaje = "";
 
-    console.log("Cliente enviado: " + oCliente.sIdCliente);
-
-    // Busco por idEmpleado
 	for(var i=0; i<this.clientes.length && bEncontrado==false; i++)
 	{
-		console.log("revisando cliente: " + this.clientes[i].sIdCliente);
         if(this.clientes[i].sIdCliente == oCliente.sIdCliente){
             bEncontrado = true;
             sMensaje = "Cliente registrado con anterioridad";
@@ -70,16 +66,12 @@ Paqueteria.prototype.eliminarCliente = function (sIdCliente) {
 
     var encontrado = false;
 
-    console.log(sIdCliente);
-
     for(var i=0; i<this.clientes.length; i++)
     {
-        console.log(this.clientes[i].sIdCliente);
         if(sIdCliente == this.clientes[i].sIdCliente)
         {
             encontrado = true;
             this.clientes[i].sActivo = false;
-            console.log(this.clientes[i]);
         }
     }
 
@@ -88,8 +80,8 @@ Paqueteria.prototype.eliminarCliente = function (sIdCliente) {
 
 // ###############################  Objeto Empleado ############################### \\
 
-function Empleado(/*idPersona,*/ idEmpleado, sNombre, sApellidos, sGestor, sManager, sOficina, sActivo){
-	//Persona.call(this,idPersona);
+function Empleado(idEmpleado, sNombre, sApellidos, sGestor, sManager, sOficina, sActivo){
+
 	this.idEmpleado = idEmpleado;
 	this.sNombre = sNombre;
 	this.sApellidos = sApellidos;
@@ -107,7 +99,6 @@ Paqueteria.prototype.altaEmpleado = function(oEmpleado)
     var bEncontrado = false;
     var sMensaje = "";
 
-    // Busco por idEmpleado
 	for(var i=0; i<this.empleados.length && bEncontrado==false; i++)
 	{
         if(this.empleados[i].idEmpleado == oEmpleado.idEmpleado){
@@ -190,12 +181,10 @@ Paqueteria.prototype.eliminarPaquete = function (idPaquete) {
 
     for(var i=0; i<this.paquetes.length; i++)
     {
-        console.log(this.paquetes[i].idPaquete);
         if(idPaquete == this.paquetes[i].idPaquete)
         {
             encontrado = true;
             this.paquetes[i].sActivo = false;
-            console.log(this.paquetes[i]);
         }
     }
 
@@ -243,58 +232,15 @@ Paqueteria.prototype.eliminarArticulo = function (idArticulo) {
 
     for(var i=0; i<this.articulos.length; i++)
     {
-        //console.log(this.articulos[i].idArticulo);
         if(idArticulo == this.articulos[i].idArticulo)
         {
             encontrado = true;
             this.articulos[i].sActivo = false;
-            console.log(this.articulos[i]);
         }
     }
 
     return encontrado;
 }
-
-
-// ############################### Objeto Direccion  ################################# \\
-
-/*/function Direccion(sCalle, sCodigoPostal, sPais){
-    this.sCalle = sCalle;
-    this.sCodigoPostal = sCodigoPostal;
-    this.sPais = sPais;
-   
-}*/
-
-// ############################### Objeto EventoQueja  ################################ \\
-
-/*function EventoQueja (idEvento, sMensaje){
-    this.idEvento = idEvento;
-    this.sMensaje = sMensaje;
-    
-}
-
-Paqueteria.prototype.altaEventoQueja = function(oEventoQueja)
-{
-    var i = 0;
-    var bEncontrado = false;
-    var sMensaje = "";
-	
-    for(var i=0; i<this.eventosQueja.length && bEncontrado==false; i++)
-	{
-        if(this.eventosQueja[i].idEvento == oEventoQueja.idEvento){
-            bEncontrado = true;
-            sMensaje = "Evento registrado con anterioridad";
-        }
-        
-    }
-
-    if(!bEncontrado){
-        this.eventosQueja.push(oEventoQueja);
-        sMensaje = "Evento dado de alta";
-    }
-
-    return sMensaje;
-};*/
 
 // ###############################  Objeto Queja  ################################### \\
 
@@ -337,12 +283,10 @@ Paqueteria.prototype.eliminarQueja = function (idQueja) {
 
     for(var i=0; i<this.quejas.length; i++)
     {
-        console.log(this.quejas[i].idQueja);
         if(idQueja == this.quejas[i].idQueja)
         {
             encontrado = true;
             this.quejas[i].sActivo = false;
-            console.log(this.quejas[i]);
         }
     }
 
@@ -391,12 +335,10 @@ Paqueteria.prototype.eliminarAduana = function (idDeclaracion) {
 
     for(var i=0; i<this.aduanas.length; i++)
     {
-        console.log(this.aduanas[i].idDeclaracion);
         if(idDeclaracion == this.aduanas[i].idDeclaracion)
         {
             encontrado = true;
             this.aduanas[i].sActivo = false;
-            console.log(this.aduanas[i]);
         }
     }
 
@@ -546,8 +488,7 @@ Paqueteria.prototype.cogerTodasLasQuejas = function()
 Paqueteria.prototype.modificarCliente= function(oCliente){
     var sCadena = "";
     for(var i=0;i < this.clientes.length;i++){
-        console.log(oCliente);
-		console.log(oCliente.sIdCliente);
+
         if(this.clientes[i].sIdCliente == oCliente.sIdCliente)
         {
             

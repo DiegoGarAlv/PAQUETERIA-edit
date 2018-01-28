@@ -32,7 +32,6 @@
 		<div class="dropdown-container">
 		    <a href="#" id="altaCli">Alta cliente</a>
             <a href="#" id="bajaCli">Baja cliente</a>
-			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiCli">Modificar cliente</a>
             <a href="#" id="listadoCli">Listado cliente</a>
 		</div>
@@ -43,7 +42,6 @@
 		<div class="dropdown-container">
 		    <a href="#" id="altaEmpl">Alta empleado</a>
         	<a href="#" id="bajaEmpl">Baja empleado</a>
-			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiEmple">Modificar empleado</a>
         	<a href="#" id="listadoEmpl">Listado empleado</a>
 		</div>
@@ -54,7 +52,6 @@
 		<div class="dropdown-container">
 		    <a href="#" id="altaArt">Alta Articulos</a>
         	<a href="#" id="bajaArt">Baja Articulos</a>
-			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiArti">Modificar artículo</a>
         	<a href="#" id="btnListaArt">Listado Articulos</a>
 		</div>
@@ -65,7 +62,6 @@
 		<div class="dropdown-container">
       <a href="#" id="altaPaquete">Alta Paquete</a>
 			<a href="#" id="btnBajaPaquete">Baja Paquete</a>
-			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiPaq">Modificar paquete</a>
 		    <a href="#" id="paqueteNoEntregado">Listado Paquetes no entregados</a>
         	<a href="#" id="paqueteEntregado">Listado paquetes entregado</a>
@@ -77,7 +73,6 @@
 		<div class="dropdown-container">
       <a href="#" id="altaAduana">Alta aduana</a>
 			<a href="#" id="btnBajaAduana">Baja aduana</a>
-			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiAduana">Modificar aduana</a>
 		    <a href="#" id="btnListadoAduana">Listado aduanas</a>
 		</div>
@@ -88,7 +83,6 @@
 		<div class="dropdown-container">
       <a href="#" id="altaQueja">Alta quejas</a>
 			<a href="#" id="btnBajaQueja">Baja quejas</a>
-			<!-- enlace para modificar (juanan)-->
 			<a href="#" id="modiQueja">Modificar queja</a>
 		    <a href="#" id="listadoQueja">Listado quejas</a>
 		</div>
@@ -140,11 +134,6 @@
             <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono">
           </div>
 
-          <!--<div class="form-group">
-            <label for="puntos">Puntos:</label>
-            <input type="text" class="form-control" id="puntos" placeholder="Puntos" name="pnts">
-          </div>-->
-
           <div class="form-group">
             <label for="calle">Dirección / Calle:</label>
             <input type="text" class="form-control" id="calle" placeholder="Calle" name="calle">
@@ -175,7 +164,6 @@
            <div class="form-group">
               <label for="sel1">Dar de baja:</label>
               <select class="form-control" id="baja">
-                <!--<option>Seleccione un cliente...</option>-->
               </select>
             </div> 
 
@@ -185,7 +173,6 @@
 
         </form>
 		
-		<!-- modificar cliente-->
 		  <form class="form-horizontal" id="formModiCliente" name="formModiCli">
 
   			<div class="form-group">
@@ -245,11 +232,7 @@
         </form>
 		
 		
-		<!-- fin modificar-->
-
 		<div id="listadoClientes" class="table-responsive">
-
-        	<!--Aquí se inserta ListadoClientes-->
 
        
         </div>
@@ -924,7 +907,7 @@
 	</div>
 
 	<script>
-	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+
 	var dropdown = document.getElementsByClassName("dropdown-btn");
 	var i;
 
