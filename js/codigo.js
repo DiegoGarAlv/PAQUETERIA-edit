@@ -3879,6 +3879,7 @@ function ocultarFormulariosModificar(){
 	document.getElementById("formBajaPaquete").style.display = "none";
 	document.getElementById("formBajaQueja").style.display = "none";
 	document.getElementById("formBajaAduana").style.display = "none";
+	document.getElementById("listaQueja").style.display = "none";
 
 }
 
@@ -3920,6 +3921,7 @@ function modificarAduana()
 	document.getElementById("formModiAduana").style.display = "block";
 	document.getElementById("formModiAduana").reset();
 	rellenaComboAduanas("comboModificarAduanas");
+	rellenaComboArticulos2("listaArticulosMod");
 }
 
 function modificarQueja()
