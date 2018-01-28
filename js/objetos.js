@@ -385,14 +385,14 @@ Paqueteria.prototype.altaAduana = function(oAduana)
     return sMensaje;
 };
 
-Paqueteria.prototype.eliminarAduana = function (idAduana) {
+Paqueteria.prototype.eliminarAduana = function (idDeclaracion) {
 
     var encontrado = false;
 
     for(var i=0; i<this.aduanas.length; i++)
     {
-        console.log(this.aduanas[i].idAduana);
-        if(idAduana == this.aduanas[i].idAduana)
+        console.log(this.aduanas[i].idDeclaracion);
+        if(idDeclaracion == this.aduanas[i].idDeclaracion)
         {
             encontrado = true;
             this.aduanas[i].sActivo = false;
@@ -485,7 +485,7 @@ Paqueteria.prototype.cogerTodosLosNombresAduanas = function ()
     {
         if(this.aduanas[i].sActivo == true)
         {
-            arrayAduanas.push(this.aduanas[i].idAduana);
+            arrayAduanas.push(this.aduanas[i].idDeclaracion);
         }
     }
     return arrayAduanas;
