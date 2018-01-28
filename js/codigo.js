@@ -1243,7 +1243,7 @@ function altaAduana()
  	
 }
 
-var bajaAduan = document.getElementById("btnBajaAduana");
+/*var bajaAduan = document.getElementById("btnBajaAduana");
 bajaAduan.addEventListener("click", bajaAduanas, false);
 
 function bajaAduanas()
@@ -1280,7 +1280,7 @@ function bajaAduanas()
 	document.getElementById("formBajaQuejas").style.display = "none";
 	document.getElementById("formModiQuejas").style.display = "none";
 	document.getElementById("listaQueja").style.display = "none";
-}
+}*/
 
 var listaAduanas = document.getElementById("btnListadoAduana");
 listaAduanas.addEventListener("click", verListaAduana, false);
