@@ -983,7 +983,7 @@ function bajaPaquetes()
 	document.getElementById("listadoAduana").style.display = "none";
 
 	document.getElementById("formAltaQuejas").style.display = "none";
-	document.getElementById("formBajaQuejas").style.display = "none";
+	document.getElementById("formBajaQueja").style.display = "none";
 	document.getElementById("formModiQuejas").style.display = "none";
 	document.getElementById("listaQueja").style.display = "none";
 }
@@ -1243,7 +1243,7 @@ function altaAduana()
  	
 }
 
-/*var bajaAduan = document.getElementById("btnBajaAduana");
+var bajaAduan = document.getElementById("btnBajaAduana");
 bajaAduan.addEventListener("click", bajaAduanas, false);
 
 function bajaAduanas()
@@ -1277,10 +1277,10 @@ function bajaAduanas()
 	document.getElementById("listadoAduana").style.display = "none";
 
 	document.getElementById("formAltaQuejas").style.display = "none";
-	document.getElementById("formBajaQuejas").style.display = "none";
+	document.getElementById("formBajaQueja").style.display = "none";
 	document.getElementById("formModiQuejas").style.display = "none";
 	document.getElementById("listaQueja").style.display = "none";
-}*/
+}
 
 var listaAduanas = document.getElementById("btnListadoAduana");
 listaAduanas.addEventListener("click", verListaAduana, false);
@@ -2739,7 +2739,7 @@ function aceptarAltaAduana(oEvento){
 
 }
 
-/*function aceptarEliminarAduana()
+function aceptarEliminarAduana()
 {
 	var oForm = document.getElementById("formBajaAduana");
     var bValido = true;
@@ -2801,7 +2801,7 @@ function comboEliminarAduana()
 	    }
 
     }
-}*/
+}
 
 //#######################################################################
 
