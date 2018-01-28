@@ -3457,28 +3457,31 @@ function mostrarListaPaquetesNo(){
 
         if(entregado == "No")
         {
-	        oFila = oTBody.insertRow(-1);
-	        
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
-			oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
-			oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+        	if(lista[i].sActivo == true)
+    		{
+		        oFila = oTBody.insertRow(-1);
+		        
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
+				oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+				oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+	    	}
         }
     }
     document.querySelector("#verPaquetesNoEntregados").appendChild(oTabla);
@@ -3588,28 +3591,31 @@ function mostrarListaPaquetesSi(){
 
         if(entregado == "Sí")
         {
-	        oFila = oTBody.insertRow(-1);
-	        
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
-			oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
-			oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
-	        oCelda = oFila.insertCell(-1);
-	        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+	        if(lista[i].sActivo == true)
+    		{
+		        oFila = oTBody.insertRow(-1);
+		        
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].idPaquete));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doTarifa));
+				oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].dFechaEntrega));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doVolumen));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+				oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sUrgente));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sAdminPublica));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sInternacional));
+		        oCelda = oFila.insertCell(-1);
+		        oCelda.appendChild(document.createTextNode(lista[i].sAsegurado));
+        	}
         }
     }
     document.querySelector("#verPaquetesEntregados").appendChild(oTabla);
@@ -3670,17 +3676,20 @@ function mostrarListaAduanas(){
 
 
     for (i = 0; i < lista.length; i++) {
-        oFila = oTBody.insertRow(-1);
-        
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].idDeclaracion));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sArticulo));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sDeclaracion));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].iTasa));
-	
+    	
+    	if(lista[i].sActivo == true)
+    	{
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].idDeclaracion));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sArticulo));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sDeclaracion));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].iTasa));
+		}
     }
     document.querySelector("#listadoAduana").appendChild(oTabla);
 }
@@ -3741,17 +3750,20 @@ function mostrarListaQuejas(){
 
 
     for (i = 0; i < lista.length; i++) {
-        oFila = oTBody.insertRow(-1);
-        
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].idQueja));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sDescripcion));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].dFecha));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sResuelta));
-	
+    	
+    	if(lista[i].sActivo == true)
+    	{
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].idQueja));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sDescripcion));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].dFecha));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sResuelta));
+		}
     }
     document.querySelector("#listaQueja").appendChild(oTabla);
 }
