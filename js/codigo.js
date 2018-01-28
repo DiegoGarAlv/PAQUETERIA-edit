@@ -1599,6 +1599,82 @@ function mostarUML()
 {
 	var verUML = document.getElementById("uml");
  	verUML.style.display = "block";
+
+ 		var listadoQuejas = document.getElementById("listaQueja");
+ 	listadoQuejas.style.display = "block";
+
+ 	var listadoEmpleados = document.getElementById("listadoEmpleados");
+ 	listadoEmpleados.style.display = "none";
+
+ 	var bajaEmpleados = document.getElementById("formBajaEmple");
+ 	bajaEmpleados.style.display = "none";
+
+ 	var altaEmpleados = document.getElementById("formAltaEmpleados");
+ 	altaEmpleados.style.display = "none";
+	altaEmpleados.reset();
+
+ 	var formAltaCliente = document.getElementById("formAltaCliente");
+ 	formAltaCliente.style.display = "none";
+	formAltaCliente.reset();
+
+ 	var formBajaCliente = document.getElementById("formBajaCliente");
+ 	formBajaCliente.style.display = "none";
+	formBajaCliente.reset();
+
+ 	var listadoClientes = document.getElementById("listadoClientes");
+ 	listadoClientes.style.display = "none";
+
+ 	var altaArtic = document.getElementById("formAltaArticulo");
+ 	altaArtic.style.display = "none";
+	altaArtic.reset();
+
+ 	var bajaArtic = document.getElementById("formBajArticulo");
+ 	bajaArtic.style.display = "none";
+
+ 	var listadoArtic = document.getElementById("listadoArtic");
+ 	listadoArtic.style.display = "none";
+	
+	var altaPaquete = document.getElementById("formAltaPedido");
+ 	altaPaquete.style.display = "none";
+
+ 	var verPaqueteEntre = document.getElementById("verPaquetesEntregados");
+ 	verPaqueteEntre.style.display = "none";
+
+ 	var verPaquetesNoEntre = document.getElementById("verPaquetesNoEntregados");
+ 	verPaquetesNoEntre.style.display = "none";
+	
+	var verAltaAduana= document.getElementById("formAltaAduana");
+ 	verAltaAduana.style.display = "none";
+	verAltaAduana.reset();
+	
+	document.getElementById("formModiCliente").style.display = "none";
+	document.getElementById("formModiCliente").reset();
+	
+	document.getElementById("formModiEmpleado").style.display = "none";
+	document.getElementById("formModiEmpleado").reset();
+	
+	document.getElementById("formModiArticulo").style.display = "none";
+	document.getElementById("formModiArticulo").reset();
+
+	document.getElementById("formModiPedido").style.display = "none";
+	document.getElementById("formModiPedido").reset();
+	
+	document.getElementById("formModiAduana").style.display = "none";
+	document.getElementById("formModiAduana").reset();
+	
+	document.getElementById("formModiQuejas").style.display = "none";
+	document.getElementById("formModiQuejas").reset();
+	
+	document.getElementById("listadoAduana").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").style.display = "none";
+	
+	document.getElementById("formAltaQuejas").reset();
+
+	document.getElementById("formBajaPaquete").style.display = "none";
+	document.getElementById("formBajaQueja").style.display = "none";
+	document.getElementById("formBajaAduana").style.display = "none";
+	document.getElementById("listaQueja").style.display = "none";
 }
 
 
@@ -3041,7 +3117,6 @@ function inicio(){
 	document.getElementById("aceptarModificarQueja").addEventListener("click", aceptarModificarQueja,false);
 	document.getElementById("listadoQueja").addEventListener("click",mostrarListaQuejas,false);
 
-
 }
 
 
@@ -3775,7 +3850,6 @@ function vaciarTablas(objetoParent)
 		objetoParent.removeChild(objetoParent.firstElementChild);
 	}
 }
-
 //metodo q necesito de momento para poder modificar bien
 function ocultarFormulariosModificar(){
 	
