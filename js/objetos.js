@@ -550,6 +550,7 @@ Paqueteria.prototype.modificarCliente= function(oCliente){
 		console.log(oCliente.sIdCliente);
         if(this.clientes[i].sIdCliente == oCliente.sIdCliente)
         {
+            
 			this.clientes[i].sNombre = oCliente.sNombre;
             this.clientes[i].sApellidos = oCliente.sApellidos;
             this.clientes[i].sEmail = oCliente.sEmail;
