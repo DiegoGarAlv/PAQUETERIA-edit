@@ -4800,7 +4800,7 @@ function aceptarModificarAduana(oEvento){
 			oForm.tasa.focus();		
 		}
 	
-		sErrores += "n\Tasa incorrecta";
+		sErrores += "\nTasa incorrecta";
 		
 		//Marcar error
 		oForm.tasa.className = "form-control error";
@@ -4823,7 +4823,7 @@ function aceptarModificarAduana(oEvento){
             bValido = false;
             oForm.listaArticulos.focus();
         }
-        sErrores += "\Debe seleccionar un artículo";
+        sErrores += "\nDebe seleccionar un artículo";
      
         //Marcar error
         oForm.listaArticulos.className = "form-control error";
@@ -4834,7 +4834,7 @@ function aceptarModificarAduana(oEvento){
                 bValido = false;
                 oForm.listaArticulos.focus();
             }
-            sErrores += "\Lo sentimos no hay artículos disponibles";
+            sErrores += "\nLo sentimos no hay artículos disponibles";
             oForm.listaArticulos.className = "form-control  error";
         }
         else {
@@ -4845,7 +4845,7 @@ function aceptarModificarAduana(oEvento){
 	  if(sDeclaracion=="" || iTasa =="" )
 		
     {
-        sErrores +="Debe rellenar todos los campos";
+        sErrores +="\nDebe rellenar todos los campos";
     }
 	
 	
