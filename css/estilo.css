@@ -33,10 +33,12 @@ body
 
 #uml
 {
-    margin: 100px 0 30px 450px;
+    margin: 100px 0 30px 350px;
+}
+
+#uml > img
+{
     width: 800px;
-    height: 1000px;
-    background: url('Paqueteríauml.png') top center no-repeat; 
 }
 
 .form-horizontal
