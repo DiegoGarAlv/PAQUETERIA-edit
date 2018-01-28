@@ -3,7 +3,7 @@
 class Paqueteria {
     constructor() {
     
-    this.empleados = [ ]; // Array vacio
+    this.empleados = [ ];
     this.quejas = [ ];
     this.clientes = [ ];
     this.articulos = [ ];
