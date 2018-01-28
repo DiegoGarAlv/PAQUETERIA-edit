@@ -2142,9 +2142,9 @@ function aceptarEliminarEmpleado()
 
     var seleccNoValido = oForm.bajaEmple.value;
 
-    if(seleccNoValido == "Seleccione un cliente...")
+    if(seleccNoValido == "Seleccione un empleado...")
     {
-    	alert("No hay ningún cliente seleccionado");
+    	alert("No hay ningún empleado seleccionado");
     }
 
     var empleadoEncontrado = oPaqueteria.eliminarEmpleado(empleadoSeleccionado);
