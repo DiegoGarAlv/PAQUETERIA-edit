@@ -3085,8 +3085,6 @@ function mostrarListaClientes() {
     
     var oTabla = document.createElement("table");
 	oTabla.setAttribute("class", "table table-striped table-responsive");
-	//oTabla.classList.add("table");
-	//oTabla.classList.add("table-striped");
 
     var oThead = oTabla.createTHead();
     var oFila = oThead.insertRow(-1);
@@ -3110,38 +3108,6 @@ function mostrarListaClientes() {
 
         oCelda = oFila.insertCell(-1);
     oCelda.textContent = "País";
-
-
-    /*oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Nombre"));
-
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Apellidos"));
-
-
-    oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Email"));
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Teléfono"));
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Dirección"));
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("Código postal"));
-	
-	 oCelda = document.createElement("th");
-    oFila.appendChild(oCelda);
-    oCelda.appendChild(document.createTextNode("País"));*/
-
-    
 
     var oTBody = oTabla.createTBody();
 
@@ -3182,23 +3148,26 @@ function mostrarListaClientes() {
 	
 	
     for (i = 0; i < lista.length; i++) {
-        oFila = oTBody.insertRow(-1);
         
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sNombre));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sApellidos));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sEmail));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sTelefono));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sDireccion));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sCodPost));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sPais));
-
+    	if(lista[i].sActivo == true)
+    	{
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sNombre));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sApellidos));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sEmail));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sTelefono));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sDireccion));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sCodPost));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sPais));
+    	}
     }
 
     document.querySelector("#listadoClientes").appendChild(oTabla);
@@ -3268,20 +3237,23 @@ function mostrarListaEmpleados() {
 
 
     for (i = 0; i < lista.length; i++) {
-        oFila = oTBody.insertRow(-1);
         
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sNombre));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sApellidos));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sGestor));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sManager));
-	
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sOficina));
-	
+    	if(lista[i].sActivo == true)
+    	{
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sNombre));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sApellidos));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sGestor));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sManager));
+		
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sOficina));
+		}
 
     }
     document.querySelector("#listadoEmpleados").appendChild(oTabla);
@@ -3361,16 +3333,20 @@ function mostrarListaArticulos() {
 		}		
 	
     for (i = 0; i < lista.length; i++) {
-        oFila = oTBody.insertRow(-1);
         
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sDescripcion));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
-		oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].doValor));
-        oCelda = oFila.insertCell(-1);
-        oCelda.appendChild(document.createTextNode(lista[i].sComercial));
+    	if(lista[i].sActivo == true)	
+    	{	
+	        oFila = oTBody.insertRow(-1);
+	        
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sDescripcion));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doPeso));
+			oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].doValor));
+	        oCelda = oFila.insertCell(-1);
+	        oCelda.appendChild(document.createTextNode(lista[i].sComercial));
+    	}
     }
     
     document.querySelector("#listadoArtic").appendChild(oTabla);
